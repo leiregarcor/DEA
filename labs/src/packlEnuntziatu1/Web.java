@@ -33,7 +33,7 @@ public class Web {
 	
 	
 	
-	public ArrayList<String> getGakoZrrenda(){
+	public ArrayList<String> getGakoZerrenda(){
 		return this.gakoZerrenda;
 	}
 	
