@@ -29,7 +29,7 @@ public class Web {
 	private void gehituGakoa() {}
 	
 	
-	public void LortuGakoHitzak() {}
+	public void LortuGakoHitzak(Web pWeb) {}
 	
 	
 	

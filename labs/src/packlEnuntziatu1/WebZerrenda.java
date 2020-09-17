@@ -4,11 +4,11 @@ public class WebZerrenda {
 	
 	// atributuak
 	private static WebZerrenda nireWebZerrenda = null;
-	private ArrayList<Web>zerrenda;
+	private ArrayList<Web>wZerrenda;
 	
 	// eraikitzailea
 	private WebZerrenda() {
-		this.zerrenda = new ArrayList<Web>();
+		this.wZerrenda = new ArrayList<Web>();
 	}
 	
 	// gainontzeko metodoak
@@ -34,9 +34,8 @@ public class WebZerrenda {
 	
 	public void ezabatu (String pUrl) {}
 	
-	public ArrayList<String> webOrdenatuta(){
-		ArrayList<String> ema;
-		return ema;		
+	public void webOrdenatuta(ArrayList<Web> pZerrenda){
+		//TODO
 	}
 	
 	public String id2String(int pId) {
@@ -44,7 +43,7 @@ public class WebZerrenda {
 		return ema;
 	}
 	
-	public int String2Id( String pUrl) {
+	public int String2Id(String pUrl) {
 		int ema;
 		return ema;
 	}
