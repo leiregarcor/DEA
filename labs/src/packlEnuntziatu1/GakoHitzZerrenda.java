@@ -10,7 +10,7 @@ public class GakoHitzZerrenda {
 	
 	// eraikitzailea
 	private GakoHitzZerrenda() {
-		this.zerrenda = new ArrayList<String>();
+		this.zerrenda = new ArrayList<Hitza>();
 	}
 	
 	// gainontzeko metodoak
