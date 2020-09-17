@@ -6,7 +6,7 @@ public class GakoHitzZerrenda {
 
 	// atributuak
 	private static GakoHitzZerrenda nireGakoHitzZerrenda = null;
-	private ArrayList<String>zerrenda;
+	private ArrayList<Hitza>zerrenda;
 	
 	// eraikitzailea
 	private GakoHitzZerrenda() {
