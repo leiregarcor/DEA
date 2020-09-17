@@ -1,4 +1,8 @@
 package packlEnuntziatu1;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.*;
 public class WebZerrenda {
 	
@@ -19,7 +23,36 @@ public class WebZerrenda {
 		return nireWebZerrenda;
 	} 
 	
-	public void fitxeroaKargatu(String pFitxeroa) {
+	public void fitxeroaKargatu(File pIndexFitxeroa) throws FileNotFoundException {
+		//Metodo hau jasotzen du: Fitxeroa web orrien url-ekin eta indizeekin.
+		//Metodo hau sartzen du informazio hori web objektuetan eta gero webzerrendan
+		
+		FileReader fr = new FileReader (pIndexFitxeroa);
+        BufferedReader b = new BufferedReader(fr);
+        
+        String lerro;
+    	WebZerrenda wz = WebZerrenda.getNireWebZerrenda();
+		try {
+	        while ((lerro = b.readLine())!=null)
+	        {
+	        	String zatiak[] = lerro.split(" "); // Zatitzen dugu web url eta indizea
+	        	// Sortzen dugu Web objektu bat eta sartzen dugu indizea eta url parametro bezala
+	        	Web w = new Web(Integer.parseInt(zatiak[1]), zatiak[0]);
+	        	// azkenik, gehitzen dugu web zerrendara
+	        	wz.gehitu(w);       	
+	        }
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}finally{ // Finally hay da fitxeroa ixteko zerbait txarto badoa.
+	        try{                    
+		           if( null != fr ){   
+		              fr.close();     
+		           }                  
+		        }catch (Exception e2){ 
+		           e2.printStackTrace();
+		        }
+		     }
 		
 	}
 	
@@ -30,7 +63,11 @@ public class WebZerrenda {
 		
 		return ema;
 	} 
-	public void gehitu (Web pWeb) {}
+	
+	public void gehitu (Web pWeb) 
+	{
+		this.wZerrenda.add(pWeb);
+	}
 	
 	public void ezabatu (String pUrl) {}
 	
@@ -39,12 +76,12 @@ public class WebZerrenda {
 	}
 	
 	public String id2String(int pId) {
-		String ema;
+		String ema = "";
 		return ema;
 	}
 	
 	public int String2Id(String pUrl) {
-		int ema;
+		int ema = 0;
 		return ema;
 	}
 	

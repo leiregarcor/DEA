@@ -25,6 +25,9 @@ public class HasieratuPraktika {
 	    
 	    try {
 			ghz.fitxeroaKargatu(wordsFitxeroa);
+			
+			wz.fitxeroaKargatu(webIndexFitxeroa);
+			
 			// Falta meter aqui para meter las webs para meter las redirecciones (los otros dos ficheros)
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
