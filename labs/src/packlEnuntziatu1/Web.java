@@ -5,7 +5,7 @@ import java.util.*;
 public class Web {
 	// atributuak
 	private int id;
-	private ArrayList<Integer>estekenIdZerrenda;
+	private ArrayList<Integer>estekenIdZerrenda; // Hemen gordeko dira web bakoitzak dituen esteken id-ak
 	private ArrayList<String>gakoZerrenda;
 	private String url;
 	
@@ -17,6 +17,14 @@ public class Web {
 		this.gakoZerrenda= new ArrayList<String>();
 	}
 	
+	
+	// getters
+	
+	public String getUrlWeb()
+	{
+		return this.url;
+	}
+	
 	// gainontzeko metodoak
 
 	public boolean EstekaBerdinaDu (String pUrl) {
@@ -26,7 +34,10 @@ public class Web {
 	}
 	
 	
-	private void gehituGakoa() {}
+	private void gehituGakoa(String pGakoa)
+	{
+		this.gakoZerrenda.add(pGakoa);
+	}
 	
 	
 	public void LortuGakoHitzak(Web pWeb) {}

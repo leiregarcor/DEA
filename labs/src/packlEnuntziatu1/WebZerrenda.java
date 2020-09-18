@@ -16,6 +16,11 @@ public class WebZerrenda {
 	}
 	
 	// gainontzeko metodoak
+	
+	private Iterator<Web> getIteradorea()
+	{
+		return this.wZerrenda.iterator();
+	}
 	public static WebZerrenda getNireWebZerrenda() {
 		if(nireWebZerrenda == null){
 			nireWebZerrenda = new WebZerrenda();
@@ -69,7 +74,22 @@ public class WebZerrenda {
 		this.wZerrenda.add(pWeb);
 	}
 	
-	public void ezabatu (String pUrl) {}
+	public void ezabatu (String pUrl) 
+	{
+		Iterator<Web>itr = this.getIteradorea();
+		boolean aurkituta = false;
+		
+		while ((itr.hasNext())&&(!aurkituta)) 
+		{
+			Web w = itr.next();
+			if (w.getUrlWeb().contentEquals(pUrl))
+			{
+				this.wZerrenda.remove(w);
+				aurkituta = true;
+			}
+		}
+		
+	}
 	
 	public void webOrdenatuta(ArrayList<Web> pZerrenda){
 		//TODO
@@ -85,9 +105,17 @@ public class WebZerrenda {
 		return ema;
 	}
 	
-	public ArrayList<String> irteerakoEstekak( String pUrl){
-		ArrayList<String> ema;
-		return ema;
+	public ArrayList<String> irteerakoEstekak(String pUrl)
+	{
+		Iterator<Web>itr = this.getIteradorea();
+		while (itr.hasNext()) {
+			Web w = itr.next();
+			if (pUrl.contentEquals(w.getUrlWeb()))
+			{
+				// Falta resolver dudas para seguir por aqui
+			}
+
+		}
 	}
 	
 	public ArrayList<String> word2Webs(String pGako){
