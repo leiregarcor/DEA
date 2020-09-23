@@ -29,7 +29,9 @@ public class Web {
 
 	public boolean EstekaBerdinaDu (String pUrl) {
 		boolean ema= false;
-		
+		if(this.url==pUrl) {
+			ema=true;
+		}
 		return ema;
 	}
 	
