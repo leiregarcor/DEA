@@ -75,8 +75,8 @@ public class WebZerrenda {
 		this.wZerrenda.add(pWeb);
 	}
 	
-	public void ezabatu (String pUrl) 
-	{
+	public void ezabatu (String pUrl) 	{
+		// sartutako url duen Web orria ezabatzen du
 		Iterator<Web>itr = this.getIteradorea();
 		boolean aurkituta = false;
 		
@@ -93,21 +93,24 @@ public class WebZerrenda {
 	}
 	
 	public void webOrdenatuta(ArrayList<Web> pZerrenda){
+		// post: web-orrien zerrenda itzultzen du, alfabetikoki ordenatuta
 		//TODO
 	}
 	
 	public String id2String(int pId) {
+		// Postbaldintza: osoko bat emanda, dagokion web-orria itzuliko du
 		String ema = "";
 		return ema;
 	}
 	
 	public int String2Id(String pUrl) {
+		// Url bat sartu eta bere indizea bueltatzen du
 		int ema = 0;
 		return ema;
 	}
 	
-	public ArrayList<String> irteerakoEstekak(String pUrl)
-	{
+	public ArrayList<String> irteerakoEstekak(String pUrl)	{
+		// post: web-orri baten izena emanda, estekatzen dituen web-orriak itzultzen ditu.
 		Iterator<Web>itr = this.getIteradorea();
 		while (itr.hasNext()) {
 			Web w = itr.next();
@@ -120,11 +123,14 @@ public class WebZerrenda {
 	}
 	
 	public ArrayList<String> word2Webs(String pGako){
+		// pre: parametroa gako-hitz bat da
+		// post:  gako-hitza daukaten web-orriak itzultzen ditu
 		ArrayList<String> ema;
 		return ema;
 	}
 	
 	public ArrayList<String> web2Words(String pUrl){
+		// post: web-orrian agertzen diren gako-hitzak itzultzen ditu
 		ArrayList<String> ema;
 		return ema;
 	}
