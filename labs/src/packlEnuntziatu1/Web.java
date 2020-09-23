@@ -27,7 +27,7 @@ public class Web {
 	
 	// gainontzeko metodoak
 
-	public boolean EstekaBerdinaDu (String pUrl) {
+	public boolean estekaBerdinaDu (String pUrl) {
 		boolean ema= false;
 		if(this.url==pUrl) {
 			ema=true;
@@ -35,7 +35,7 @@ public class Web {
 		return ema;
 	}
 	
-	public boolean IdBerdinaDu (int pId) {
+	public boolean idBerdinaDu (int pId) {
 		boolean ema=false;
 		if(this.id==pId) {
 			ema=true;
@@ -53,7 +53,7 @@ public class Web {
 	}
 	
 	
-	public void LortuGakoHitzak(Web pWeb) {}
+	public void lortuGakoHitzak(Web pWeb) {}
 	
 	
 	

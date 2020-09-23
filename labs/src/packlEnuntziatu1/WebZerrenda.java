@@ -64,13 +64,26 @@ public class WebZerrenda {
 	
 	public void fitxeroaEguneratu() {}
 	
-	public Web bilatu(String pUrl) {
+	public Web bilatuUrl(String pUrl) {
 		Web ema=null;
 		Iterator<Web>itr= this.getIteradorea();
 		boolean aurkitua=false;
 		while(itr.hasNext()&&!aurkitua) {
 			ema=itr.next();
-			if(ema.EstekaBerdinaDu(pUrl)) {
+			if(ema.estekaBerdinaDu(pUrl)) {
+				aurkitua=true;
+			}
+		}
+		return ema;
+	}
+	
+	public Web bilatuId(int pId) {
+		Web ema=null;
+		Iterator<Web>itr= this.getIteradorea();
+		boolean aurkitua=false;
+		while(itr.hasNext()&&!aurkitua) {
+			ema=itr.next();
+			if(ema.idBerdinaDu(pId)) {
 				aurkitua=true;
 			}
 		}
@@ -83,20 +96,10 @@ public class WebZerrenda {
 	}
 	
 	public void ezabatu (String pUrl) 	{
-		// sartutako url duen Web orria ezabatzen du
-		Iterator<Web>itr = this.getIteradorea();
-		boolean aurkituta = false;
-		
-		while ((itr.hasNext())&&(!aurkituta)) 
-		{
-			Web w = itr.next();
-			if (w.EstekaBerdinaDu(pUrl))//w.getUrlWeb().contentEquals(pUrl)
-			{
-				this.wZerrenda.remove(w);
-				aurkituta = true;
-			}
+		Web w=bilatuUrl(pUrl);
+		if(w!=null) {
+		this.wZerrenda.remove(w);
 		}
-		
 	}
 	
 	public void webOrdenatuta(ArrayList<Web> pZerrenda){
@@ -108,25 +111,17 @@ public class WebZerrenda {
 	public String id2String(int pId) {
 		// Postbaldintza: osoko bat emanda, dagokion web-orria itzuliko du
 		String ema = "";
-		Iterator<Web>itr=this.getIteradorea();
-		boolean aurkitua=false;
-		Web w=null;
-		while(itr.hasNext()&&!aurkitua) {
-			w=itr.next();
-			if(w.IdBerdinaDu(pId)) {
-				aurkitua=true;
-			}
-		}
-		if(aurkitua) {
+		Web w=bilatuId(pId);
+		if(w!=null) {
 		ema=w.getUrlWeb();
 		}
 		return ema;
 	}
 	
-	public int String2Id(String pUrl) {
+	public int string2Id(String pUrl) {
 		// Url bat sartu eta bere indizea bueltatzen du
 		int ema = -1;
-		Web w=bilatu(pUrl);
+		Web w=bilatuUrl(pUrl);
 		if(w!=null) {
 		ema=w.getId();
 		}
@@ -135,15 +130,12 @@ public class WebZerrenda {
 	
 	public ArrayList<String> irteerakoEstekak(String pUrl)	{
 		// post: web-orri baten izena emanda, estekatzen dituen web-orriak itzultzen ditu.
-		Iterator<Web>itr = this.getIteradorea();
-		while (itr.hasNext()) {
-			Web w = itr.next();
-			if (pUrl.contentEquals(w.getUrlWeb()))
-			{
-				// Falta resolver dudas para seguir por aqui
-			}
-
+		Web w=bilatuUrl(pUrl);
+		ArrayList<String>a=new ArrayList<String>();
+		if(w!=null) {
+		a=w.getGakoZerrenda();
 		}
+		return a;
 	}
 	
 	public ArrayList<String> word2Webs(String pGako){

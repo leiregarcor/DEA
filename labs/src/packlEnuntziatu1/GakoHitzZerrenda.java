@@ -37,14 +37,6 @@ public class GakoHitzZerrenda {
 		return nireGakoHitzZerrenda;
 	}
 	
-	public boolean gakoBerdinaDa(String pGakoa) {
-		boolean ema= false;
-		
-		return ema;
-		
-	}
-
-	
 	
 	public void fitxeroaKargatu(File pFitxeroaWords) throws FileNotFoundException {
 		FileReader fr = new FileReader (pFitxeroaWords);
@@ -61,7 +53,7 @@ public class GakoHitzZerrenda {
 			}
 		}catch(Exception e){
 	        e.printStackTrace();
-	     }finally{ // Finally hay da fitxeroa ixteko zerbait txarto badoa.
+	     }finally{ // Finally hau da fitxeroa ixteko zerbait txarto badoa.
 	        try{                    
 	           if( null != fr ){   
 	              fr.close();     

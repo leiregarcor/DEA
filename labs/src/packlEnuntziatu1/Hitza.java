@@ -8,4 +8,14 @@ public class Hitza {
 	{
 		this.katea = pKatea;
 	}
+	
+	public boolean gakoBerdinaDa(String pGakoa) {
+		boolean ema= false;
+		if(this.katea==pGakoa) {
+			ema=true;
+		}
+		return ema;
+		
+	}
+
 }
