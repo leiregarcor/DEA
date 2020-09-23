@@ -148,7 +148,7 @@
         <height>-1</height>
         <width>-1</width>
         <x>830</x>
-        <y>122</y>
+        <y>104</y>
       </constraint>
       <sourceConnections>
         <net.java.amateras.uml.classdiagram.model.AggregationModel>
