@@ -66,7 +66,14 @@ public class WebZerrenda {
 	
 	public Web bilatu(String pUrl) {
 		Web ema=null;
-		
+		Iterator<Web>itr= this.getIteradorea();
+		boolean aurkitua=false;
+		while(itr.hasNext()&&!aurkitua) {
+			ema=itr.next();
+			if(ema.EstekaBerdinaDu(pUrl)) {
+				aurkitua=true;
+			}
+		}
 		return ema;
 	} 
 	
@@ -83,7 +90,7 @@ public class WebZerrenda {
 		while ((itr.hasNext())&&(!aurkituta)) 
 		{
 			Web w = itr.next();
-			if (w.getUrlWeb().contentEquals(pUrl))
+			if (w.EstekaBerdinaDu(pUrl))//w.getUrlWeb().contentEquals(pUrl)
 			{
 				this.wZerrenda.remove(w);
 				aurkituta = true;
@@ -95,17 +102,34 @@ public class WebZerrenda {
 	public void webOrdenatuta(ArrayList<Web> pZerrenda){
 		// post: web-orrien zerrenda itzultzen du, alfabetikoki ordenatuta
 		//TODO
+		
 	}
 	
 	public String id2String(int pId) {
 		// Postbaldintza: osoko bat emanda, dagokion web-orria itzuliko du
 		String ema = "";
+		Iterator<Web>itr=this.getIteradorea();
+		boolean aurkitua=false;
+		Web w=null;
+		while(itr.hasNext()&&!aurkitua) {
+			w=itr.next();
+			if(w.IdBerdinaDu(pId)) {
+				aurkitua=true;
+			}
+		}
+		if(aurkitua) {
+		ema=w.getUrlWeb();
+		}
 		return ema;
 	}
 	
 	public int String2Id(String pUrl) {
 		// Url bat sartu eta bere indizea bueltatzen du
-		int ema = 0;
+		int ema = -1;
+		Web w=bilatu(pUrl);
+		if(w!=null) {
+		ema=w.getId();
+		}
 		return ema;
 	}
 	

@@ -35,6 +35,17 @@ public class Web {
 		return ema;
 	}
 	
+	public boolean IdBerdinaDu (int pId) {
+		boolean ema=false;
+		if(this.id==pId) {
+			ema=true;
+		}
+		return ema;
+	}
+	public int getId() {
+		return this.id;
+	}
+	
 	
 	private void gehituGakoa(String pGakoa)
 	{
