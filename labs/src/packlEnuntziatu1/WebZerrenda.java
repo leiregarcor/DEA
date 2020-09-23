@@ -9,10 +9,12 @@ public class WebZerrenda {
 	// atributuak
 	private static WebZerrenda nireWebZerrenda = null;
 	private ArrayList<Web>wZerrenda;
+	private ArrayList<String>urlZerrenda;
 	
 	// eraikitzailea
 	private WebZerrenda() {
 		this.wZerrenda = new ArrayList<Web>();
+		this.urlZerrenda= new ArrayList<String>();
 	}
 	
 	// gainontzeko metodoak
@@ -37,6 +39,7 @@ public class WebZerrenda {
         
         String lerro;
     	WebZerrenda wz = WebZerrenda.getNireWebZerrenda();
+    	
 		try {
 	        while ((lerro = b.readLine())!=null)
 	        {
@@ -93,16 +96,19 @@ public class WebZerrenda {
 	public void gehitu (Web pWeb) 
 	{
 		this.wZerrenda.add(pWeb);
+		urlZerrenda.add(pWeb.getUrlWeb());
 	}
 	
 	public void ezabatu (String pUrl) 	{
 		Web w=bilatuUrl(pUrl);
 		if(w!=null) {
+		urlZerrenda.remove(pUrl);																//comprobar
 		this.wZerrenda.remove(w);
+		
 		}
 	}
 	
-	public void webOrdenatuta(ArrayList<Web> pZerrenda){
+	public void webOrdenatuta(ArrayList<String> pZerrenda){
 		// post: web-orrien zerrenda itzultzen du, alfabetikoki ordenatuta
 		//TODO
 		
