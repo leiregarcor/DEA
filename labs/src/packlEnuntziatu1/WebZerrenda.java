@@ -102,7 +102,7 @@ public class WebZerrenda {
 	public void ezabatu (String pUrl) 	{
 		Web w=bilatuUrl(pUrl);
 		if(w!=null) {
-		urlZerrenda.remove(pUrl);																//comprobar
+		urlZerrenda.remove(pUrl);
 		this.wZerrenda.remove(w);
 		
 		}
