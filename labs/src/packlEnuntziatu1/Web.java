@@ -6,7 +6,6 @@ public class Web {
 	// atributuak
 	private int id;
 	private ArrayList<Web>estekenZerrenda; // Hemen gordeko dira web bakoitzak dituen esteken id-ak
-	private ArrayList<String>gakoZerrenda;
 	private String url;
 	
 	// eraikitzailea
@@ -14,7 +13,6 @@ public class Web {
 		this.id= pId;
 		this.url =  pUrl;
 		this.estekenZerrenda= new ArrayList<Web>() ;
-		this.gakoZerrenda= new ArrayList<String>();
 	}
 	
 	
@@ -46,20 +44,8 @@ public class Web {
 		return this.id;
 	}
 	
-	
-	private void gehituGakoa(String pGakoa)
-	{
-		this.gakoZerrenda.add(pGakoa);
-	}
-	
-	
 	public void lortuGakoHitzak(Web pWeb) {}
 	
-	
-	
-	public ArrayList<String> getGakoZerrenda(){
-		return this.gakoZerrenda;
-	}
 	
 	public ArrayList<Web> getEstekenZerrenda(){
 		return this.estekenZerrenda;
