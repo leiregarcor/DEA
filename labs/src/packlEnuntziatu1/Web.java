@@ -5,7 +5,7 @@ import java.util.*;
 public class Web {
 	// atributuak
 	private int id;
-	private ArrayList<Integer>estekenIdZerrenda; // Hemen gordeko dira web bakoitzak dituen esteken id-ak
+	private ArrayList<Web>estekenZerrenda; // Hemen gordeko dira web bakoitzak dituen esteken id-ak
 	private ArrayList<String>gakoZerrenda;
 	private String url;
 	
@@ -13,7 +13,7 @@ public class Web {
 	public Web (int pId, String pUrl) {
 		this.id= pId;
 		this.url =  pUrl;
-		this.estekenIdZerrenda= new ArrayList<Integer>() ;
+		this.estekenZerrenda= new ArrayList<Web>() ;
 		this.gakoZerrenda= new ArrayList<String>();
 	}
 	
@@ -61,6 +61,8 @@ public class Web {
 		return this.gakoZerrenda;
 	}
 	
-	
+	public ArrayList<Web> getEstekenZerrenda(){
+		return this.estekenZerrenda;
+	}
 	
 }

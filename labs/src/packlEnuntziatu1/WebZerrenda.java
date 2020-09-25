@@ -134,12 +134,12 @@ public class WebZerrenda {
 		return ema;
 	}
 	
-	public ArrayList<String> irteerakoEstekak(String pUrl)	{
+	public ArrayList<Web> irteerakoEstekak(String pUrl)	{
 		// post: web-orri baten izena emanda, estekatzen dituen web-orriak itzultzen ditu.
 		Web w=bilatuUrl(pUrl);
-		ArrayList<String>a=new ArrayList<String>();
+		ArrayList<Web>a=new ArrayList<Web>();
 		if(w!=null) {
-		a=w.getGakoZerrenda();
+		a=w.getEstekenZerrenda();
 		}
 		return a;
 	}
