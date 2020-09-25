@@ -9,6 +9,7 @@ public class WebZerrenda {
 	// atributuak
 	private static WebZerrenda nireWebZerrenda = null;
 	private ArrayList<Web>wZerrenda;
+	//HashMap sortu behar dugu non Key = url eta Value = Web objektua
 	private ArrayList<String>urlZerrenda;
 	
 	// eraikitzailea
@@ -43,6 +44,9 @@ public class WebZerrenda {
 		try {
 	        while ((lerro = b.readLine())!=null)
 	        {
+	        	
+	        	//TODO
+	        	// Falta zaigu hash mapan ere sartzea
 	        	String zatiak[] = lerro.split(" "); // Zatitzen dugu web url eta indizea
 	        	// Sortzen dugu Web objektu bat eta sartzen dugu indizea eta url parametro bezala
 	        	Web w = new Web(Integer.parseInt(zatiak[1]), zatiak[0]);
