@@ -148,16 +148,16 @@ public class WebZerrenda {
 		return a;
 	}
 	
-	public ArrayList<String> word2Webs(String pGako){
+	public ArrayList<Web> word2Webs(String pGako){
 		// pre: parametroa gako-hitz bat da
 		// post:  gako-hitza daukaten web-orriak itzultzen ditu
-		ArrayList<String> ema = new ArrayList<String>();
+		ArrayList<Web> ema = new ArrayList<Web>();
 		return ema;
 	}
 	
-	public ArrayList<String> web2Words(String pUrl){
+	public ArrayList<Hitza> web2Words(String pUrl){
 		// post: web-orrian agertzen diren gako-hitzak itzultzen ditu
-		ArrayList<String> ema = new ArrayList<String>();
+		ArrayList<Hitza> ema = new ArrayList<Hitza>();
 		return ema;
 	}
 	

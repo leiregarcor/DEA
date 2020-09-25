@@ -6,7 +6,7 @@ public class Web {
 	// atributuak
 	private int id;
 	private ArrayList<Web>estekenZerrenda; // Hemen gordeko dira web bakoitzak dituen esteken web-ak
-	private ArrayList<String>gakoZerrenda;
+	private ArrayList<Hitza>gakoZerrenda;
 	private String url;
 	
 	// eraikitzailea
@@ -14,7 +14,7 @@ public class Web {
 		this.id= pId;
 		this.url =  pUrl;
 		this.estekenZerrenda= new ArrayList<Web>() ;
-		this.gakoZerrenda= new ArrayList<String>();
+		this.gakoZerrenda= new ArrayList<Hitza>();
 	}
 	
 	
@@ -47,9 +47,9 @@ public class Web {
 	}
 	
 	
-	private void gehituGakoa(String pGakoa)
+	private void gehituGakoa(Hitza pHitza)
 	{
-		this.gakoZerrenda.add(pGakoa);
+		this.gakoZerrenda.add(pHitza);
 	}
 	
 	
@@ -57,7 +57,7 @@ public class Web {
 	
 	
 	
-	public ArrayList<String> getGakoZerrenda(){
+	public ArrayList<Hitza> getGakoZerrenda(){
 		return this.gakoZerrenda;
 	}
 	
