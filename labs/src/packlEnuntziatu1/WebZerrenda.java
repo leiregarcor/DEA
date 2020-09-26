@@ -8,14 +8,16 @@ public class WebZerrenda {
 	
 	// atributuak
 	private static WebZerrenda nireWebZerrenda = null;
-	private ArrayList<Web>wZerrenda;
+	private ArrayList<Web>wZerrenda; // Esto es necesario?? Igual podemos hacer el values y meter aqui todo lo del HashMap
 	//HashMap sortu behar dugu non Key = url eta Value = Web objektua
-	private ArrayList<String>urlZerrenda;
+	private HashMap<String, Web> webMapa; 
+	private ArrayList<String>urlZerrenda;// Hau zen url-ak ordenatzeko baina ez gaude ziur erabili behar den ala ez
 	
 	// eraikitzailea
 	private WebZerrenda() {
 		this.wZerrenda = new ArrayList<Web>();
 		this.urlZerrenda= new ArrayList<String>();
+		this.webMapa = new HashMap<String, Web>();
 	}
 	
 	// gainontzeko metodoak
@@ -33,7 +35,9 @@ public class WebZerrenda {
 	
 	public void fitxeroaKargatu(File pIndexFitxeroa) throws FileNotFoundException {
 		//Metodo hau jasotzen du: Fitxeroa web orrien url-ekin eta indizeekin.
-		//Metodo hau sartzen du informazio hori web objektuetan eta gero webzerrendan
+		//Metodo hau sartzen du informazio hori web objektuetan, gero web zerrendan sartzeko
+		// eta baita ere string en zerrendan (geroago alfabetikoki ordenatu beharko duguna) eta 
+		// HashMapean sartuko duguna
 		
 		FileReader fr = new FileReader (pIndexFitxeroa);
         BufferedReader b = new BufferedReader(fr);
@@ -44,9 +48,6 @@ public class WebZerrenda {
 		try {
 	        while ((lerro = b.readLine())!=null)
 	        {
-	        	
-	        	//TODO
-	        	// Falta zaigu hash mapan ere sartzea
 	        	String zatiak[] = lerro.split(" "); // Zatitzen dugu web url eta indizea
 	        	// Sortzen dugu Web objektu bat eta sartzen dugu indizea eta url parametro bezala
 	        	Web w = new Web(Integer.parseInt(zatiak[1]), zatiak[0]);
@@ -99,16 +100,18 @@ public class WebZerrenda {
 	
 	public void gehitu (Web pWeb) 
 	{
-		this.wZerrenda.add(pWeb);
-		urlZerrenda.add(pWeb.getUrlWeb());
+		this.wZerrenda.add(pWeb); // Web Zerrendan gehitzeko
+		// Ez gaude ziur urlZerrenda beharrezkoa denentz. HashMapean .values() egin daitekeela.
+		urlZerrenda.add(pWeb.getUrlWeb()); // String zerrendan gehitzeko
+		this.webMapa.put(pWeb.getUrlWeb(), pWeb); // HashMapan ere gehitzeko
 	}
 	
-	public void ezabatu (String pUrl) 	{
+	public void ezabatu (String pUrl) 
+	{
 		Web w=bilatuUrl(pUrl);
 		if(w!=null) {
 		urlZerrenda.remove(pUrl);
 		this.wZerrenda.remove(w);
-		
 		}
 	}
 	

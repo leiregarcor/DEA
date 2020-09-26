@@ -13,6 +13,32 @@ public class Hitza {
 		this.wLista = new ArrayList<Web>();
 	}
 	
+	
+	// getters
+	
+	public ArrayList<Web> getWebLista()
+	{
+		return this.wLista;
+	}
+	
+	
+	public String getKatea()
+	{
+		return this.katea;
+	}
+	
+	
+	
+	// metodoak
+	
+	public void beteWebLista ()
+	{
+		//TODO
+		// Tiene que ir a WebZerrenda y recorrer el ArrayList (wZerrenda)
+		// tiene que meter las Webs que tienen esa palabra en la url.
+	}
+	
+	
 	public boolean gakoBerdinaDa(String pGakoa) {
 		boolean ema= false;
 		if(this.katea==pGakoa) {

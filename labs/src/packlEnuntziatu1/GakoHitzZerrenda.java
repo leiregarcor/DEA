@@ -1,6 +1,7 @@
 package packlEnuntziatu1;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,8 +15,9 @@ public class GakoHitzZerrenda {
 
 	// atributuak
 	private static GakoHitzZerrenda nireGakoHitzZerrenda = null;
-	private ArrayList<Hitza>ghZerrenda;
+	private ArrayList<Hitza>ghZerrenda; // Ez dakigu behar dugun ala ez
 	// HashMap bat sortu behar dugu Key = katea eta Value = Hitza objektua
+	private HashMap<String, Hitza> gakoMapa;
 	
 	// eraikitzailea
 	private GakoHitzZerrenda() {
@@ -50,7 +52,8 @@ public class GakoHitzZerrenda {
 			while ((fila=b.readLine())!=null)
 			{
 				Hitza h = new Hitza(fila);
-				this.ghZerrenda.add(h); // Hitza sartzen dugu konprobatu gabe ea badagoen??
+				this.ghZerrenda.add(h); 
+				this.gakoMapa.put(h.getKatea(), h);
 			}
 		}catch(Exception e){
 	        e.printStackTrace();
