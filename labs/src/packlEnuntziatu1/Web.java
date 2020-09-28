@@ -29,7 +29,7 @@ public class Web {
 	
 	public void gakoZerrendariGehitu (Hitza pHitza)
 	{
-		this.gakoZerrenda.add(pHitza);
+		this.gakoZerrenda.add(pHitza); // para sumar al gakoZerrenda
 	}
 
 	public boolean estekaBerdinaDu (String pUrl) {
