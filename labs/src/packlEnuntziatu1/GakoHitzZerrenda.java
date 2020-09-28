@@ -42,6 +42,9 @@ public class GakoHitzZerrenda {
 	
 	
 	public void fitxeroaKargatu(File pFitxeroaWords) throws FileNotFoundException {
+		// Pre: Fitxeroa jasotzen du words.txt
+		
+		// Post: GakoHitzZerrenda betetzen du, HashMapa betetzen du.
 		FileReader fr = new FileReader (pFitxeroaWords);
         BufferedReader b = new BufferedReader(fr);
 		
@@ -54,6 +57,7 @@ public class GakoHitzZerrenda {
 				Hitza h = new Hitza(fila);
 				this.ghZerrenda.add(h); 
 				this.gakoMapa.put(h.getKatea(), h);
+				h.beteWebLista(h.getKatea());
 			}
 		}catch(Exception e){
 	        e.printStackTrace();

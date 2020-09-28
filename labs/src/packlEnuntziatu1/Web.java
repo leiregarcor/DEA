@@ -19,7 +19,6 @@ public class Web {
 	
 	
 	// getters
-	
 	public String getUrlWeb()
 	{
 		return this.url;
@@ -27,7 +26,7 @@ public class Web {
 	
 	// gainontzeko metodoak
 	
-	public void gakoZerrendariGehitu (Hitza pHitza)
+	public void webarenGakoZerrendariGehitu (Hitza pHitza)
 	{
 		this.gakoZerrenda.add(pHitza); // para sumar al gakoZerrenda
 	}

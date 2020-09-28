@@ -77,9 +77,9 @@ public class WebZerrenda {
 	
 	
 	public void arcFitxeroaKargatu(File pWebEstekaFitxeroa) throws FileNotFoundException {
-		//Metodo hau jasotzen du: Fitxeroa web orrien id-ekin eta estekatzen dituen web-en indizeekin.
+		//Pre: Metodo hau jasotzen du: Fitxeroa web orrien id-ekin eta estekatzen dituen web-en indizeekin.
 		
-		// eta baita ere string en zerrendan (geroago alfabetikoki ordenatu beharko duguna) eta 
+		// Post: Web bakoitzaren esteka zerrendak osatzen ditu
 		
 		
 		FileReader fr = new FileReader (pWebEstekaFitxeroa);
@@ -96,18 +96,16 @@ public class WebZerrenda {
 	        {
 	        	String zatiak1[] = lerro.split("-->"); // Zatitzen dugu estekak eta indizea
 	        	w=wz.bilatuId(Integer.parseInt(zatiak1[0]));//w-n gorde behar ditugu esteka guztiak
-	        	String zatiak2[] = zatiak1[1].split(" ");
-	        	luzera=zatiak2.length;
-	        	i=0;
-	        	while(i<=luzera-1) {
-	        		w.getEstekenZerrenda().add(wz.bilatuId(Integer.parseInt(zatiak2[i])));
-	        		i++;
-	        		
-	        	}
-	        	
-	        	
-	        	
-	        	      	
+	        	if (zatiak1[1]!=null)
+	        	{
+	        		String zatiak2[] = zatiak1[1].split(" ");
+		        	luzera=zatiak2.length;
+		        	i=0;
+		        	while(i<=luzera-1) {
+		        		w.getEstekenZerrenda().add(wz.bilatuId(Integer.parseInt(zatiak2[i])));
+		        		i++;
+		        	}
+	        	}      	
 	        }
 		}catch(Exception e)
 		{
@@ -223,6 +221,16 @@ public class WebZerrenda {
 		// pre: parametroa gako-hitz bat da
 		// post:  gako-hitza daukaten web-orriak itzultzen ditu
 		ArrayList<Web> ema = new ArrayList<Web>();
+		Iterator<Web>itr = this.getIteradorea();
+		Web w;
+		while (itr.hasNext())
+		{
+			w = itr.next();
+			if (w.getUrlWeb().contains(pGako))
+			{
+				ema.add(w);
+			}
+		}
 		return ema;
 	}
 	

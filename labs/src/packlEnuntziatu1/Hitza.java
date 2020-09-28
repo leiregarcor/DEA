@@ -10,7 +10,7 @@ public class Hitza {
 	public Hitza (String pKatea)
 	{
 		this.katea = pKatea;
-		this.wLista = new ArrayList<Web>();
+//		this.wLista = new ArrayList<Web>();
 	}
 	
 	
@@ -31,11 +31,13 @@ public class Hitza {
 	
 	// metodoak
 	
-	public void beteWebLista ()
+	public void beteWebLista (String pKatea)
 	{
 		//TODO
 		// Tiene que ir a WebZerrenda y recorrer el ArrayList (wZerrenda)
 		// tiene que meter las Webs que tienen esa palabra en la url.
+		
+		this.wLista = WebZerrenda.getNireWebZerrenda().word2Webs(pKatea);
 	}
 	
 	
