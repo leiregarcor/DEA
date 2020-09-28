@@ -26,6 +26,11 @@ public class Web {
 	}
 	
 	// gainontzeko metodoak
+	
+	public void gakoZerrendariGehitu (Hitza pHitza)
+	{
+		this.gakoZerrenda.add(pHitza);
+	}
 
 	public boolean estekaBerdinaDu (String pUrl) {
 		boolean ema= false;
