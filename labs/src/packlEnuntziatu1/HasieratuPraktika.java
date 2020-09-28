@@ -26,7 +26,7 @@ public class HasieratuPraktika {
 	    try {
 			ghz.fitxeroaKargatu(wordsFitxeroa);
 			
-			wz.fitxeroaKargatu(webIndexFitxeroa);
+			wz.indexFitxeroaKargatu(webIndexFitxeroa);
 			
 			
 			

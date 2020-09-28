@@ -11,12 +11,12 @@ public class WebZerrenda {
 	private ArrayList<Web>wZerrenda; // Esto es necesario?? Igual podemos hacer el values y meter aqui todo lo del HashMap
 	//HashMap sortu behar dugu non Key = url eta Value = Web objektua
 	private HashMap<String, Web> webMapa; 
-	private ArrayList<String>urlZerrenda;// Hau zen url-ak ordenatzeko baina ez gaude ziur erabili behar den ala ez
+	//private ArrayList<String>urlZerrenda;// Hau zen url-ak ordenatzeko baina ez gaude ziur erabili behar den ala ez
 	
 	// eraikitzailea
 	private WebZerrenda() {
 		this.wZerrenda = new ArrayList<Web>();
-		this.urlZerrenda= new ArrayList<String>();
+		//this.urlZerrenda= new ArrayList<String>();
 		this.webMapa = new HashMap<String, Web>();
 	}
 	
@@ -33,7 +33,7 @@ public class WebZerrenda {
 		return nireWebZerrenda;
 	} 
 	
-	public void fitxeroaKargatu(File pIndexFitxeroa) throws FileNotFoundException {
+	public void indexFitxeroaKargatu(File pIndexFitxeroa) throws FileNotFoundException {
 		//Metodo hau jasotzen du: Fitxeroa web orrien url-ekin eta indizeekin.
 		//Metodo hau sartzen du informazio hori web objektuetan, gero web zerrendan sartzeko
 		// eta baita ere string en zerrendan (geroago alfabetikoki ordenatu beharko duguna) eta 
@@ -70,6 +70,67 @@ public class WebZerrenda {
 	}
 	
 	
+	
+	
+	
+	
+	
+	
+	public void arcFitxeroaKargatu(File pWebEstekaFitxeroa) throws FileNotFoundException {
+		//Metodo hau jasotzen du: Fitxeroa web orrien id-ekin eta estekatzen dituen web-en indizeekin.
+		
+		// eta baita ere string en zerrendan (geroago alfabetikoki ordenatu beharko duguna) eta 
+		
+		
+		FileReader fr = new FileReader (pWebEstekaFitxeroa);
+        BufferedReader b = new BufferedReader(fr);
+        
+        String lerro;
+        Web w=null;
+        int luzera=0;
+        int i=0;
+    	WebZerrenda wz = WebZerrenda.getNireWebZerrenda();
+    	
+		try {
+	        while ((lerro = b.readLine())!=null)
+	        {
+	        	String zatiak1[] = lerro.split("-->"); // Zatitzen dugu estekak eta indizea
+	        	w=wz.bilatuId(Integer.parseInt(zatiak1[0]));//w-n gorde behar ditugu esteka guztiak
+	        	String zatiak2[] = zatiak1[1].split(" ");
+	        	luzera=zatiak2.length;
+	        	i=0;
+	        	while(i<=luzera-1) {
+	        		w.getEstekenZerrenda().add(wz.bilatuId(Integer.parseInt(zatiak2[i])));
+	        		i++;
+	        		
+	        	}
+	        	
+	        	
+	        	
+	        	      	
+	        }
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}finally{ // Finally hay da fitxeroa ixteko zerbait txarto badoa.
+	        try{                    
+		           if( null != fr ){   
+		              fr.close();     
+		           }                  
+		        }catch (Exception e2){ 
+		           e2.printStackTrace();
+		        }
+		     }
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	public void fitxeroaEguneratu() {}
 	
 	public Web bilatuUrl(String pUrl) {
@@ -102,7 +163,7 @@ public class WebZerrenda {
 	{
 		this.wZerrenda.add(pWeb); // Web Zerrendan gehitzeko
 		// Ez gaude ziur urlZerrenda beharrezkoa denentz. HashMapean .values() egin daitekeela.
-		urlZerrenda.add(pWeb.getUrlWeb()); // String zerrendan gehitzeko
+		//urlZerrenda.add(pWeb.getUrlWeb()); // String zerrendan gehitzeko
 		this.webMapa.put(pWeb.getUrlWeb(), pWeb); // HashMapan ere gehitzeko
 	}
 	
@@ -110,18 +171,20 @@ public class WebZerrenda {
 	{
 		Web w=bilatuUrl(pUrl);
 		if(w!=null) {
-		urlZerrenda.remove(pUrl);
-		this.wZerrenda.remove(w);
+			webMapa.remove(pUrl);
+			//urlZerrenda.remove(pUrl);
+			this.wZerrenda.remove(w);
 		}
 	}
 	
-	public void webOrdenatuta(ArrayList<String> pZerrenda){
+	public ArrayList<Web> webOrdenatuta(ArrayList<Web> pZerrenda){
 		// post: web-orrien zerrenda itzultzen du, alfabetikoki ordenatuta
 		//TODO
 		// Voy a hacer que ordene alfabeticamente el array de objetos Web, si luego es el de Strings 
 		// se cambia y ya.
 		// Bon dia.
-		
+		ArrayList<Web> ordZerrenda= pZerrenda;
+		return ordZerrenda;
 		
 		
 	}
@@ -151,7 +214,7 @@ public class WebZerrenda {
 		Web w=bilatuUrl(pUrl);
 		ArrayList<Web>a=new ArrayList<Web>();
 		if(w!=null) {
-		a=w.getEstekenZerrenda();
+			a=w.getEstekenZerrenda();
 		}
 		return a;
 	}
