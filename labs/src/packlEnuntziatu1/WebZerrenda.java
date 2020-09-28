@@ -118,6 +118,11 @@ public class WebZerrenda {
 	public void webOrdenatuta(ArrayList<String> pZerrenda){
 		// post: web-orrien zerrenda itzultzen du, alfabetikoki ordenatuta
 		//TODO
+		// Voy a hacer que ordene alfabeticamente el array de objetos Web, si luego es el de Strings 
+		// se cambia y ya.
+		// Bon dia.
+		
+		
 		
 	}
 	
