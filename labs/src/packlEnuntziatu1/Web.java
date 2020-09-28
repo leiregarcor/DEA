@@ -26,10 +26,6 @@ public class Web {
 	
 	// gainontzeko metodoak
 	
-	public void webarenGakoZerrendariGehitu (Hitza pHitza)
-	{
-		this.gakoZerrenda.add(pHitza); // para sumar al gakoZerrenda
-	}
 
 	public boolean estekaBerdinaDu (String pUrl) {
 		boolean ema= false;
@@ -57,11 +53,16 @@ public class Web {
 	}
 	
 	
-	public void lortuGakoHitzak(Web pWeb) {}
+	private void lortuGakoHitzak(Web pWeb) {
+		// Pribatua da zeren eta getGakoZerrendatik deitzen dugu.
+		//TODO
+	}
+	
 	
 	
 	
 	public ArrayList<Hitza> getGakoZerrenda(){
+		// Hemendik lortuGakoHitza deitu behar dugu.
 		return this.gakoZerrenda;
 	}
 	

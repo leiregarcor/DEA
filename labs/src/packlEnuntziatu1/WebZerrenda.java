@@ -236,8 +236,11 @@ public class WebZerrenda {
 	
 	public ArrayList<Hitza> web2Words(String pUrl){
 		// post: web-orrian agertzen diren gako-hitzak itzultzen ditu
-		ArrayList<Hitza> ema = new ArrayList<Hitza>();
-		return ema;
+//		ArrayList<Hitza> ema = new ArrayList<Hitza>();
+//		return ema;
+		Web w = this.bilatuUrl(pUrl);
+		return w.getGakoZerrenda();
+		
 	}
 	
 	
