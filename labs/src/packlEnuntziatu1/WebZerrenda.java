@@ -141,16 +141,19 @@ public class WebZerrenda {
 	}
 	
 	public Web bilatuId(int pId) {
-		Web ema=null;
-		Iterator<Web>itr= this.getIteradorea();
-		boolean aurkitua=false;
-		while(itr.hasNext()&&!aurkitua) {
-			ema=itr.next();
-			if(ema.idBerdinaDu(pId)) {
-				aurkitua=true;
-			}
-		}
-		return ema;
+//		Web ema=null;
+//		Iterator<Web>itr= this.getIteradorea();
+//		boolean aurkitua=false;
+//		while(itr.hasNext()&&!aurkitua) {
+//			ema=itr.next();
+//			if(ema.idBerdinaDu(pId)) {
+//				aurkitua=true;
+//			}
+//		}
+//		return ema;
+		
+		return this.wZerrenda.get(pId); // Metodo corto
+		
 	} 
 	
 	public void gehitu (Web pWeb) 
