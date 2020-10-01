@@ -40,6 +40,9 @@ public class GakoHitzZerrenda {
 		return nireGakoHitzZerrenda;
 	}
 	
+	public Hitza bilatuHitza(String pGakoa) {
+		return gakoMapa.get(pGakoa);
+	}
 	
 	public void fitxeroaKargatu(File pFitxeroaWords) throws FileNotFoundException {
 		// Pre: Fitxeroa jasotzen du words.txt
@@ -58,6 +61,7 @@ public class GakoHitzZerrenda {
 				this.ghZerrenda.add(h); 
 				this.gakoMapa.put(h.getKatea(), h);
 				h.beteWebLista(h.getKatea());
+				WebZerrenda.getNireWebZerrenda();
 			}
 		}catch(Exception e){
 	        e.printStackTrace();

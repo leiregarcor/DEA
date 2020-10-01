@@ -219,7 +219,7 @@ public class WebZerrenda {
 	
 	public ArrayList<Web> word2Webs(String pGako){
 		// pre: parametroa gako-hitz bat da
-		// post:  gako-hitza daukaten web-orriak itzultzen ditu
+		// post:  gako-hitza daukaten web-orriak itzultzen ditu eta web-orrien zerrendan sartzen du
 		ArrayList<Web> ema = new ArrayList<Web>();
 		Iterator<Web>itr = this.getIteradorea();
 		Web w;
@@ -228,6 +228,7 @@ public class WebZerrenda {
 			w = itr.next();
 			if (w.getUrlWeb().contains(pGako))
 			{
+				w.getGakoZerrenda().add(GakoHitzZerrenda.getNireGakoHitzZerrenda().bilatuHitza(pGako));
 				ema.add(w);
 			}
 		}
