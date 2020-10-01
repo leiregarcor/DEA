@@ -28,6 +28,18 @@ public class HasieratuPraktika {
 			
 			wz.indexFitxeroaKargatu(webIndexFitxeroa);
 			
+			wz.arcFitxeroaKargatu(webEstekaFitxeroa);
+			
+			
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			
+			
+			
+			System.out.println(wz.getSize());
+			
+			
 			
 			
 			// Falta meter aqui para meter las webs para meter las redirecciones (los otros dos ficheros)

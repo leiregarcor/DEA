@@ -126,10 +126,9 @@ public class WebZerrenda {
 	
 	
 	
-	
-	
-	
-	public void fitxeroaEguneratu() {}
+	public void fitxeroaEguneratu() {
+		//TODO
+	}
 	
 	public Web bilatuUrl(String pUrl) {
 		// Pre: Url string bat sartzen da.
@@ -241,6 +240,19 @@ public class WebZerrenda {
 		Web w = this.bilatuUrl(pUrl);
 		return w.getGakoZerrenda();
 		
+	}
+	
+	
+	
+	
+	
+	
+	// Metodos para probar a ver si funciona.
+	
+	
+	public int getSize()
+	{
+		return this.wZerrenda.size();
 	}
 	
 	
