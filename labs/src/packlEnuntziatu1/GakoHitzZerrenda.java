@@ -1,5 +1,6 @@
 package packlEnuntziatu1;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -21,7 +22,8 @@ public class GakoHitzZerrenda {
 	
 	// eraikitzailea
 	private GakoHitzZerrenda() {
-		this.ghZerrenda = new ArrayList<Hitza>();
+		this.ghZerrenda = new ArrayList<Hitza>(); //gako array-a sortu
+		this.gakoMapa = new HashMap<String,Hitza>(); //gako mapa sortu
 	}
 	
 	// gainontzeko metodoak
