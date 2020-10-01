@@ -132,16 +132,12 @@ public class WebZerrenda {
 	public void fitxeroaEguneratu() {}
 	
 	public Web bilatuUrl(String pUrl) {
-		Web ema=null;
-		Iterator<Web>itr= this.getIteradorea();
-		boolean aurkitua=false;
-		while(itr.hasNext()&&!aurkitua) {
-			ema=itr.next();
-			if(ema.estekaBerdinaDu(pUrl)) {
-				aurkitua=true;
-			}
-		}
-		return ema;
+		// Pre: Url string bat sartzen da.
+		
+		// Post: Bueltatzen du Web objektua url hori duena bere url atributuan.
+		
+		return this.webMapa.get(pUrl);
+		
 	}
 	
 	public Web bilatuId(int pId) {
