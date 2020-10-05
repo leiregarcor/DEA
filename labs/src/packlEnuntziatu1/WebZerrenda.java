@@ -127,6 +127,7 @@ public class WebZerrenda {
 	
 	
 	public void fitxeroaEguneratu() {
+		//post: Web-orrien zerrenda fitxategitan gordetzen du
 		//TODO
 	}
 	
