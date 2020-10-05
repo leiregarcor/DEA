@@ -9,23 +9,22 @@ public class WebZerrenda {
 	// atributuak
 	private static WebZerrenda nireWebZerrenda = null;
 	private ArrayList<Web>wZerrenda; // Esto es necesario?? Igual podemos hacer el values y meter aqui todo lo del HashMap
-	//HashMap sortu behar dugu non Key = url eta Value = Web objektua
-	private HashMap<String, Web> webMapa; 
+	private HashMap<String, Web> webMapa; //HashMap sortu behar dugu non Key = url eta Value = Web objektua
 	//private ArrayList<String>urlZerrenda;// Hau zen url-ak ordenatzeko baina ez gaude ziur erabili behar den ala ez
 	
 	// eraikitzailea
 	private WebZerrenda() {
-		this.wZerrenda = new ArrayList<Web>();
+		this.wZerrenda = new ArrayList<Web>(); //CREO QUE NO HAY QUE CREAR UNA INSTANCIA PORQUE PODEMOS USAR EL VALUES() [EL VALUES() DEVUELVE UNA COLLECCION, ES UN GENERICO¿] EN EL HASHMAP Y COPIARLO EN ESTE ALDAGAIA DE CLASE ARRAYLIST<WEB>
 		//this.urlZerrenda= new ArrayList<String>();
 		this.webMapa = new HashMap<String, Web>();
 	}
 	
 	// gainontzeko metodoak
 	
-	private Iterator<Web> getIteradorea()
-	{
+	private Iterator<Web> getIteradorea(){
 		return this.wZerrenda.iterator();
 	}
+	
 	public static WebZerrenda getNireWebZerrenda() {
 		if(nireWebZerrenda == null){
 			nireWebZerrenda = new WebZerrenda();
@@ -66,12 +65,7 @@ public class WebZerrenda {
 		           e2.printStackTrace();
 		        }
 		     }
-		
 	}
-	
-	
-	
-	
 	
 	
 	
@@ -118,29 +112,24 @@ public class WebZerrenda {
 		        }catch (Exception e2){ 
 		           e2.printStackTrace();
 		        }
-		     }
-		
+		     }		
 	}
 	
 	
-	
-	
-	
-	public void fitxeroaEguneratu() {
+		
+	public void fitxeroaEguneratu(){
 		//post: Web-orrien zerrenda fitxategitan gordetzen du
 		//TODO
 	}
 	
-	public Web bilatuUrl(String pUrl) {
-		// Pre: Url string bat sartzen da.
-		
+	public Web bilatuUrl(String pUrl){
+		// Pre: Url string bat sartzen da.		
 		// Post: Bueltatzen du Web objektua url hori duena bere url atributuan.
 		
-		return this.webMapa.get(pUrl);
-		
+		return this.webMapa.get(pUrl);		
 	}
 	
-	public Web bilatuId(int pId) {
+	public Web bilatuId(int pId){
 //		Web ema=null;
 //		Iterator<Web>itr= this.getIteradorea();
 //		boolean aurkitua=false;
@@ -150,22 +139,18 @@ public class WebZerrenda {
 //				aurkitua=true;
 //			}
 //		}
-//		return ema;
-		
-		return this.wZerrenda.get(pId); // Metodo corto
-		
+//		return ema;		
+		return this.wZerrenda.get(pId); // Metodo corto		
 	} 
 	
-	public void gehitu (Web pWeb) 
-	{
+	public void gehitu (Web pWeb){
 		this.wZerrenda.add(pWeb); // Web Zerrendan gehitzeko
 		// Ez gaude ziur urlZerrenda beharrezkoa denentz. HashMapean .values() egin daitekeela.
 		//urlZerrenda.add(pWeb.getUrlWeb()); // String zerrendan gehitzeko
 		this.webMapa.put(pWeb.getUrlWeb(), pWeb); // HashMapan ere gehitzeko
 	}
 	
-	public void ezabatu (String pUrl) 
-	{
+	public void ezabatu (String pUrl){
 		Web w=bilatuUrl(pUrl);
 		if(w!=null) {
 			webMapa.remove(pUrl);
@@ -181,12 +166,10 @@ public class WebZerrenda {
 		// se cambia y ya.
 		// Bon dia.
 		ArrayList<Web> ordZerrenda= pZerrenda;
-		return ordZerrenda;
-		
-		
+		return ordZerrenda;		
 	}
 	
-	public String id2String(int pId) {
+	public String id2String(int pId){
 		// Postbaldintza: osoko bat emanda, dagokion web-orria itzuliko du
 		String ema = "";
 		Web w=bilatuId(pId);
@@ -196,7 +179,7 @@ public class WebZerrenda {
 		return ema;
 	}
 	
-	public int string2Id(String pUrl) {
+	public int string2Id(String pUrl){
 		// Url bat sartu eta bere indizea bueltatzen du
 		int ema = -1;
 		Web w=bilatuUrl(pUrl);
@@ -206,7 +189,7 @@ public class WebZerrenda {
 		return ema;
 	}
 	
-	public ArrayList<Web> irteerakoEstekak(String pUrl)	{
+	public ArrayList<Web> irteerakoEstekak(String pUrl){
 		// post: web-orri baten izena emanda, estekatzen dituen web-orriak itzultzen ditu.
 		Web w=bilatuUrl(pUrl);
 		ArrayList<Web>a=new ArrayList<Web>();
@@ -241,18 +224,14 @@ public class WebZerrenda {
 	}
 	
 	
-	
-	
+		
 	
 	
 	// Metodos para probar a ver si funciona.
 	
 	
-	public int getSize()	{								//PARA QUÉ SIRVE??¿
+	public int getSize(){								
 		return this.wZerrenda.size();
 	}
 	
-	
-	
-
 }

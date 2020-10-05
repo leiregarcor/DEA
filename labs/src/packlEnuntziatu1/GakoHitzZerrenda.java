@@ -17,8 +17,8 @@ public class GakoHitzZerrenda {
 	// atributuak
 	private static GakoHitzZerrenda nireGakoHitzZerrenda = null;
 	//private ArrayList<Hitza>ghZerrenda; // Ez dakigu behar dugun ala ez
-	// HashMap bat sortu behar dugu Key = katea eta Value = Hitza objektua
-	private HashMap<String, Hitza> gakoMapa;
+	
+	private HashMap<String, Hitza> gakoMapa; // HashMap bat sortu behar dugu Key = katea eta Value = Hitza objektua
 	
 	// eraikitzailea
 	private GakoHitzZerrenda() {

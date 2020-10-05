@@ -6,7 +6,7 @@ public class Web {
 	// atributuak
 	private int id;
 	private ArrayList<Web>estekenZerrenda; // Hemen gordeko dira web bakoitzak dituen esteken web-ak
-	private ArrayList<Hitza>gakoZerrenda;
+	private ArrayList<Hitza>gakoZerrenda;   // Hemen gordeko dira web bakoitzak URL-AN DITUEN GAKOAK  
 	private String url;
 	
 	// eraikitzailea
@@ -42,16 +42,16 @@ public class Web {
 		return ema;		
 	}*/
 	
-	public int getId() {
+	public int getId() {				// SE USA EN WebZerrenda.string2Id
 		return this.id;
 	}
 		
-	public ArrayList<Hitza> getGakoZerrenda(){
-		// Hemendik lortuGakoHitza deitu behar dugu.
+	public ArrayList<Hitza> getGakoZerrenda(){      //SE USA EN WebZerrenda.word2Webs Y WebZerrenda.web2Words
+		
 		return this.gakoZerrenda;
 	}
 	
-	public ArrayList<Web> getEstekenZerrenda(){
+	public ArrayList<Web> getEstekenZerrenda(){ // SE USA EN WebZerrenda.irteerakoEstekak
 		return this.estekenZerrenda;
 	}
 	

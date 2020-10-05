@@ -3,27 +3,24 @@ package packlEnuntziatu1;
 import java.util.ArrayList;
 
 public class Hitza {
+	// atributuak
 	private String katea;
 	private ArrayList<Web> wLista;
 	
-	
-	public Hitza (String pKatea)
-	{
+	// eraikitzailea
+	public Hitza (String pKatea){
 		this.katea = pKatea;
 //		this.wLista = new ArrayList<Web>();
 	}
 	
 	
-	// getters
-	
-	public ArrayList<Web> getWebLista()
-	{
+	// getters	
+	public ArrayList<Web> getWebLista(){
 		return this.wLista;
 	}
 	
 	
-	public String getKatea()
-	{
+	public String getKatea(){
 		return this.katea;
 	}
 	
@@ -31,8 +28,7 @@ public class Hitza {
 	
 	// metodoak
 	
-	public void beteWebLista (String pKatea)
-	{
+	public void beteWebLista (String pKatea){
 		//TODO
 		// Tiene que ir a WebZerrenda y recorrer el ArrayList (wZerrenda)
 		// tiene que meter las Webs que tienen esa palabra en la url.
@@ -41,13 +37,12 @@ public class Hitza {
 	}
 	
 	
-	public boolean gakoBerdinaDa(String pGakoa) {
+/*	public boolean gakoBerdinaDa(String pGakoa) {                          //CREO QUE NO SE USA Y SE PUEDE BORRAR
 		boolean ema= false;
 		if(this.katea==pGakoa) {
 			ema=true;
 		}
-		return ema;
-		
-	}
+		return ema;		
+	}*/
 
 }
