@@ -16,23 +16,23 @@ public class GakoHitzZerrenda {
 
 	// atributuak
 	private static GakoHitzZerrenda nireGakoHitzZerrenda = null;
-	private ArrayList<Hitza>ghZerrenda; // Ez dakigu behar dugun ala ez
+	//private ArrayList<Hitza>ghZerrenda; // Ez dakigu behar dugun ala ez
 	// HashMap bat sortu behar dugu Key = katea eta Value = Hitza objektua
 	private HashMap<String, Hitza> gakoMapa;
 	
 	// eraikitzailea
 	private GakoHitzZerrenda() {
-		this.ghZerrenda = new ArrayList<Hitza>(); //gako array-a sortu
+		//this.ghZerrenda = new ArrayList<Hitza>(); //gako array-a sortu
 		this.gakoMapa = new HashMap<String,Hitza>(); //gako mapa sortu
 	}
 	
 	// gainontzeko metodoak
 	
 	
-	private Iterator<Hitza> getIteradorea()
+	/*private Iterator<Hitza> getIteradorea()
 	{
 		return this.ghZerrenda.iterator();
-	}
+	}*/
 	
 	
 	public static GakoHitzZerrenda getNireGakoHitzZerrenda() {
@@ -60,7 +60,7 @@ public class GakoHitzZerrenda {
 			while ((fila=b.readLine())!=null)
 			{
 				Hitza h = new Hitza(fila);
-				this.ghZerrenda.add(h); 
+				//this.ghZerrenda.add(h); 
 				this.gakoMapa.put(h.getKatea(), h);
 				h.beteWebLista(h.getKatea());
 				WebZerrenda.getNireWebZerrenda();
