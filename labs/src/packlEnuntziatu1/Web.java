@@ -19,15 +19,14 @@ public class Web {
 	
 	
 	// getters
-	public String getUrlWeb()
-	{
+	public String getUrlWeb(){
 		return this.url;
 	}
 	
 	// gainontzeko metodoak
 	
 
-	public boolean estekaBerdinaDu (String pUrl) {
+/*	public boolean estekaBerdinaDu (String pUrl) {
 		boolean ema= false;
 		if(this.url==pUrl) {
 			ema=true;
@@ -40,27 +39,13 @@ public class Web {
 		if(this.id==pId) {
 			ema=true;
 		}
-		return ema;
-	}
+		return ema;		
+	}*/
+	
 	public int getId() {
 		return this.id;
 	}
-	
-	
-	private void gehituGakoa(Hitza pHitza)
-	{
-		this.gakoZerrenda.add(pHitza);
-	}
-	
-	
-	private void lortuGakoHitzak(Web pWeb) {
-		// Pribatua da zeren eta getGakoZerrendatik deitzen dugu.
-		//TODO
-	}
-	
-	
-	
-	
+		
 	public ArrayList<Hitza> getGakoZerrenda(){
 		// Hemendik lortuGakoHitza deitu behar dugu.
 		return this.gakoZerrenda;

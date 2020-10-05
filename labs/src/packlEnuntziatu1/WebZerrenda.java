@@ -222,11 +222,9 @@ public class WebZerrenda {
 		ArrayList<Web> ema = new ArrayList<Web>();
 		Iterator<Web>itr = this.getIteradorea();
 		Web w;
-		while (itr.hasNext())
-		{
+		while (itr.hasNext()){
 			w = itr.next();
-			if (w.getUrlWeb().contains(pGako))
-			{
+			if (w.getUrlWeb().contains(pGako))	{
 				w.getGakoZerrenda().add(GakoHitzZerrenda.getNireGakoHitzZerrenda().bilatuHitza(pGako));
 				ema.add(w);
 			}
@@ -239,8 +237,7 @@ public class WebZerrenda {
 //		ArrayList<Hitza> ema = new ArrayList<Hitza>();
 //		return ema;
 		Web w = this.bilatuUrl(pUrl);
-		return w.getGakoZerrenda();
-		
+		return w.getGakoZerrenda();		
 	}
 	
 	
@@ -251,8 +248,7 @@ public class WebZerrenda {
 	// Metodos para probar a ver si funciona.
 	
 	
-	public int getSize()
-	{
+	public int getSize()	{								//PARA QUÉ SIRVE??¿
 		return this.wZerrenda.size();
 	}
 	
