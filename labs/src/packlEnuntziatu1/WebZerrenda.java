@@ -122,14 +122,14 @@ public class WebZerrenda {
 		//TODO
 	}
 	
-	public Web bilatuUrl(String pUrl){
+	private Web bilatuUrl(String pUrl){				 //PRIVATE PORQUE SOLO SE USA EN ESTA CLASE, SI SE USARA FUERA HAY QUE PONERLO PUBLIC
 		// Pre: Url string bat sartzen da.		
 		// Post: Bueltatzen du Web objektua url hori duena bere url atributuan.
 		
 		return this.webMapa.get(pUrl);		
 	}
 	
-	public Web bilatuId(int pId){
+	private Web bilatuId(int pId){     				  //PRIVATE PORQUE SOLO SE USA EN ESTA CLASE, SI SE USARA FUERA HAY QUE PONERLO PUBLIC
 //		Web ema=null;
 //		Iterator<Web>itr= this.getIteradorea();
 //		boolean aurkitua=false;
@@ -150,7 +150,7 @@ public class WebZerrenda {
 		this.webMapa.put(pWeb.getUrlWeb(), pWeb); // HashMapan ere gehitzeko
 	}
 	
-	public void ezabatu (String pUrl){
+	public void ezabatu (String pUrl){	
 		Web w=bilatuUrl(pUrl);
 		if(w!=null) {
 			webMapa.remove(pUrl);
