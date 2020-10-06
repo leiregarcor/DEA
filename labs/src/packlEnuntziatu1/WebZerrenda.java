@@ -142,7 +142,7 @@ public class WebZerrenda {
 			fitxero= new FileWriter("");
 			pw=new PrintWriter(fitxero);
 			for(int i=0; i<wZerrenda.size();i++) {
-				pw.println(bilatuId(i).getUrlWeb()+i);
+				pw.println(bilatuId(i).getUrlWeb()+" " +i);
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
