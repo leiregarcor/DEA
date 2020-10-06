@@ -258,6 +258,60 @@ public class WebZerrenda {
 		return w.getGakoZerrenda();		
 	}
 	
+	private String[] pasaArray() {
+		String[] zerrenda= new String[wZerrenda.size()];
+		int i=0;
+		Iterator<Web> itr= this.getIteradorea();
+		Web w=null;
+		while(itr.hasNext()) {
+			w=itr.next();
+			zerrenda[i]=w.getUrlWeb();
+			i++;
+		}
+		return zerrenda;
+	}
+	
+	private void quickSort(String[] zerrenda, int hasiera, int bukaera) {
+		if(bukaera-hasiera>0) {
+			int indizeaZatiketa=zatiketa(zerrenda,hasiera,bukaera);
+			quickSort(zerrenda,hasiera,indizeaZatiketa-1);
+			quickSort(zerrenda,indizeaZatiketa+1,bukaera);
+		}
+	}
+	
+	private int zatiketa(String[] lista, int i, int f) {
+		String lag=lista[i];
+		int ezker=i;
+		int eskuin=f;
+		while(ezker<eskuin) {
+			lag.toUpperCase();
+			lista[ezker].toUpperCase();
+			lista[eskuin].toUpperCase();
+			while(lista[ezker].compareTo(lag)<=0 && ezker<eskuin)
+				ezker++;
+			while(lista[eskuin].compareTo(lag)>0)
+				eskuin--;
+			if(ezker<eskuin)
+				swap(lista,ezker,eskuin);
+		}
+		lista[i]=lista[eskuin];
+		lista[eskuin]=lag;
+		return eskuin;
+	}
+	
+	private void swap(String[] lista, int bat, int bi) {
+		String temp=lista[bat];
+		lista[bat]=lista[bi];
+		lista[bi]=temp;
+	}
+	
+	
+	
+	public String[] listaOrdenatuta() {
+		String[] zerrenda= this.pasaArray();
+		quickSort(zerrenda,0,zerrenda.length-1);
+		return zerrenda;
+	}
 	
 		
 	
