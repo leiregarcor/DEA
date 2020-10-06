@@ -1,8 +1,12 @@
 package packlEnuntziatu1;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 public class WebZerrenda {
 	
@@ -117,9 +121,40 @@ public class WebZerrenda {
 	
 	
 		
-	public void fitxeroaEguneratu(){
+	private void fitxeroaSortu() throws IOException{
 		//post: Web-orrien zerrenda fitxategitan gordetzen du
-		//TODO
+		String ruta= "";
+		File fitxeroa= new File(ruta);
+		BufferedWriter bw;
+		if(fitxeroa.exists()) {
+			bw = new BufferedWriter(new FileWriter(fitxeroa));
+		}else {
+			bw = new BufferedWriter(new FileWriter(fitxeroa));
+		}
+		bw.close();
+	}
+	
+	public void fitxeroaEguneratu() throws IOException {
+		FileWriter fitxero= null;
+		PrintWriter pw=null;
+		fitxeroaSortu();
+		try {
+			fitxero= new FileWriter("");
+			pw=new PrintWriter(fitxero);
+			for(int i=0; i<wZerrenda.size();i++) {
+				pw.println(bilatuId(i).getUrlWeb()+i);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(null!=fitxero) {
+					fitxero.close();
+				}
+			}catch(Exception e2) {
+				e2.printStackTrace();
+			}
+		}
 	}
 	
 	private Web bilatuUrl(String pUrl){				 //PRIVATE PORQUE SOLO SE USA EN ESTA CLASE, SI SE USARA FUERA HAY QUE PONERLO PUBLIC
