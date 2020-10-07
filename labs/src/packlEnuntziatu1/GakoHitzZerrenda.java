@@ -64,10 +64,8 @@ public class GakoHitzZerrenda {
 				this.gakoMapa.put(h.getKatea(), h);
 				
 				
-				// QUITO ESTO PORQUE CRUSHEA, AUN SOLO HEMOS LEIDO EL FICHERO DE PALABRAS Y NO PODEMOS RECORRER
-				// WEBS PORQUE CASCA 
-//				h.beteWebLista(h.getKatea());
-//				WebZerrenda.getNireWebZerrenda();
+				h.beteWebLista(h.getKatea());
+				WebZerrenda.getNireWebZerrenda();
 			}
 		}catch(Exception e){
 	        e.printStackTrace();
