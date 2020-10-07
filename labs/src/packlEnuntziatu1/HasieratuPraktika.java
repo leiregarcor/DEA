@@ -24,6 +24,7 @@ public class HasieratuPraktika {
 	    WebZerrenda wz = WebZerrenda.getNireWebZerrenda();
 	    
 	    try {
+	    	
 			ghz.fitxeroaKargatu(wordsFitxeroa);
 			
 			wz.indexFitxeroaKargatu(webIndexFitxeroa);

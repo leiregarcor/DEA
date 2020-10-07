@@ -55,7 +55,7 @@ public class WebZerrenda {
 	        	// Sortzen dugu Web objektu bat eta sartzen dugu indizea eta url parametro bezala
 	        	Web w = new Web(Integer.parseInt(zatiak[1]), zatiak[0]);
 	        	// azkenik, gehitzen dugu web zerrendara
-	        	wz.gehitu(w);       	
+	        	wz.gehitu(w);  
 	        }
 		}catch(Exception e)
 		{

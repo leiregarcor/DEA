@@ -62,8 +62,12 @@ public class GakoHitzZerrenda {
 				Hitza h = new Hitza(fila);
 				//this.ghZerrenda.add(h); 
 				this.gakoMapa.put(h.getKatea(), h);
-				h.beteWebLista(h.getKatea());
-				WebZerrenda.getNireWebZerrenda();
+				
+				
+				// QUITO ESTO PORQUE CRUSHEA, AUN SOLO HEMOS LEIDO EL FICHERO DE PALABRAS Y NO PODEMOS RECORRER
+				// WEBS PORQUE CASCA 
+//				h.beteWebLista(h.getKatea());
+//				WebZerrenda.getNireWebZerrenda();
 			}
 		}catch(Exception e){
 	        e.printStackTrace();
