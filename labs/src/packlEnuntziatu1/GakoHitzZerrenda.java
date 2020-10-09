@@ -63,9 +63,10 @@ public class GakoHitzZerrenda {
 				//this.ghZerrenda.add(h); 
 				this.gakoMapa.put(h.getKatea(), h);
 				
-				
-				h.beteWebLista(h.getKatea());
-				WebZerrenda.getNireWebZerrenda();
+				// Comento esto porque si leemos los ficheros en el orden que los leemos
+				// peta
+//				h.beteWebLista(h.getKatea());
+//				WebZerrenda.getNireWebZerrenda();
 			}
 		}catch(Exception e){
 	        e.printStackTrace();

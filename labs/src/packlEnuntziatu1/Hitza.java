@@ -10,7 +10,7 @@ public class Hitza {
 	// eraikitzailea
 	public Hitza (String pKatea){
 		this.katea = pKatea;
-//		this.wLista = new ArrayList<Web>();
+		this.wLista = new ArrayList<Web>();
 	}
 	
 	
@@ -27,6 +27,11 @@ public class Hitza {
 	
 	
 	// metodoak
+	
+	public void gehituWebBat(Web pWeb)
+	{
+		this.wLista.add(pWeb);
+	}
 	
 	public void beteWebLista (String pKatea){
 		//TODO

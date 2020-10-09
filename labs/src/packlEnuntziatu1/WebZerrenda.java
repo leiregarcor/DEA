@@ -47,6 +47,7 @@ public class WebZerrenda {
         
         String lerro;
     	WebZerrenda wz = WebZerrenda.getNireWebZerrenda();
+    	GakoHitzZerrenda ghz = GakoHitzZerrenda.getNireGakoHitzZerrenda();
     	
 		try {
 	        while ((lerro = b.readLine())!=null)
@@ -54,8 +55,42 @@ public class WebZerrenda {
 	        	String zatiak[] = lerro.split(" "); // Zatitzen dugu web url eta indizea
 	        	// Sortzen dugu Web objektu bat eta sartzen dugu indizea eta url parametro bezala
 	        	Web w = new Web(Integer.parseInt(zatiak[1]), zatiak[0]);
-	        	// azkenik, gehitzen dugu web zerrendara
-	        	wz.gehitu(w);  
+	        	//gehitzen dugu web zerrendara
+	        	wz.gehitu(w);
+	        	// Aqui tenemos que dividir la url en subgrupos empezando por subgrupos de 3
+	        	// hasta el tamaño de la hitza-1 que seria el mas grande de los subgrupos.
+	        	// Despues, tenemos que ir comprobando cada zati a ver si coincide en el hashmap
+	        	// de GakoHitzZerrenda que se llama 'gakoMapa' y si devuelve null, es que no esta
+	        	// si devuelve una Hitza, quiere decir que contiene esa hitza osea que tenemos 
+	        	// que coger la web que estamos dividiendo, meterla en el hashmap de webs, nos devuelve una
+	        	// web y la metemos a la lista de webs de la Hitza que nos ha devuelto el hashmap de 'gakoMapa'
+	        	
+	        	//primero dividimos la url en subgrupos
+	        	
+	        	int luz = zatiak[0].length(); // luz va a ser el tamaño de la url
+	        	int iterazio;
+	        	int dif = 3;
+	        	Hitza atxe;
+	        	String sub;	        	
+	        	while (dif <= luz) 
+	        	{
+	        		iterazio = 0;
+	        		while (iterazio <= luz - dif )
+		        	{
+		        		sub = zatiak[0].substring(iterazio, iterazio + dif);
+		        		atxe = ghz.bilatuHitza(sub);
+		        		if (atxe!=null) // Aurkitzen badu
+		        		{
+		        			// Esto lo que hace es si atxe, es decir, si el substring ese que hemos
+		        			// metido devuelve un gakohitz, es decir, si contiene alguna hitza de la lista
+		        			// cogemos la hitza esa (en este caso atxe) y cogemos la web cuya url estamos 
+		        			// dividiendo y la metemos a la lista de webs que coinciden con la palabra atxe
+		        			atxe.gehituWebBat(this.webMapa.get(zatiak[0]));
+		        		}
+		        		iterazio++;
+		        	}
+	        		dif++;
+	        	}
 	        }
 		}catch(Exception e)
 		{
@@ -86,24 +121,24 @@ public class WebZerrenda {
         String lerro;
         Web w=null;
         int luzera=0;
-        int i=0;
+        int i;
     	WebZerrenda wz = WebZerrenda.getNireWebZerrenda();
     	
 		try {
 	        while ((lerro = b.readLine())!=null)
 	        {
-	        	String zatiak1[] = lerro.split("-->"); // Zatitzen dugu estekak eta indizea
+	        	String zatiak1[] = lerro.split(" -->"); // Zatitzen dugu estekak eta indizea
 	        	w=wz.bilatuId(Integer.parseInt(zatiak1[0]));//w-n gorde behar ditugu esteka guztiak
-	        	if (zatiak1[1]!=null)
+	        	if (zatiak1.length == 2)// zatiak1[1]!=null
 	        	{
 	        		String zatiak2[] = zatiak1[1].split(" ");
 		        	luzera=zatiak2.length;
-		        	i=0;
+		        	i=1;
 		        	while(i<=luzera-1) {
 		        		w.getEstekenZerrenda().add(wz.bilatuId(Integer.parseInt(zatiak2[i])));
 		        		i++;
 		        	}
-	        	}      	
+	        	}
 	        }
 		}catch(Exception e)
 		{
@@ -157,20 +192,20 @@ public class WebZerrenda {
 		}
 	}
 	
-	private Web bilatuUrl(String pUrl){				 //PRIVATE PORQUE SOLO SE USA EN ESTA CLASE, SI SE USARA FUERA HAY QUE PONERLO PUBLIC
+	public Web bilatuUrl(String pUrl){				 
 		// Pre: Url string bat sartzen da.		
 		// Post: Bueltatzen du Web objektua url hori duena bere url atributuan.
 		
 		return this.webMapa.get(pUrl);		
 	}
 	
-	private Web bilatuId(int pId){     				  //PRIVATE PORQUE SOLO SE USA EN ESTA CLASE, SI SE USARA FUERA HAY QUE PONERLO PUBLIC
+	public Web bilatuId(int pId){     				  
 		Web ema=null;
 		if(pId>=0 && pId<wZerrenda.size()) {
 			ema=wZerrenda.get(pId);
 		}
 		return ema;		
-	} 
+	}
 	
 	public void gehitu (Web pWeb){
 		this.wZerrenda.add(pWeb); // Web Zerrendan gehitzeko
@@ -190,7 +225,6 @@ public class WebZerrenda {
 	
 	public ArrayList<Web> webOrdenatuta(ArrayList<Web> pZerrenda){
 		// post: web-orrien zerrenda itzultzen du, alfabetikoki ordenatuta
-		//TODO
 		// Voy a hacer que ordene alfabeticamente el array de objetos Web, si luego es el de Strings 
 		// se cambia y ya.
 		// Bon dia.

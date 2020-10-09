@@ -30,7 +30,7 @@ public class HasieratuPraktika {
 			wz.indexFitxeroaKargatu(webIndexFitxeroa);
 			
 			wz.arcFitxeroaKargatu(webEstekaFitxeroa);
-			
+		
 			
 			System.out.println("");
 			System.out.println("");
