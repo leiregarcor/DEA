@@ -165,17 +165,11 @@ public class WebZerrenda {
 	}
 	
 	private Web bilatuId(int pId){     				  //PRIVATE PORQUE SOLO SE USA EN ESTA CLASE, SI SE USARA FUERA HAY QUE PONERLO PUBLIC
-//		Web ema=null;
-//		Iterator<Web>itr= this.getIteradorea();
-//		boolean aurkitua=false;
-//		while(itr.hasNext()&&!aurkitua) {
-//			ema=itr.next();
-//			if(ema.idBerdinaDu(pId)) {
-//				aurkitua=true;
-//			}
-//		}
-//		return ema;		
-		return this.wZerrenda.get(pId); // Metodo corto		
+		Web ema=null;
+		if(pId>=0 && pId<wZerrenda.size()) {
+			ema=wZerrenda.get(pId);
+		}
+		return ema;		
 	} 
 	
 	public void gehitu (Web pWeb){
