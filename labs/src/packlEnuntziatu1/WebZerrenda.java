@@ -286,7 +286,8 @@ public class WebZerrenda {
 		return w.getGakoZerrenda();		
 	}
 	
-	private String[] pasaArray() {
+	
+	  private String[] pasaArray() {
 		String[] zerrenda= new String[wZerrenda.size()];
 		int i=0;
 		Iterator<Web> itr= this.getIteradorea();
@@ -298,6 +299,7 @@ public class WebZerrenda {
 		}
 		return zerrenda;
 	}
+	
 	
 	private void quickSort(String[] zerrenda, int hasiera, int bukaera) {
 		if(bukaera-hasiera>0) {

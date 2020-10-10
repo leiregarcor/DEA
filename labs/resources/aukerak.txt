@@ -1,0 +1,13 @@
+
+	Kaixo, zer egin nahi duzu?
+
+	1)  Web bat bilatu.
+	2)  Web orri bat txertatu.
+	3)  Web orri bat ezabatu.
+	4)  Web bat bat estekatzen dituen web orrien zerrenda ikusi.
+	5)  Gakohitz bat sartu bere web orrien zerrenda ikusteko.
+	6)  Web orrien zerrenda fitxeroa eguneratu.
+	7)  Web zerrenda ordenatua lortu.
+
+	Sar ezazu zenbaki bat:
+	
