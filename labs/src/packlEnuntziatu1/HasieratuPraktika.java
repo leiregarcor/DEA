@@ -2,6 +2,8 @@ package packlEnuntziatu1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+//import java.io.*;
+import java.util.*;
 
 public class HasieratuPraktika {
 
@@ -13,8 +15,7 @@ public class HasieratuPraktika {
 		File webEstekaFitxeroa = null;
 
 		// El FileReader y el BufferReader se meten dentro de GakoHitzZerrenda y de WebZerrenda.
-		
-		
+				
 		wordsFitxeroa = new File ("resources\\words.txt");
 	    webIndexFitxeroa = new File ("resources\\index.txt");
 	    webEstekaFitxeroa = new File ("resources\\pld-arcs-1-N.txt");
@@ -24,35 +25,54 @@ public class HasieratuPraktika {
 	    GakoHitzZerrenda ghz = GakoHitzZerrenda.getNireGakoHitzZerrenda();
 	    WebZerrenda wz = WebZerrenda.getNireWebZerrenda();
 	    
-	    try {
-	    	
+	    try {	    	
 	    	// Lehenik fitxeroen karga egiten dugu.
-			ghz.fitxeroaKargatu(wordsFitxeroa);
-			
-			wz.indexFitxeroaKargatu(webIndexFitxeroa);
-			
+			ghz.fitxeroaKargatu(wordsFitxeroa);			
+			wz.indexFitxeroaKargatu(webIndexFitxeroa);			
 			wz.arcFitxeroaKargatu(webEstekaFitxeroa);
-		
-			
+					
 			System.out.println("");
 			System.out.println("");
 			System.out.println("");
-			
-			
-			
-//			System.out.println(wz.getSize());
-			
-			
-			
+									
+//			System.out.println(wz.getSize());	
+						
 			// Falta meter aqui para meter las webs para meter las redirecciones (los otros dos ficheros)
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} 
+	    
+		System.out.println("************************************************************");
+		System.out.println("************************************************************");
+		System.out.println("**                 WEB KUDEAKETA APLIKAZIOA               **");
+		System.out.println("************************************************************");
+		System.out.println("************************************************************");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+	    
+		
+		Scanner aukerak = null;
+		
+		//aukerak pantailan inprimatzeko:
+		File aukerakTestuaFile = new File("resources\\aukerak.txt");
+		try {
+			aukerak = new Scanner(aukerakTestuaFile);
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("Ez da aurkitu fitxategia");
+		}
+
+		while(aukerak.hasNextLine())		{ 
+		   System.out.println(aukerak.nextLine());
+		}
+		aukerak.close();
+	    
 
 	}//_____________________________main amaiera_______________________
     
 	
-	public void menuaHasieratu()
+/*	public void menuaHasieratu()
     {
     	//TODO
 		
@@ -84,5 +104,6 @@ public class HasieratuPraktika {
 		
 		
     }
+    */
 
 }
