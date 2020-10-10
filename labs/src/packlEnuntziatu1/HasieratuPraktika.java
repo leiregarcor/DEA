@@ -79,29 +79,36 @@ public class HasieratuPraktika {
 			 * segú opción llamar a un metodo u otro
 			 * podemos hacer otro switch case o podemos usar if
 			*/
-			
-			System.out.println("k1");
+			//imprimir url de web, HAY QUE IMPLEMENTAR EL METODO 
+			System.out.println("	K1");
 			break;
 		case 2:
-			System.out.println("k2");
+			System.out.println("	Txertaketa arrakastatsua izan da.");
 			break;
 		case 3:
-			System.out.println("k3");
+			System.out.println("	Ezabaketa arrakastatsua izan da.");
 			break;
 		case 4:
-			System.out.println("k4");
+			//WEB ORRIA SARTU
+			//web HORREK ESTEKATZEN DITUEN orrien zerrenda imprimatu
+			String s= "url"; //AQUI LLAMAMOS AL METODO PARA QUE META UN STRING POR TECLADO
+			System.out.println("	Honako hau da "+ s +"web orrialdeak estekatzen dituen web orrien zerrenda: ");
 			break;
 		case 5:
+			//GAKOHITZA SARTU
+			//GAKO HITZA BARNEAN DUTEN WEB ORRIAK IMPRIMATU
 			System.out.println("k5");
 			break;
 		case 6:
-			System.out.println("k6");
+			System.out.println("	Fitxeroa eguneratu da.");
 			break;
 		case 7:
-			System.out.println("k7");
+			System.out.println("	Web orrien zerrenda ordenatu da.");
 			break;
 		case 8:
-			System.out.println("k8");
+			System.out.println("********************");
+			System.out.println("********AGUR********");
+			System.out.println("********************");
 			System.exit(0);
 			break;
 		}
@@ -149,8 +156,7 @@ public class HasieratuPraktika {
 		Scanner sc = new Scanner(System.in);
 		int emaitza =  -1;
         boolean denaOndo=false;
-        do {
-	        
+        do {	        
 			String str = sc.nextLine();
 			try{
 				emaitza = Integer.parseInt(str);
