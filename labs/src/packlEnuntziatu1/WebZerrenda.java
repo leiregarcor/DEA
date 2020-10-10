@@ -208,22 +208,24 @@ public class WebZerrenda {
 	}
 	
 	public void gehitu (Web pWeb){
-		this.wZerrenda.add(pWeb); // Web Zerrendan gehitzeko
+		//this.wZerrenda.add(pWeb); // Web Zerrendan gehitzeko
 		// Ez gaude ziur urlZerrenda beharrezkoa denentz. HashMapean .values() egin daitekeela.
 		//urlZerrenda.add(pWeb.getUrlWeb()); // String zerrendan gehitzeko
 		this.webMapa.put(pWeb.getUrlWeb(), pWeb); // HashMapan ere gehitzeko
 	}
 	
 	public void ezabatu (String pUrl){	
-		Web w=bilatuUrl(pUrl);
-		if(w!=null) {
+		//Web w=bilatuUrl(pUrl);
+		//if(w!=null) {
+		//creo que no se rompe si intentas eliminar una web con una key que no está
 			webMapa.remove(pUrl);
 			//urlZerrenda.remove(pUrl);
-			this.wZerrenda.remove(w);
-		}
+		//	this.wZerrenda.remove(w);
+		//}
 	}
 	
 	public ArrayList<Web> webOrdenatuta(ArrayList<Web> pZerrenda){
+		//TODO
 		// post: web-orrien zerrenda itzultzen du, alfabetikoki ordenatuta
 		// Voy a hacer que ordene alfabeticamente el array de objetos Web, si luego es el de Strings 
 		// se cambia y ya.
