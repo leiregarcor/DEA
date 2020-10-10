@@ -51,9 +51,8 @@ public class HasieratuPraktika {
 		System.out.println("");
 		System.out.println("");
 	    
-		
-		Scanner aukerak = null;
-		
+		do {
+		Scanner aukerak = null;		
 		//aukerak pantailan inprimatzeko:
 		File aukerakTestuaFile = new File("resources\\aukerak.txt");
 		try {
@@ -68,6 +67,45 @@ public class HasieratuPraktika {
 		}
 		aukerak.close();
 	    
+	
+		int kasua = irakurriAukera(1 , 8);
+		switch(kasua) {
+		case 1:
+			int kasu2= irakurriAukera(1,2);
+			/* 
+			 * tenemos que leer el txt aukerak2
+			 * implementar metodo que lea string
+			 * implementar metodo que lea int
+			 * segú opción llamar a un metodo u otro
+			 * podemos hacer otro switch case o podemos usar if
+			*/
+			
+			System.out.println("k1");
+			break;
+		case 2:
+			System.out.println("k2");
+			break;
+		case 3:
+			System.out.println("k3");
+			break;
+		case 4:
+			System.out.println("k4");
+			break;
+		case 5:
+			System.out.println("k5");
+			break;
+		case 6:
+			System.out.println("k6");
+			break;
+		case 7:
+			System.out.println("k7");
+			break;
+		case 8:
+			System.out.println("k8");
+			System.exit(0);
+			break;
+		}
+	}while(true);
 
 	}//_____________________________main amaiera_______________________
     
@@ -105,5 +143,25 @@ public class HasieratuPraktika {
 		
     }
     */
+	
+	
+	public static int irakurriAukera(int pNundik, int pNora){
+		Scanner sc = new Scanner(System.in);
+		int emaitza =  -1;
+        boolean denaOndo=false;
+        do {
+	        
+			String str = sc.nextLine();
+			try{
+				emaitza = Integer.parseInt(str);
+				if( emaitza >pNora || emaitza<pNundik){
+					throw new NumberFormatException();//sartzen duen balioa ez du balio
+				}
+				denaOndo=true;
+			}catch (NumberFormatException e) { System.out.println("Sar ezazu zenbaki baliogarri bat:"); 
+			}
+        }while(!denaOndo);
+        return emaitza;
+      }
 
 }

@@ -8,6 +8,7 @@
 	5)  Gakohitz bat sartu bere web orrien zerrenda ikusteko.
 	6)  Web orrien zerrenda fitxeroa eguneratu.
 	7)  Web zerrenda ordenatua lortu.
+	8)  Aplikaziotik irten.
 
 	Sar ezazu zenbaki bat:
 	
