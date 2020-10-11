@@ -72,6 +72,7 @@ public class HasieratuPraktika {
 		switch(kasua) {
 		case 1:
 			//imprimir url de web, HAY QUE IMPLEMENTAR EL METODO 
+			String s1= Teklatua.getNireTeklatua().irakurriString();
 			System.out.println("	K1");
 			break;
 		case 2:
@@ -109,41 +110,5 @@ public class HasieratuPraktika {
 	}//_____________________________main amaiera_______________________
     
 	
-/*	public void menuaHasieratu()
-    {
-    	//TODO
-		
-		System.out.println("************************************************************");
-		System.out.println("************************************************************");
-		System.out.println("**                 WEB KUDEAKETA APLIKAZIOA               **");
-		System.out.println("************************************************************");
-		System.out.println("************************************************************");
-		System.out.println("");
-		System.out.println("");
-		System.out.println("");
-		System.out.println("Kaixo, zer egin nahi duzu?");
-		System.out.println("");
-		System.out.println("  1)  Web bat bilatu."); 
-		
-		// busquedas parecidas utilizando gakohitzas
-		
-		
-		// Dentro de esto te pedira que metas el id o la url, identificamos a ver si es numero o string lo que ha metido y si 
-		// es numero buscamos con el bilatuId() en el ArrayList de webs si mete un String lo buscamos en el HashMap
-		System.out.println("  2)  Web orri bat txertatu.");
-		System.out.println("  3)  Web orri bat ezabatu.");
-		System.out.println("  4)  Web bat bat estekatzen dituen web orrien zerrenda ikusi.");
-		// Aunque tenga 1000000 millones de estekas tenemos que imprimir todo
-		// tenemos que implementar el metodo para que lo imprima
-		System.out.println("  5)  Gakohitz bat sartu bere web orrien zerrenda ikusteko.");
-		System.out.println("  6)  Web orrien zerrenda fitxeroa eguneratu.");
-		System.out.println("  7)  Web zerrenda ordenatua lortu.");
-		
-		
-    }
-    */
-	
-	
-
 
 }

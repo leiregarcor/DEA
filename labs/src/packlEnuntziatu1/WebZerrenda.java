@@ -208,7 +208,7 @@ public class WebZerrenda {
 	}
 	
 	public void gehitu (Web pWeb){
-		//this.wZerrenda.add(pWeb); // Web Zerrendan gehitzeko
+		this.wZerrenda.add(pWeb); // Web Zerrendan gehitzeko
 		// Ez gaude ziur urlZerrenda beharrezkoa denentz. HashMapean .values() egin daitekeela.
 		//urlZerrenda.add(pWeb.getUrlWeb()); // String zerrendan gehitzeko
 		this.webMapa.put(pWeb.getUrlWeb(), pWeb); // HashMapan ere gehitzeko
