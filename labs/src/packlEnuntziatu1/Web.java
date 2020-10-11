@@ -17,7 +17,10 @@ public class Web {
 		this.gakoZerrenda= new ArrayList<Hitza>();
 	}
 	
-	
+	//settters
+	public void setUrl(String pUrl) {
+		this.url= pUrl;
+	}
 	// getters
 	public String getUrlWeb(){
 		return this.url;

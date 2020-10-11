@@ -158,7 +158,7 @@ public class WebZerrenda {
 		
 	private void fitxeroaSortu() throws IOException{
 		//post: Web-orrien zerrenda fitxategitan gordetzen du
-		String ruta= "";
+		String ruta= "resources\\fitxeroBerria.txt";
 		File fitxeroa= new File(ruta);
 		BufferedWriter bw;
 		if(fitxeroa.exists()) {
@@ -174,10 +174,14 @@ public class WebZerrenda {
 		PrintWriter pw=null;
 		fitxeroaSortu();
 		try {
-			fitxero= new FileWriter("");
+			fitxero= new FileWriter("resources\\fitxeroBerria.txt");
 			pw=new PrintWriter(fitxero);
-			for(int i=0; i<wZerrenda.size();i++) {
-				pw.println(bilatuId(i).getUrlWeb()+" " +i);
+			Collection<Web> c= this.webMapa.values();
+			ArrayList<Web> list= new ArrayList<>(c);
+			 // Hash mapeko balioak arrayList<Web>n gorde
+			
+			for(int i=0; i<list.size();i++) {
+				pw.println(list.get(i).getUrlWeb()+" " +i);				
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -289,58 +293,60 @@ public class WebZerrenda {
 	}
 	
 	
-	  private String[] pasaArray() {
-		String[] zerrenda= new String[wZerrenda.size()];
-		int i=0;
-		Iterator<Web> itr= this.getIteradorea();
-		Web w=null;
-		while(itr.hasNext()) {
-			w=itr.next();
-			zerrenda[i]=w.getUrlWeb();
-			i++;
-		}
-		return zerrenda;
-	}
+//	  private String[] pasaArray() {
+//		Collection<Web> c= this.webMapa.values();
+//		//ArrayList<Web> list= new ArrayList<>(c);
+//		// Hash mapeko balioak arrayList<Web>n gorde
+//		Web[] zerrenda= new Web[c.size()];
+//		int i=0;
+//		Iterator<Web> itr= this.getIteradorea();
+//		Web w=null;
+//		while(itr.hasNext()) {
+//			w=itr.next();
+//			zerrenda[i]=w.getUrlWeb();
+//			i++;
+//		}
+//		return zerrenda;
+//	}
 	
 	
-	private void quickSort(String[] zerrenda, int hasiera, int bukaera) {
+	private void quickSort(Web[] zerrenda, int hasiera, int bukaera) {
 		if(bukaera-hasiera>0) {
-			int indizeaZatiketa=zatiketa(zerrenda,hasiera,bukaera);
-			quickSort(zerrenda,hasiera,indizeaZatiketa-1);
+			int indizeaZatiketa=zatiketa(zerrenda,hasiera,bukaera);//error
+			quickSort(zerrenda,hasiera,indizeaZatiketa-1); //error
 			quickSort(zerrenda,indizeaZatiketa+1,bukaera);
 		}
 	}
 	
-	private int zatiketa(String[] lista, int i, int f) {
-		String lag=lista[i];
+	private int zatiketa(Web[] lista, int i, int f) {
+		String lag=lista[i].getUrlWeb();
 		int ezker=i;
 		int eskuin=f;
 		while(ezker<eskuin) {
-			lag.toUpperCase();
-			lista[ezker].toUpperCase();
-			lista[eskuin].toUpperCase();
-			while(lista[ezker].compareTo(lag)<=0 && ezker<eskuin)
+			lag.toUpperCase(); //error
+			lista[ezker].getUrlWeb().toUpperCase();
+			lista[eskuin].getUrlWeb().toUpperCase();
+			while(lista[ezker].getUrlWeb().compareTo(lag)<=0 && ezker<eskuin)
 				ezker++;
-			while(lista[eskuin].compareTo(lag)>0)
+			while(lista[eskuin].getUrlWeb().compareTo(lag)>0)
 				eskuin--;
 			if(ezker<eskuin)
 				swap(lista,ezker,eskuin);
 		}
 		lista[i]=lista[eskuin];
-		lista[eskuin]=lag;
+		lista[eskuin].setUrl(lag);
 		return eskuin;
 	}
 	
-	private void swap(String[] lista, int bat, int bi) {
-		String temp=lista[bat];
+	private void swap(Web[] lista, int bat, int bi) {
+		Web temp=lista[bat];
 		lista[bat]=lista[bi];
 		lista[bi]=temp;
-	}
+	}	
 	
-	
-	
-	public String[] listaOrdenatuta() {
-		String[] zerrenda= this.pasaArray();
+	public Web[] listaOrdenatuta() {
+		Collection<Web> c= this.webMapa.values();
+		Web[] zerrenda= c.toArray(new Web[c.size()]);
 		quickSort(zerrenda,0,zerrenda.length-1);
 		return zerrenda;
 	}

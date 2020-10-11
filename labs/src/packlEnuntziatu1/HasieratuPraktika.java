@@ -2,6 +2,7 @@ package packlEnuntziatu1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 //import java.io.*;
 import java.util.*;
 
@@ -167,10 +168,17 @@ public class HasieratuPraktika {
 			break;
 			
 		case 6: //Web orrien zerrenda fitxeroa eguneratu.
-			System.out.println("	Fitxeroa eguneratu da.");
+			try {
+				wz.fitxeroaEguneratu();
+				System.out.println("	Fitxeroa eguneratu da.");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			break;
 			
 		case 7: //Web zerrenda ordenatua lortu.
+			wz.listaOrdenatuta();
 			System.out.println("	Web orrien zerrenda ordenatu da.");
 			break;
 			
