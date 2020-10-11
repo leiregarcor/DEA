@@ -95,7 +95,7 @@ public class HasieratuPraktika {
 				System.out.println("	Sar ezazu txertatu nahi duzun web orriaren url-a:");
 				s= tk.irakurriString();
 				w= wz.bilatuUrl(s);
-				if(w!= null) {
+				if(w == null) {
 					w= new Web(wz.getHSize()+1,s);
 					wz.gehitu(w);
 					ondo=true;}

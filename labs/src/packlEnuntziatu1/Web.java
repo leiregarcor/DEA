@@ -57,7 +57,7 @@ public class Web {
 	
 	public void webInprimatu() {
 		System.out.println(" ");
-		System.out.println(" Sartu duzun web orrialdearen informazioa honako da:");
+		System.out.println("	Sartu duzun web orrialdearen informazioa honako da:");
 		System.out.println(" url:  "+this.url);
 		System.out.println(" indizea: "+this.id);
 		System.out.println(" ");
