@@ -319,29 +319,29 @@ public class WebZerrenda {
 	}
 	
 	private int zatiketa(Web[] lista, int i, int f) {
-		String lag=lista[i].getUrlWeb();
+		Web lag1=lista[i];
+		lista[i]= lista[i+(f-i)/2];
+		lista[i+(f-i)/2]=lag1;
+		Web lag= lista[i];
 		int ezker=i;
 		int eskuin=f;
 		while(ezker<eskuin) {
-			lag.toUpperCase(); //error
-			lista[ezker].getUrlWeb().toUpperCase();
-			lista[eskuin].getUrlWeb().toUpperCase();
-			while(lista[ezker].getUrlWeb().compareTo(lag)<=0 && ezker<eskuin)
+			while(lista[ezker].getUrlWeb().compareToIgnoreCase(lag.getUrlWeb())<=0 && ezker<eskuin)
 				ezker++;
-			while(lista[eskuin].getUrlWeb().compareTo(lag)>0)
+			while(lista[eskuin].getUrlWeb().compareToIgnoreCase(lag.getUrlWeb())>0)
 				eskuin--;
 			if(ezker<eskuin)
 				swap(lista,ezker,eskuin);
 		}
 		lista[i]=lista[eskuin];
-		lista[eskuin].setUrl(lag);
+		lista[eskuin]=lag;
 		return eskuin;
 	}
 	
-	private void swap(Web[] lista, int bat, int bi) {
-		Web temp=lista[bat];
-		lista[bat]=lista[bi];
-		lista[bi]=temp;
+	private void swap(Web[] lista, int ezker, int eskuin) {
+		Web temp=lista[ezker];
+		lista[ezker]=lista[eskuin];
+		lista[eskuin]=temp;
 	}	
 	
 	public Web[] listaOrdenatuta() {
