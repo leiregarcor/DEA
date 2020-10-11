@@ -24,6 +24,9 @@ public class HasieratuPraktika {
 	    
 	    GakoHitzZerrenda ghz = GakoHitzZerrenda.getNireGakoHitzZerrenda();
 	    WebZerrenda wz = WebZerrenda.getNireWebZerrenda();
+	    Teklatua tk= Teklatua.getNireTeklatua();
+	    Web w=null;
+	    String s= " ";
 	    
 	    try {	    	
 	    	// Lehenik fitxeroen karga egiten dugu.
@@ -68,37 +71,61 @@ public class HasieratuPraktika {
 		aukerak.close();
 	    
 	
-		int kasua = Teklatua.getNireTeklatua().irakurriAukera(1 , 8);
+		int kasua = tk.irakurriAukera(1 , 8);
 		switch(kasua) {
-		case 1:
-			//imprimir url de web, HAY QUE IMPLEMENTAR EL METODO 
-			String s1= Teklatua.getNireTeklatua().irakurriString();
-			System.out.println("	K1");
+		case 1: //Web bat bilatu.
+			boolean ondo=false;
+			do{
+				System.out.println("	Sar ezazu web orriaren url-a:");
+				//imprimir url de web, HAY QUE IMPLEMENTAR EL METODO 
+				s= tk.irakurriString();
+				w= wz.bilatuUrl(s);
+				if(w!= null) {
+					w.webInprimatu();
+					ondo=true;}
+				else {
+					System.out.println("	Sartu duzun web orria ez da existitzen.");
+				}
+			}while(!ondo);//
 			break;
-		case 2:
+			
+		case 2: //Web orri bat txertatu.
+			System.out.println("	Sar ezazu web orriaren url-a:");
+			s= tk.irakurriString();
+			w= new Web(wz.getHSize()+1,s);
+			wz.gehitu(w);
 			System.out.println("	Txertaketa arrakastatsua izan da.");
 			break;
-		case 3:
+			
+		case 3: // Web orri bat ezabatu.
+			System.out.println("	Sar ezazu web orriaren url-a:");
+			s= tk.irakurriString();
+			wz.ezabatu(s);
 			System.out.println("	Ezabaketa arrakastatsua izan da.");
 			break;
-		case 4:
+			
+		case 4:  //Web bat bat estekatzen dituen web orrien zerrenda ikusi.
 			//WEB ORRIA SARTU
 			//web HORREK ESTEKATZEN DITUEN orrien zerrenda imprimatu
-			String s= "url"; //AQUI LLAMAMOS AL METODO PARA QUE META UN STRING POR TECLADO
+	////		s= "url"; //AQUI LLAMAMOS AL METODO PARA QUE META UN STRING POR TECLADO
 			System.out.println("	Honako hau da "+ s +"web orrialdeak estekatzen dituen web orrien zerrenda: ");
 			break;
-		case 5:
+			
+		case 5: //Gakohitz bat sartu bere web orrien zerrenda ikusteko.
 			//GAKOHITZA SARTU
 			//GAKO HITZA BARNEAN DUTEN WEB ORRIAK IMPRIMATU
 			System.out.println("k5");
 			break;
-		case 6:
+			
+		case 6: //Web orrien zerrenda fitxeroa eguneratu.
 			System.out.println("	Fitxeroa eguneratu da.");
 			break;
-		case 7:
+			
+		case 7: //Web zerrenda ordenatua lortu.
 			System.out.println("	Web orrien zerrenda ordenatu da.");
 			break;
-		case 8:
+			
+		case 8: //Aplikaziotik irten.
 			System.out.println("********************");
 			System.out.println("********AGUR********");
 			System.out.println("********************");

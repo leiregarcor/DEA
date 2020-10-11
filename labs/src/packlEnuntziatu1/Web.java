@@ -55,4 +55,11 @@ public class Web {
 		return this.estekenZerrenda;
 	}
 	
+	public void webInprimatu() {
+		System.out.println(" ");
+		System.out.println(this.url);
+		System.out.println(" ");
+	}
+	
+	
 }
