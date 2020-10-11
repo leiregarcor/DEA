@@ -168,17 +168,16 @@ public class HasieratuPraktika {
 			System.out.println("	Web orrien zerrenda ordenatu da.");
 			break;
 			
-		case 8: //Aplikaziotik irten.
-			System.out.println("********************");
-			System.out.println("********AGUR********");
-			System.out.println("********************");
+		case 8: //Aplikaziotik irten.	
+			System.out.println("************************************************************");
+			System.out.println("************************************************************");
+			System.out.println("****************************AGUR****************************");
+			System.out.println("************************************************************");
+			System.out.println("************************************************************");			
 			System.exit(0);
 			break;
 		}
 	}while(true);
 
-	}//_____________________________main amaiera_______________________
-    
-	
-
+	}//_____________________________main amaiera_______________________    
 }
