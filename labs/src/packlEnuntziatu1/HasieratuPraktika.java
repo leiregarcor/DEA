@@ -28,6 +28,7 @@ public class HasieratuPraktika {
 	    Web w=null;
 	    String s= " ";
 	    boolean ondo= false;
+	    Hitza h=null;
 	    
 	    try {	    	
 	    	// Lehenik fitxeroen karga egiten dugu.
@@ -135,7 +136,7 @@ public class HasieratuPraktika {
 				s= tk.irakurriString();
 				w= wz.bilatuUrl(s);
 				if(w!= null) {
-					System.out.println("	Honako hau da "+ s +"web orrialdeak estekatzen dituen web orrien zerrenda: ");
+					System.out.println("	Honako hau da "+ s +" web orrialdeak estekatzen dituen web orrien zerrenda: ");
 					w.estekaZerendaInprimatu();
 					ondo=true;
 				}
@@ -147,8 +148,22 @@ public class HasieratuPraktika {
 			
 		case 5: //Gakohitz bat sartu bere web orrien zerrenda ikusteko.
 			//GAKOHITZA SARTU
-			//GAKO HITZA BARNEAN DUTEN WEB ORRIAK IMPRIMATU
-			System.out.println("k5");
+			//GAKO HITZA BARNEAN DUTEN WEB ORRIAK IMPRIMATU			
+			
+			ondo=false;
+			do{
+				System.out.println("	Sar ezazu gako-hitza:");
+				s= tk.irakurriString();
+				h= ghz.bilatuHitza(s);
+				if(h!= null) {
+					System.out.println("	Honako hau da "+ s +" gako-hitza duten web orrien zerrenda: ");
+					h.gakoWebInprimatu();
+					ondo=true;
+				}
+				else {
+					System.out.println("	Sartu duzun gako-hitza ez da existitzen.");
+				}
+			}while(!ondo);
 			break;
 			
 		case 6: //Web orrien zerrenda fitxeroa eguneratu.

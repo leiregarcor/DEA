@@ -1,6 +1,7 @@
 package packlEnuntziatu1;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Hitza {
 	// atributuak
@@ -28,8 +29,11 @@ public class Hitza {
 	
 	// metodoak
 	
-	public void gehituWebBat(Web pWeb)
-	{
+	private Iterator<Web> getIteradorea(){
+		return this.wLista.iterator();
+	}
+	
+	public void gehituWebBat(Web pWeb){
 		this.wLista.add(pWeb);
 	}
 	
@@ -41,6 +45,17 @@ public class Hitza {
 		this.wLista = WebZerrenda.getNireWebZerrenda().word2Webs(pKatea);
 	}
 	
+	
+	
+	public void gakoWebInprimatu() {
+		System.out.println(" ");
+		Iterator<Web> itr= this.getIteradorea();
+		Web w=null;
+		while(itr.hasNext()) {
+			w=itr.next();
+			System.out.println( w.getId() +" "+ w.getUrlWeb());						
+		}
+	}
 	
 /*	public boolean gakoBerdinaDa(String pGakoa) {                          //CREO QUE NO SE USA Y SE PUEDE BORRAR
 		boolean ema= false;
