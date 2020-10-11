@@ -68,10 +68,10 @@ public class HasieratuPraktika {
 		aukerak.close();
 	    
 	
-		int kasua = irakurriAukera(1 , 8);
+		int kasua = Teklatua.getNireTeklatua().irakurriAukera(1 , 8);
 		switch(kasua) {
 		case 1:
-			int kasu2= irakurriAukera(1,2);
+			int kasu2= Teklatua.getNireTeklatua().irakurriAukera(1,2);
 			/* 
 			 * tenemos que leer el txt aukerak2
 			 * implementar metodo que lea string
@@ -152,22 +152,6 @@ public class HasieratuPraktika {
     */
 	
 	
-	public static int irakurriAukera(int pNundik, int pNora){
-		Scanner sc = new Scanner(System.in);
-		int emaitza =  -1;
-        boolean denaOndo=false;
-        do {	        
-			String str = sc.nextLine();
-			try{
-				emaitza = Integer.parseInt(str);
-				if( emaitza >pNora || emaitza<pNundik){
-					throw new NumberFormatException();//sartzen duen balioa ez du balio
-				}
-				denaOndo=true;
-			}catch (NumberFormatException e) { System.out.println("Sar ezazu zenbaki baliogarri bat:"); 
-			}
-        }while(!denaOndo);
-        return emaitza;
-      }
+
 
 }
