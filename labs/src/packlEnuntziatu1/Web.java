@@ -23,8 +23,14 @@ public class Web {
 		return this.url;
 	}
 	
+	public int getId() {				// SE USA EN WebZerrenda.string2Id
+		return this.id;
+	}
 	// gainontzeko metodoak
 	
+	private Iterator<Web> getIteradorea(){
+		return this.estekenZerrenda.iterator();
+	}
 
 /*	public boolean estekaBerdinaDu (String pUrl) {
 		boolean ema= false;
@@ -42,9 +48,7 @@ public class Web {
 		return ema;		
 	}*/
 	
-	public int getId() {				// SE USA EN WebZerrenda.string2Id
-		return this.id;
-	}
+
 		
 	public ArrayList<Hitza> getGakoZerrenda(){      //SE USA EN WebZerrenda.word2Webs Y WebZerrenda.web2Words
 		
@@ -58,10 +62,20 @@ public class Web {
 	public void webInprimatu() {
 		System.out.println(" ");
 		System.out.println("	Sartu duzun web orrialdearen informazioa honako da:");
-		System.out.println(" url:  "+this.url);
+		System.out.println(" url:     "+this.url);
 		System.out.println(" indizea: "+this.id);
 		System.out.println(" ");
 	}
 	
+	
+	public void estekaZerendaInprimatu() {
+		System.out.println(" ");
+		Iterator<Web> itr= this.getIteradorea();
+		Web w=null;
+		while(itr.hasNext()) {
+			w=itr.next();
+			System.out.println( w.id +" "+ w.url);						
+		}
+	}
 	
 }

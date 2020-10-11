@@ -82,7 +82,8 @@ public class HasieratuPraktika {
 				w= wz.bilatuUrl(s);
 				if(w!= null) {
 					w.webInprimatu();
-					ondo=true;}
+					ondo=true;
+				}
 				else {
 					System.out.println("	Sartu duzun web orria ez da existitzen.");
 				}
@@ -98,7 +99,8 @@ public class HasieratuPraktika {
 				if(w == null) {
 					w= new Web(wz.getHSize()+1,s);
 					wz.gehitu(w);
-					ondo=true;}
+					ondo=true;
+				}
 				else {
 					System.out.println("	Sartu duzun web orria jada existitzen da.");
 				}
@@ -115,7 +117,8 @@ public class HasieratuPraktika {
 				w= wz.bilatuUrl(s);
 				if(w!= null) {
 					wz.ezabatu(s);
-					ondo=true;}
+					ondo=true;
+				}
 				else {
 					System.out.println("	Sartu duzun web orria ez da existitzen.");
 				}
@@ -126,8 +129,20 @@ public class HasieratuPraktika {
 		case 4:  //Web bat bat estekatzen dituen web orrien zerrenda ikusi.
 			//WEB ORRIA SARTU
 			//web HORREK ESTEKATZEN DITUEN orrien zerrenda imprimatu
-	////		s= "url"; //AQUI LLAMAMOS AL METODO PARA QUE META UN STRING POR TECLADO
-			System.out.println("	Honako hau da "+ s +"web orrialdeak estekatzen dituen web orrien zerrenda: ");
+			ondo=false;
+			do{
+				System.out.println("	Sar ezazu web orriaren url-a:");
+				s= tk.irakurriString();
+				w= wz.bilatuUrl(s);
+				if(w!= null) {
+					System.out.println("	Honako hau da "+ s +"web orrialdeak estekatzen dituen web orrien zerrenda: ");
+					w.estekaZerendaInprimatu();
+					ondo=true;
+				}
+				else {
+					System.out.println("	Sartu duzun web orria ez da existitzen.");
+				}
+			}while(!ondo);
 			break;
 			
 		case 5: //Gakohitz bat sartu bere web orrien zerrenda ikusteko.
