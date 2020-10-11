@@ -44,9 +44,6 @@ public class Teklatua {
 		return mezua;
 	}
 	
-	public int irakurriInteger(){
-				
-		return Teklatua.nireTeklatua.irakurriAukera(0, WebZerrenda.getNireWebZerrenda().getSize())  ;
-	}
+
 	
 }

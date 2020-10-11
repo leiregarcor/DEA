@@ -71,14 +71,6 @@ public class HasieratuPraktika {
 		int kasua = Teklatua.getNireTeklatua().irakurriAukera(1 , 8);
 		switch(kasua) {
 		case 1:
-			int kasu2= Teklatua.getNireTeklatua().irakurriAukera(1,2);
-			/* 
-			 * tenemos que leer el txt aukerak2
-			 * implementar metodo que lea string
-			 * implementar metodo que lea int
-			 * segú opción llamar a un metodo u otro
-			 * podemos hacer otro switch case o podemos usar if
-			*/
 			//imprimir url de web, HAY QUE IMPLEMENTAR EL METODO 
 			System.out.println("	K1");
 			break;

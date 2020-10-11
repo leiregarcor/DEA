@@ -354,9 +354,7 @@ public class WebZerrenda {
 	public int getSize(){								
 		return this.wZerrenda.size();
 	}
-	public int getHSize() {	
-		return this.webMapa.size();
-	}
+
 	
 	
 }

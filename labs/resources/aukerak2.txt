@@ -1,6 +1,0 @@
-		Web bat bilatu nahi duzu, era bat aukeratu:
-		
-		1) Url bidez.
-		2) Id bidez.
-		
-		Sar ezazu zenbaki bat:
