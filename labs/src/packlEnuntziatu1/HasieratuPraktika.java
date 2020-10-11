@@ -100,7 +100,7 @@ public class HasieratuPraktika {
 					wz.gehitu(w);
 					ondo=true;}
 				else {
-					System.out.println("	Sartu duzun web orria ez da existitzen.");
+					System.out.println("	Sartu duzun web orria jada existitzen da.");
 				}
 			}while(!ondo);
 			System.out.println("	Txertaketa arrakastatsua izan da.");
