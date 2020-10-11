@@ -27,6 +27,7 @@ public class HasieratuPraktika {
 	    Teklatua tk= Teklatua.getNireTeklatua();
 	    Web w=null;
 	    String s= " ";
+	    boolean ondo= false;
 	    
 	    try {	    	
 	    	// Lehenik fitxeroen karga egiten dugu.
@@ -74,10 +75,9 @@ public class HasieratuPraktika {
 		int kasua = tk.irakurriAukera(1 , 8);
 		switch(kasua) {
 		case 1: //Web bat bilatu.
-			boolean ondo=false;
+			ondo=false;
 			do{
-				System.out.println("	Sar ezazu web orriaren url-a:");
-				//imprimir url de web, HAY QUE IMPLEMENTAR EL METODO 
+				System.out.println("	Sar ezazu bilatu nahi duzun web orriaren url-a:");
 				s= tk.irakurriString();
 				w= wz.bilatuUrl(s);
 				if(w!= null) {
@@ -86,21 +86,40 @@ public class HasieratuPraktika {
 				else {
 					System.out.println("	Sartu duzun web orria ez da existitzen.");
 				}
-			}while(!ondo);//
+			}while(!ondo);
 			break;
 			
 		case 2: //Web orri bat txertatu.
-			System.out.println("	Sar ezazu web orriaren url-a:");
-			s= tk.irakurriString();
-			w= new Web(wz.getHSize()+1,s);
-			wz.gehitu(w);
+			ondo=false;
+			do{
+				System.out.println("	Sar ezazu txertatu nahi duzun web orriaren url-a:");
+				s= tk.irakurriString();
+				w= wz.bilatuUrl(s);
+				if(w!= null) {
+					w= new Web(wz.getHSize()+1,s);
+					wz.gehitu(w);
+					ondo=true;}
+				else {
+					System.out.println("	Sartu duzun web orria ez da existitzen.");
+				}
+			}while(!ondo);
 			System.out.println("	Txertaketa arrakastatsua izan da.");
+			
 			break;
 			
-		case 3: // Web orri bat ezabatu.
-			System.out.println("	Sar ezazu web orriaren url-a:");
-			s= tk.irakurriString();
-			wz.ezabatu(s);
+		case 3: // Web orri bat ezabatu.			
+			ondo=false;
+			do{
+				System.out.println("	Sar ezazu ezabatu nahi duzun web orriaren url-a:");
+				s= tk.irakurriString();
+				w= wz.bilatuUrl(s);
+				if(w!= null) {
+					wz.ezabatu(s);
+					ondo=true;}
+				else {
+					System.out.println("	Sartu duzun web orria ez da existitzen.");
+				}
+			}while(!ondo);
 			System.out.println("	Ezabaketa arrakastatsua izan da.");
 			break;
 			
