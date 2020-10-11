@@ -16,49 +16,26 @@ public class Web {
 		this.estekenZerrenda= new ArrayList<Web>() ;
 		this.gakoZerrenda= new ArrayList<Hitza>();
 	}
-	
-	//settters
-	public void setUrl(String pUrl) {
-		this.url= pUrl;
-	}
+
 	// getters
 	public String getUrlWeb(){
 		return this.url;
 	}
 	
-	public int getId() {				// SE USA EN WebZerrenda.string2Id
+	public int getId() {				
 		return this.id;
 	}
-	// gainontzeko metodoak
 	
+	// gainontzeko metodoak	
 	private Iterator<Web> getIteradorea(){
 		return this.estekenZerrenda.iterator();
 	}
 
-/*	public boolean estekaBerdinaDu (String pUrl) {
-		boolean ema= false;
-		if(this.url==pUrl) {
-			ema=true;
-		}
-		return ema;
-	}
-	
-	public boolean idBerdinaDu (int pId) {
-		boolean ema=false;
-		if(this.id==pId) {
-			ema=true;
-		}
-		return ema;		
-	}*/
-	
-
-		
-	public ArrayList<Hitza> getGakoZerrenda(){      //SE USA EN WebZerrenda.word2Webs Y WebZerrenda.web2Words
-		
+	public ArrayList<Hitza> getGakoZerrenda(){      
 		return this.gakoZerrenda;
 	}
 	
-	public ArrayList<Web> getEstekenZerrenda(){ // SE USA EN WebZerrenda.irteerakoEstekak
+	public ArrayList<Web> getEstekenZerrenda(){ 
 		return this.estekenZerrenda;
 	}
 	
@@ -70,7 +47,6 @@ public class Web {
 		System.out.println(" ");
 	}
 	
-	
 	public void estekaZerendaInprimatu() {
 		System.out.println(" ");
 		Iterator<Web> itr= this.getIteradorea();
@@ -79,6 +55,5 @@ public class Web {
 			w=itr.next();
 			System.out.println( w.id +" "+ w.url);						
 		}
-	}
-	
+	}	
 }

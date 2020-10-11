@@ -9,19 +9,14 @@ import java.util.*;
 public class HasieratuPraktika {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		File wordsFitxeroa = null;
 		File webIndexFitxeroa = null;
 		File webEstekaFitxeroa = null;
 
-		// El FileReader y el BufferReader se meten dentro de GakoHitzZerrenda y de WebZerrenda.
-				
 		wordsFitxeroa = new File ("resources\\words.txt");
 	    webIndexFitxeroa = new File ("resources\\index.txt");
 	    webEstekaFitxeroa = new File ("resources\\pld-arcs-1-N.txt");
-	    
-	    // Aqui metemos las palabras de words.txt en hitzas y luego en GakoHitzZerrenda
 	    
 	    GakoHitzZerrenda ghz = GakoHitzZerrenda.getNireGakoHitzZerrenda();
 	    WebZerrenda wz = WebZerrenda.getNireWebZerrenda();
@@ -40,10 +35,7 @@ public class HasieratuPraktika {
 			System.out.println("");
 			System.out.println("");
 			System.out.println("");
-									
-//			System.out.println(wz.getSize());	
-						
-			// Falta meter aqui para meter las webs para meter las redirecciones (los otros dos ficheros)
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} 
@@ -129,8 +121,6 @@ public class HasieratuPraktika {
 			break;
 			
 		case 4:  //Web bat bat estekatzen dituen web orrien zerrenda ikusi.
-			//WEB ORRIA SARTU
-			//web HORREK ESTEKATZEN DITUEN orrien zerrenda imprimatu
 			ondo=false;
 			do{
 				System.out.println("	Sar ezazu web orriaren url-a:");
@@ -148,9 +138,6 @@ public class HasieratuPraktika {
 			break;
 			
 		case 5: //Gakohitz bat sartu bere web orrien zerrenda ikusteko.
-			//GAKOHITZA SARTU
-			//GAKO HITZA BARNEAN DUTEN WEB ORRIAK IMPRIMATU			
-			
 			ondo=false;
 			do{
 				System.out.println("	Sar ezazu gako-hitza:");
@@ -172,7 +159,6 @@ public class HasieratuPraktika {
 				wz.fitxeroaEguneratu();
 				System.out.println("	Fitxeroa eguneratu da.");
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;

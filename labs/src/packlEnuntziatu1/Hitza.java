@@ -14,18 +14,14 @@ public class Hitza {
 		this.wLista = new ArrayList<Web>();
 	}
 	
-	
 	// getters	
 	public ArrayList<Web> getWebLista(){
 		return this.wLista;
 	}
 	
-	
 	public String getKatea(){
 		return this.katea;
 	}
-	
-	
 	
 	// metodoak
 	
@@ -38,14 +34,8 @@ public class Hitza {
 	}
 	
 	public void beteWebLista (String pKatea){
-		//TODO
-		// Tiene que ir a WebZerrenda y recorrer el ArrayList (wZerrenda)
-		// tiene que meter las Webs que tienen esa palabra en la url.
-		
 		this.wLista = WebZerrenda.getNireWebZerrenda().word2Webs(pKatea);
 	}
-	
-	
 	
 	public void gakoWebInprimatu() {
 		System.out.println(" ");
@@ -56,13 +46,4 @@ public class Hitza {
 			System.out.println( w.getId() +" "+ w.getUrlWeb());						
 		}
 	}
-	
-/*	public boolean gakoBerdinaDa(String pGakoa) {                          //CREO QUE NO SE USA Y SE PUEDE BORRAR
-		boolean ema= false;
-		if(this.katea==pGakoa) {
-			ema=true;
-		}
-		return ema;		
-	}*/
-
 }

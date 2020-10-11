@@ -1,17 +1,11 @@
 package packlEnuntziatu1;
 
-
-//import java.util.ArrayList;
 import java.util.HashMap;
 //import java.util.Iterator;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-
-
-
-
 public class GakoHitzZerrenda {
 
 	// atributuak
@@ -27,13 +21,6 @@ public class GakoHitzZerrenda {
 	}
 	
 	// gainontzeko metodoak
-	
-	
-	/*private Iterator<Hitza> getIteradorea()
-	{
-		return this.ghZerrenda.iterator();
-	}*/
-	
 	
 	public static GakoHitzZerrenda getNireGakoHitzZerrenda() {
 		if(nireGakoHitzZerrenda == null){
@@ -62,11 +49,6 @@ public class GakoHitzZerrenda {
 				Hitza h = new Hitza(fila);
 				//this.ghZerrenda.add(h); 
 				this.gakoMapa.put(h.getKatea(), h);
-				
-				// Comento esto porque si leemos los ficheros en el orden que los leemos
-				// peta
-//				h.beteWebLista(h.getKatea());
-//				WebZerrenda.getNireWebZerrenda();
 			}
 		}catch(Exception e){
 	        e.printStackTrace();

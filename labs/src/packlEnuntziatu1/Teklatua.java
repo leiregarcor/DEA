@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Teklatua {
 
 	// atributuak
-
 	private static Teklatua nireTeklatua = null;
 	private Scanner sc;
 	
@@ -43,7 +42,4 @@ public class Teklatua {
 		String mezua=this.sc.nextLine();		
 		return mezua;
 	}
-	
-
-	
 }
