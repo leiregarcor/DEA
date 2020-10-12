@@ -37,6 +37,7 @@ public class WebZerrendaTest {
 		} catch (FileNotFoundException e) {
 			System.out.println("webIndexFitxeroa ez da sartu");
 		}
+		System.out.println("testIndexFitxeroaKargatu");
 	}
 
 	@Test
@@ -46,27 +47,32 @@ public class WebZerrendaTest {
 		} catch (FileNotFoundException e) {
 			System.out.println("webEstekaFitxeroa ez da sartu");
 		}
-
+		System.out.println("testArcFitxeroaKargatu");
 	}
 
 	@Test
 	public void testBilatuUrl() {
-		fail("Not yet implemented");
+		//HASIERAN 0-00.pl 0
+		//ERDIAN
+		//BUKAERAN
 	}
 
 	@Test
 	public void testGehitu() {
-		fail("Not yet implemented");
+		//JADA DAGOEN WEB BAT SARTU
+		//EZ DAGOEN WEB BAT SARTU
 	}
 
 	@Test
 	public void testEzabatu() {
-		fail("Not yet implemented");
+		//EZABATU DAGOEN WEB BAT 
+		//EZ DAGOEN WEB BAT EZABATU
 	}
 
 	@Test
 	public void testListaOrdenatuta() {
-		fail("Not yet implemented");
+		wz.listaOrdenatuta();
+		System.out.println("testListaOrdenatuta");
 	}
 
 }
