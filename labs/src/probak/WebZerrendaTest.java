@@ -42,6 +42,7 @@ public class WebZerrendaTest {
 	@After
 	public void tearDown() throws Exception {
 		wz=null;
+		ghz= null;
 		webIndexFitxeroa = null;
 		webEstekaFitxeroa = null;
 		wordsFitxeroa = null;

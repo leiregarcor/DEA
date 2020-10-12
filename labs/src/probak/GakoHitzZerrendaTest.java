@@ -1,6 +1,5 @@
 package probak;
 
-
 import java.io.File;
 import java.io.FileNotFoundException;
 
@@ -12,7 +11,6 @@ import packlEnuntziatu1.GakoHitzZerrenda;
 
 public class GakoHitzZerrendaTest {
 	private static  GakoHitzZerrenda ghz;
-
 	private File wordsFitxeroa ;
 	
 	@Before
@@ -36,5 +34,4 @@ public class GakoHitzZerrendaTest {
 			System.out.println("wordsFitxeroa ez da sartu");
 		}
 	}
-
 }
