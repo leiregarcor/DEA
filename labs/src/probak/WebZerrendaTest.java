@@ -19,10 +19,7 @@ public class WebZerrendaTest {
 	private File wordsFitxeroa;
 	private File webIndexFitxeroa ;
 	private File webEstekaFitxeroa ;
-	
-	
-	
-	Web w;
+	private Web w;
 	
 	@Before
 	public void setUp() throws Exception {
