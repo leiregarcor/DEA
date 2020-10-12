@@ -21,8 +21,8 @@ public class WebZerrendaTest {
 	private File webEstekaFitxeroa ;
 	
 	
-	Web w;
 	
+	Web w;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -47,6 +47,10 @@ public class WebZerrendaTest {
 		wz=null;
 		webIndexFitxeroa = null;
 		webEstekaFitxeroa = null;
+		wordsFitxeroa = null;
+		w = null;
+		
+		
 	}
 
 	@Test
