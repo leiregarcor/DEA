@@ -96,7 +96,7 @@ public class WebZerrendaTest {
 	public void testEzabatu() {
 		//EZABATU DAGOEN WEB BAT
 		fail();
-		//EZ DAGOEN WEB BAT EZABATU
+		//EZ DAGOEN WEB BAT EZABATUU
 	}
 
 	@Test
