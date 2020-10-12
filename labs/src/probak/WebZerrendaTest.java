@@ -91,13 +91,16 @@ public class WebZerrendaTest {
 //		w = new Web(2039807, "bilbokoudala.com");
 //		wz.gehitu(w);
 		
+		// Biak berdin tardatuko dute zeren eta hash mapean denbora konstantea.
+		
 	}
 
 	@Test
 	public void testEzabatu() {
 		//EZABATU DAGOEN WEB BAT
-		fail();
-		//EZ DAGOEN WEB BAT EZABATUU
+		//EZ DAGOEN WEB BAT EZABATU
+		// biak berdina O(1) kostua daukate:
+		wz.ezabatu("auto-business-shop.de");
 	}
 
 	@Test
