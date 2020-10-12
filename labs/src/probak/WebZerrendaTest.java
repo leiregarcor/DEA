@@ -9,18 +9,37 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import packlEnuntziatu1.GakoHitzZerrenda;
+import packlEnuntziatu1.Web;
 import packlEnuntziatu1.WebZerrenda;
 
 public class WebZerrendaTest {
 	private static WebZerrenda wz;
+	private static GakoHitzZerrenda ghz;
+	private File wordsFitxeroa;
 	private File webIndexFitxeroa ;
 	private File webEstekaFitxeroa ;
+	
+	
+	Web w;
+	
+	
 	@Before
 	public void setUp() throws Exception {
 		wz= WebZerrenda.getNireWebZerrenda();
+		ghz = GakoHitzZerrenda.getNireGakoHitzZerrenda();
 				
 	    webIndexFitxeroa = new File ("resources\\index.txt");
 	    webEstekaFitxeroa = new File ("resources\\pld-arcs-1-N.txt");
+	    wordsFitxeroa = new File ("resources\\words.txt");
+	    
+	    ghz.fitxeroaKargatu(wordsFitxeroa);
+	    wz.indexFitxeroaKargatu(webIndexFitxeroa);
+		wz.arcFitxeroaKargatu(webEstekaFitxeroa);
+		
+		
+		
+
 	}
 
 	@After
@@ -56,17 +75,27 @@ public class WebZerrendaTest {
 		//ERDIAN
 		//BUKAERAN
 		//EZ DAGO
+		
+		// Lau kasuetan berdina emango du. HashMapean bilaketa O(1) kostua duelako.
+		wz.bilatuUrl("0-00.pl"); // Hau lehenengo url-a da
+		
 	}
 
 	@Test
 	public void testGehitu() {
 		//JADA DAGOEN WEB BAT SARTU
+		w = new Web(0, "0-00.pl");
+		wz.gehitu(w);
 		//EZ DAGOEN WEB BAT SARTU
+//		w = new Web(2039807, "bilbokoudala.com");
+//		wz.gehitu(w);
+		
 	}
 
 	@Test
 	public void testEzabatu() {
-		//EZABATU DAGOEN WEB BAT 
+		//EZABATU DAGOEN WEB BAT
+		fail();
 		//EZ DAGOEN WEB BAT EZABATU
 	}
 
