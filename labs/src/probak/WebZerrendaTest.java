@@ -55,6 +55,7 @@ public class WebZerrendaTest {
 		//HASIERAN 0-00.pl 0
 		//ERDIAN
 		//BUKAERAN
+		//EZ DAGO
 	}
 
 	@Test
