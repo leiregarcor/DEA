@@ -17,19 +17,26 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 			berria.next=last.next;
 			last.next=berria;
 		}
+		count++;
 	}
 
 	public void addToRear(T elem) {
 		Node<T> berria= new Node<T>(elem);
-		berria.next=last.next;
-		last.next=berria;
-		last=berria;
+		if(isEmpty()) {
+			last=berria;
+			berria.next=berria;
+		}else {
+			berria.next=last.next;
+			last.next=berria;
+			last=berria;
+		}
+		count++;
 	}
 
 	public void addAfter(T elem, T target) {
 		Node<T> berria= new Node<T>(elem);
 		Node<T> unekoa= last;
-		while(unekoa.next!=last) {
+		do{
 			if(unekoa.elem.equals(target)) {
 				if(unekoa==last) {
 					addToRear(elem);
@@ -39,11 +46,11 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 				}
 				
 			}
-		}
-		if(last.elem.equals(target)) {
-			addToRear(elem);
-		}
-		
+			else {
+			unekoa=unekoa.next;
+			}
+		}while(unekoa.next!=last);
+		count++;
 	}
 
 }

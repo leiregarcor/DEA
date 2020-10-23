@@ -60,7 +60,7 @@ public class CircularLinkedList<T> implements ListADT<T>{
 		if(unekoa==null) {
 			return null;
 		}
-		while(!aurk&& aurrekoa==last) {
+		while(!aurk&& aurrekoa!=last) {
 			if(unekoa.elem.equals(elem)) {
 				if(unekoa==last) {
 					removeLast();
@@ -117,20 +117,7 @@ public class CircularLinkedList<T> implements ListADT<T>{
 		return(last==null);
 	}
 	public int size() {
-		boolean pasata=false;
-		int ema=0;
-		Node<T> unekoa=last;
-		if(last==null) {
-			return ema;
-		}
-		while(!pasata) {
-			ema++;
-			unekoa=unekoa.next;
-			if(unekoa==last) {
-				pasata=true;
-			}
-		}
-		return ema;
+		return count;
 	}
 	public Iterator<T> iterator(){
 		return new ListIterator();
