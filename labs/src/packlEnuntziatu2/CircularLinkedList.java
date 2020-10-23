@@ -30,18 +30,26 @@ public class CircularLinkedList<T> implements ListADT<T>{
 	}
 	public T removeFirst()
 	{
+		if(last==null) {
+			return null;
+		}
 		Node<T> unekoa= last.next;
 		last.next=unekoa.next;
+		count--;
 		return unekoa.elem;
 	}
 	public T removeLast() {
 		Node<T> unekoa=last;
-		while(!unekoa.next.equals(last)) {
+		if(unekoa==null) {
+			return null;
+		}
+		while(unekoa.next!=last) {
 			unekoa=unekoa.next;
 		}
 		last=unekoa;
 		unekoa=unekoa.next;
 		last.next=unekoa.next;
+		count--;
 		return unekoa.elem;
 		
 	}
@@ -68,8 +76,10 @@ public class CircularLinkedList<T> implements ListADT<T>{
 		}
 		if(!aurk) {
 			return null;
+		}else {
+			count--;
+			return unekoa.elem;
 		}
-		return unekoa.elem;
 	}
 	public T first() {
 		Node<T> unekoa=last;
