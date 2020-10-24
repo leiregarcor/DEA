@@ -1,4 +1,4 @@
-package probak;
+package packlEnuntziatu1;
 
 import org.junit.After;
 import org.junit.Before;
@@ -6,9 +6,9 @@ import org.junit.Test;
 
 //import static org.junit.Assert.*;
 
-import packlEnuntziatu1.GakoHitzZerrenda;
-import packlEnuntziatu1.Hitza;
-import packlEnuntziatu1.WebZerrenda;
+//import packlEnuntziatu1.GakoHitzZerrenda;
+//import packlEnuntziatu1.Hitza;
+//import packlEnuntziatu1.WebZerrenda;
 
 import java.io.File;
 
