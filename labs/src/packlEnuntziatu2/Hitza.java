@@ -38,11 +38,26 @@ public class Hitza {
 	
 	public void gakoWebInprimatu() {
 		System.out.println(" ");
-		Iterator<Web> itr= this.getIteradorea();
-		Web w=null;
-		while(itr.hasNext()) {
-			w=itr.next();
-			System.out.println( w.getId() +" "+ w.getUrlWeb());						
+
+		Node<Web> lag=null;
+		boolean lehena=true;
+		if (wLista.last !=null){
+			while (lag!= wLista.last.next){
+				if (lehena){
+					lehena=false;
+					lag=wLista.last.next;
+				}
+				System.out.println("");
+				lag.elem.webInprimatu();
+				System.out.println("");
+				lag=lag.next;
+
+			}
 		}
+		else{
+			System.out.println(" Ezin da imprimatu, lista hutsa baita.");
+		}
+
+
 	}
 }
