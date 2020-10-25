@@ -123,11 +123,17 @@ public class CircularLinkedList<T> implements ListADT<T>{
 		return new ListIterator();
 	}
 	private class ListIterator implements Iterator<T>{
-		Node<T> aux=last;
+		private Node<T> aux=last;
+		boolean lehena=false;
 		public boolean hasNext() {
-			if(aux==null) {
+			if(isEmpty()) {
 				return false;
-			}else {
+			}
+			else if (aux.equals(last) && lehena ){
+				return false;
+			}
+			else {
+				lehena=true;
 				return true;
 			}
 		}

@@ -31,7 +31,8 @@ public class Hitza {
 	private Iterator<Web> getIteradorea(){
 		return this.wLista.iterator();
 	}
-	
+
+
 	public void gehituWebBat(Web pWeb){
 		this.wLista.addToRear(pWeb);
 	}
@@ -57,7 +58,17 @@ public class Hitza {
 		else{
 			System.out.println(" Ezin da imprimatu, lista hutsa baita.");
 		}
+	}
 
+	public void gakoWebInprimatu2() {
+		System.out.println(" ");
+		Iterator<Web> itr= this.getIteradorea();
+		Web w=null;
+		while(itr.hasNext()) {
+			w=itr.next();
+			w.webInprimatu();
+
+		}
 
 	}
 }
