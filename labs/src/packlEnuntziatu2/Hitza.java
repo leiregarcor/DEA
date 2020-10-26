@@ -65,9 +65,11 @@ public class Hitza {
 		Iterator<Web> itr= this.getIteradorea();
 		Web w=null;
 		while(itr.hasNext()) {
-			w=itr.next();
-			w.webInprimatu();
-
+			if (w!=null)
+			{
+				w=itr.next();
+				w.webInprimatu();
+			}
 		}
 
 	}
