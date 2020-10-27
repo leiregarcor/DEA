@@ -55,7 +55,7 @@ public class CircularLinkedList<T> implements ListADT<T>{
 	}
 	public T remove(T elem) {
 		boolean aurk=false;
-		Node<T> unekoa=last;
+		Node<T> unekoa=last.next;
 		Node<T> aurrekoa=null;
 		if(unekoa==null) {
 			return null;
