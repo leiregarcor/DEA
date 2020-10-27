@@ -139,13 +139,13 @@ public class CircularLinkedList<T> implements ListADT<T>{
 		}
 
 		public T next() {
-			if(!hasNext()) {
-				return null;
-			}else {
+			//if(!hasNext()) {
+			//	return null;
+			//}else {
 				T ema=aux.elem;
 				aux=aux.next;
 				return ema;
-			}
+			//}
 		}
 		
 	}
