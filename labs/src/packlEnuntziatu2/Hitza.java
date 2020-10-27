@@ -37,7 +37,7 @@ public class Hitza {
 		this.wLista.addToRear(pWeb);
 	}
 	
-	public void gakoWebInprimatu() {
+/*	public void gakoWebInprimatu() {
 		//este es usando punteros, abría que eliminarlo y quedarnos con el del iterador
 		System.out.println(" ");
 
@@ -59,10 +59,10 @@ public class Hitza {
 		else{
 			System.out.println(" Ezin da imprimatu, lista hutsa baita.");
 		}
-	}
+	}*/
 
-	public void gakoWebInprimatu2() {
-		//este es con iterador, deberíamos eliminiar el otor
+	public void gakoWebInprimatu() {
+
 		System.out.println(" ");
 		Iterator<Web> itr= this.getIteradorea();
 		Web w=null;

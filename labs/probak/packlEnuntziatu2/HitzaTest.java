@@ -38,9 +38,5 @@ public class HitzaTest {
         h.gakoWebInprimatu();
     }
 
-    @Test
-    public void TestGakoWebInprimatu2() {
-        System.out.println(" TestGakoWebInprimatu2 ");
-        h.gakoWebInprimatu2();
-    }
+
 }
