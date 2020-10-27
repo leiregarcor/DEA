@@ -38,6 +38,7 @@ public class Hitza {
 	}
 	
 	public void gakoWebInprimatu() {
+		//este es usando punteros, abría que eliminarlo y quedarnos con el del iterador
 		System.out.println(" ");
 
 		Node<Web> lag=null;
@@ -61,12 +62,13 @@ public class Hitza {
 	}
 
 	public void gakoWebInprimatu2() {
+		//este es con iterador, deberíamos eliminiar el otor
 		System.out.println(" ");
 		Iterator<Web> itr= this.getIteradorea();
 		Web w=null;
 		while(itr.hasNext()) {
 			w=itr.next();
-			System.out.println(w.getId() + w.getUrlWeb());
+			w.webInprimatu();
 
 		}
 
