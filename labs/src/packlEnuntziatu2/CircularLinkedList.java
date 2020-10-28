@@ -3,9 +3,9 @@ package packlEnuntziatu2;
 import java.util.Iterator;
 
 public class CircularLinkedList<T> implements ListADT<T>{
-	public Node<T> last;
-	public String deskr;
-	public int count;
+	protected Node<T> last;
+	protected String deskr;
+	protected int count;
 	
 	
 	
@@ -124,7 +124,7 @@ public class CircularLinkedList<T> implements ListADT<T>{
 	}
 	private class ListIterator implements Iterator<T>{
 		private Node<T> aux=last;
-		boolean lehena=false;
+		private boolean lehena=false;
 		public boolean hasNext() {
 			if(isEmpty()) {
 				return false;
