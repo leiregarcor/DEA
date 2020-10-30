@@ -139,14 +139,6 @@ public class CircularLinkedList<T> implements ListADT<T>{
 		}
 
 		public T next() {
-			//if(!hasNext()) {
-			//	return null;
-			//}else {
-			//el orden es así para que apunte al primer elemento de la lista, porque al principio está apuntando a last
-				aux=aux.next;
-				//T ema=aux.elem;
-				//return ema;
-			//}
 			return aux.elem;
 		}
 		
