@@ -1,10 +1,6 @@
 package packlEnuntziatu2;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import packlEnuntziatu1.Web;
-import packlEnuntziatu1.WebZerrenda;
+import java.util.Iterator;
 
 public class Hitza {
 	// atributuak
@@ -27,7 +23,6 @@ public class Hitza {
 	}
 	
 	// metodoak
-	
 	private Iterator<Web> getIteradorea(){
 		return this.wLista.iterator();
 	}
@@ -36,41 +31,14 @@ public class Hitza {
 	public void gehituWebBat(Web pWeb){
 		this.wLista.addToRear(pWeb);
 	}
-	
-/*	public void gakoWebInprimatu() {
-		//este es usando punteros, abría que eliminarlo y quedarnos con el del iterador
-		System.out.println(" ");
-
-		Node<Web> lag=null;
-		boolean lehena=true;
-		if (wLista.last !=null){
-			while (lag!= wLista.last.next){
-				if (lehena){
-					lehena=false;
-					lag=wLista.last.next;
-				}
-				System.out.println("");
-				lag.elem.webInprimatu();
-				System.out.println("");
-				lag=lag.next;
-
-			}
-		}
-		else{
-			System.out.println(" Ezin da imprimatu, lista hutsa baita.");
-		}
-	}*/
 
 	public void gakoWebInprimatu() {
-
 		System.out.println(" ");
 		Iterator<Web> itr= this.getIteradorea();
 		Web w=null;
 		while(itr.hasNext()) {
 			w=itr.next();
 			w.webInprimatu();
-
 		}
-
 	}
 }

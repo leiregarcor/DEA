@@ -7,11 +7,11 @@
     <node x="201.0" y="138.0">packlEnuntziatu2.Node</node>
     <node x="629.5" y="51.0">packlEnuntziatu2.Hitza</node>
     <node x="406.0" y="904.0">packlEnuntziatu2.CircularLinkedList.ListIterator</node>
-    <node x="599.0" y="904.0">packlEnuntziatu2.UnorderedCircularLinkedList</node>
     <node x="0.0" y="582.0">packlEnuntziatu2.OrderedListADT</node>
+    <node x="599.0" y="904.0">packlEnuntziatu2.UnorderedCircularLinkedList</node>
     <node x="383.5" y="399.0">packlEnuntziatu2.CircularLinkedList</node>
-    <node x="717.5" y="569.0">packlEnuntziatu2.UnorderedListADT</node>
     <node x="88.0" y="917.0">packlEnuntziatu2.OrderedCircularLinkedList</node>
+    <node x="717.5" y="569.0">packlEnuntziatu2.UnorderedListADT</node>
   </nodes>
   <notes />
   <edges>
@@ -56,15 +56,15 @@
       <point x="72.66666666666669" y="227.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="546.5" y="928.0" />
+  <settings layout="Hierarchic Group" zoom="0.8339587242026266" x="501.0" y="523.0" />
   <SelectedNodes>
     <node>packlEnuntziatu2.Node</node>
   </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
     <Category>Constructors</Category>
-    <Category>Inner Classes</Category>
     <Category>Methods</Category>
+    <Category>Inner Classes</Category>
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>

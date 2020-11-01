@@ -1,11 +1,8 @@
 package packlEnuntziatu2;
-
 public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implements UnorderedListADT<T> {
 
-	public UnorderedCircularLinkedList(String pDeskr)
-	{
+	public UnorderedCircularLinkedList(String pDeskr){
 		super(pDeskr);
-		
 	}
 
 	public void addToFront(T elem) {
@@ -44,7 +41,6 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 					berria.next=unekoa.next;
 					unekoa.next=berria;
 				}
-				
 			}
 			else {
 			unekoa=unekoa.next;
@@ -52,5 +48,4 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 		}while(unekoa.next!=last);
 		count++;
 	}
-
 }
