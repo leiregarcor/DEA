@@ -262,10 +262,12 @@ public class WebZerrenda {
 		quickSort(zerrenda,0,zerrenda.length-1);
 		return zerrenda;
 	}
-	
-		
-	
-	
+
+	public ArrayList<Web> hashMapaBihurtu (){
+		Collection c =  this.webMapa.values();
+		ArrayList<Web> l = (ArrayList<Web>) c;
+		return l;
+	}
 	// Metodos para probar a ver si funciona.
 	
 	
