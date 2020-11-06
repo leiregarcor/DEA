@@ -1,14 +1,8 @@
 package packlEnuntziatu3;
 
-import packlEnuntziatu1.GakoHitzZerrenda;
-import packlEnuntziatu1.Hitza;
 import packlEnuntziatu1.Web;
 import packlEnuntziatu1.WebZerrenda;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -16,13 +10,19 @@ import java.util.Queue;
 
 public class Graph {
 	
-      HashMap<String, Integer> th;
+      HashMap<String, Integer> th; //HashMap sortu behar dugu non Key = url eta Value = indizea
       String[] keys;
       ArrayList<Integer>[] adjList;
 
-      public void thBete ()
-	  {
 
+	public void thBete (WebZerrenda lista){
+		  ArrayList<Web> l = WebZerrenda.getNireWebZerrenda().hashMapaBihurtu();
+		  this.th = new HashMap<>();
+		  int i =0;
+		  for (Web w :l){
+		  	this.th.put(w.getUrlWeb(),i);
+		  	i++;
+		  }
 	  }
 
 	  public void grafoaSortu(WebZerrenda lista){
@@ -33,9 +33,7 @@ public class Graph {
 		
             // 1. pausua:  “th” bete
             // KODEA INPLEMENTATU
-
-
-
+		  this.thBete(lista);
 
             // 2. pausua: “keys” bete
 		keys = new String[th.size()];

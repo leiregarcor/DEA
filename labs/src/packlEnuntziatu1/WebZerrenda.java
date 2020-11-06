@@ -264,6 +264,7 @@ public class WebZerrenda {
 	}
 
 	public ArrayList<Web> hashMapaBihurtu (){
+		//fitxeroaEguneratu() metodoan berdinba egiten dugu beste era batean eta ez du errorerik ematen
 		Collection c =  this.webMapa.values();
 		ArrayList<Web> l = (ArrayList<Web>) c;
 		return l;
