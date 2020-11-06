@@ -1,5 +1,12 @@
 package packlEnuntziatu3;
 
+import packlEnuntziatu1.WebZerrenda;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Graph {
 	
       HashMap<String, Integer> th;
