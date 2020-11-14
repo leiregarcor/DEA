@@ -31,7 +31,6 @@ public class Graph {
 
 		
             // 1. pausua:  “th” bete
-            // KODEA INPLEMENTATU
 		  this.thBete(lista);
 
             // 2. pausua: “keys” bete
@@ -39,9 +38,21 @@ public class Graph {
 		for (String k: th.keySet()) keys[th.get(k)] = k;
 
  	    // 3. pausua: “adjList” bete
-            // KODEA INPLEMENTATU           
 		  adjList = new ArrayList[keys.length];
-      }
+		  Web w= null;
+		  ArrayList<Web> aux = new ArrayList<>();
+		  int kont=0;
+		  for(String s: keys){
+		  	w = lista.bilatuUrl(s);
+		  	aux = w.getEstekenZerrenda();
+		  	ArrayList<Integer> berria = new ArrayList<>();
+		  	for(Web w1 : aux){
+				berria.add(th.get(w1.getUrlWeb()));
+		  	}
+		  	adjList[kont]=berria;
+		  	kont++;
+		  }
+	}
 	
       public void print(){
 	   for (int i = 0; i < adjList.length; i++){
