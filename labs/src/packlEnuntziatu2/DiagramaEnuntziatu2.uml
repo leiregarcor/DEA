@@ -10,8 +10,8 @@
     <node x="0.0" y="582.0">packlEnuntziatu2.OrderedListADT</node>
     <node x="599.0" y="904.0">packlEnuntziatu2.UnorderedCircularLinkedList</node>
     <node x="383.5" y="399.0">packlEnuntziatu2.CircularLinkedList</node>
-    <node x="88.0" y="917.0">packlEnuntziatu2.OrderedCircularLinkedList</node>
     <node x="717.5" y="569.0">packlEnuntziatu2.UnorderedListADT</node>
+    <node x="88.0" y="917.0">packlEnuntziatu2.OrderedCircularLinkedList</node>
   </nodes>
   <notes />
   <edges>

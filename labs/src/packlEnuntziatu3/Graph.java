@@ -29,7 +29,6 @@ public class Graph {
 		// Post: web-en zerrendatik grafoa sortu
 		//       Nodoak web-en url-ak dira
 
-
 		
             // 1. pausua:  “th” bete
             // KODEA INPLEMENTATU
@@ -41,7 +40,7 @@ public class Graph {
 
  	    // 3. pausua: “adjList” bete
             // KODEA INPLEMENTATU           
-           
+		  adjList = new ArrayList[keys.length];
       }
 	
       public void print(){
