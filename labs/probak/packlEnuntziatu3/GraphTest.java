@@ -6,18 +6,54 @@ import org.junit.Test;
 import packlEnuntziatu1.Web;
 import packlEnuntziatu1.WebZerrenda;
 
-import static org.junit.Assert.*;
-
 public class GraphTest {
     private WebZerrenda wz;
-    private Web w1, w2, w3;
+    private Web w1, w2, w3, w4, w5, w6, w0;
+    private Graph g;
+
     @Before
     public void setUp() throws Exception {
+        //hasieraketak
         wz= WebZerrenda.getNireWebZerrenda();
 
-        w1= new Web(0, "a.com");
-        w2= new Web(1, "b.com");
-        w3= new Web(2, "c.com");
+        w0= new Web(0, "a.com");
+        w1= new Web(1, "b.com");
+        w2= new Web(2, "c.com");
+        w3= new Web(3, "d.com");
+        w4= new Web(4, "e.com");
+        w5= new Web(5, "f.com");
+        w6= new Web(6, "g.com");
+
+        //web-en esteken zerrendak bete:
+            //a norekin lotuta
+        w0.getEstekenZerrenda().add(w1); //b
+        w0.getEstekenZerrenda().add(w2); //c
+        w0.getEstekenZerrenda().add(w4); //e
+            //b norekin lotuta
+        w1.getEstekenZerrenda().add(w3);//d
+            //c norekin lotuta
+        w2.getEstekenZerrenda().add(w0);//a
+            //d norekin lotuta
+        w3.getEstekenZerrenda().add(w5);//f
+            //e norekin lotuta
+        w4.getEstekenZerrenda().add(w3);//d
+        w4.getEstekenZerrenda().add(w6);//g
+            //f norekin lotuta
+        w5.getEstekenZerrenda().add(w6);//g
+            //g norekin lotuta
+        w6.getEstekenZerrenda().add(w5);//f
+
+        //web-ak webZerrendan sartu
+        wz.gehitu(w0);
+        wz.gehitu(w1);
+        wz.gehitu(w2);
+        wz.gehitu(w3);
+        wz.gehitu(w4);
+        wz.gehitu(w5);
+        wz.gehitu(w6);
+
+        g = new Graph();
+        g.grafoaSortu(wz);
     }
 
     @After
@@ -27,10 +63,23 @@ public class GraphTest {
         w1= null;
         w2= null;
         w3= null;
+        w4= null;
+        w5= null;
+        w6= null;
+        w0= null;
+
+        g= null;
     }
 
     @Test
     public void TestErlazionatuta() {
-        System.out.println(" TestGakoWebInprimatu ");
+        System.out.println(" TestErlazionatuta ");
+        boolean ema=false;
+
+        g.print();
+
+        System.out.println(" "+w0.getUrlWeb() +" "+w1.getUrlWeb()+"-rekin:    EMAITZA: true ");
+        g.erlazionatuta(w0.getUrlWeb(), w1.getUrlWeb());
+        System.out.println(ema);
     }
 }
