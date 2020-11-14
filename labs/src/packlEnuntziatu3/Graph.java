@@ -28,7 +28,6 @@ public class Graph {
 	  public void grafoaSortu(WebZerrenda lista){
 		// Post: web-en zerrendatik grafoa sortu
 		//       Nodoak web-en url-ak dira
-
 		
             // 1. pausua:  “th” bete
 		  this.thBete(lista);
@@ -71,9 +70,27 @@ public class Graph {
 		boolean aurkitua = false;
 		boolean[] aztertuak = new boolean[th.size()];
 
-                 // KODEA INPLEMENTATU    
-		
+		aztertuGabeak.add(pos1); //aztertuGabeen ilararen bukaeran sartu
+		aztertuak[pos1]= true; //aztertuen array-an true jarri
+		if (pos1 == pos2) aurkitua = true;
+		int unekoa= pos1;
+		ArrayList<Integer> lag = null;
+		while(!aurkitua || !aztertuGabeak.isEmpty()){
+			//aurkitu ez dugun bitartean edo pila hutsa den bitartean loop-ean sartu
+			unekoa= aztertuGabeak.remove();
+			lag = adjList[unekoa]; //aztertzen ari garen nodoaren  bizilagunak lortu ditugu
+			//aztertuak arrayan true sartuko dugu nodoen indizeetan, baita aztertu gabeen ilaran sartu ere:
+			for (int biziLag : lag){
+				//bidean jarri ze nodotik heldu garen
+				if (!aztertuak[biziLag]) {//ez bada tratatua izan
+					aztertuak[biziLag] = true;
+					aztertuGabeak.add(biziLag);
+				}
+				if(biziLag==pos2){ //amaierako nodoa unekoaren bizilagunen bat bada, aurkitua true eta loop-a amaitu
+					aurkitua= true;
+				}
+			}
+		}
 		return aurkitua;
-
 	}
 }
