@@ -263,11 +263,11 @@ public class WebZerrenda {
 		return zerrenda;
 	}
 
-	public ArrayList<Web> hashMapaBihurtu (){
+	/*public ArrayList<Web> hashMapaBihurtu (){
 		Collection<Web> c= this.webMapa.values();
 		ArrayList<Web> l= new ArrayList<>(c);
 		return l;
-	}
+	}*/
 	// Metodos para probar a ver si funciona.
 	
 	
@@ -279,5 +279,8 @@ public class WebZerrenda {
 	public int getHSize(){								
 		return this.webMapa.size();
 	}
-	
+
+	public HashMap<String, Web>  getHM(){
+		return this.webMapa;
+	}
 }

@@ -16,10 +16,11 @@ public class Graph {
 
 
 	public void thBete (WebZerrenda lista){
-		  ArrayList<Web> l = WebZerrenda.getNireWebZerrenda().hashMapaBihurtu();
-		  this.th = new HashMap<>();
-		  int i =0;
-		  for (Web w :l){
+		Collection<Web> c= lista.getHM().values();
+		ArrayList<Web> l= new ArrayList<>(c);
+		this.th = new HashMap<>();
+		int i =0;
+		for (Web w :l){
 		  	this.th.put(w.getUrlWeb(),i);
 		  	i++;
 		  }

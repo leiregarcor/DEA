@@ -78,7 +78,7 @@ public class GraphTest {
         System.out.println("  ");
         System.out.println("  ");
         System.out.println(" TestErlazionatuta ");
-        boolean ema=false;
+        boolean ema;
         System.out.println("  ");
         System.out.println("  ");
         g.print();
@@ -134,7 +134,7 @@ public class GraphTest {
 
     @Test
     public void Test1ErlazionatutaBidea() {
-        ArrayList<String> ema= null;
+        ArrayList<String> ema;
 
         System.out.println(" TestErlazionatutaBidea ");
         System.out.println("  ");
@@ -156,7 +156,7 @@ public class GraphTest {
 
         System.out.println("  ");
         System.out.println("  ");
-        System.out.println(" "+w4.getUrlWeb() +" "+w0.getUrlWeb()+"-rekin:    EMAITZA: true ");
+        System.out.println(" "+w4.getUrlWeb() +" "+w0.getUrlWeb()+"-rekin:    EMAITZA: false ");
         ema=g.erlazionatutaBidea(w4.getUrlWeb(), w0.getUrlWeb());
         if(ema.size()==0){
             System.out.println(" null da");
