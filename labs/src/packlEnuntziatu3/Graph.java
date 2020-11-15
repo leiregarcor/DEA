@@ -146,6 +146,9 @@ public class Graph {
 				}
 			}
 		}
+		else{
+			System.out.println("  Ez dago biderik");
+		}
 		return ema;
 	}
 

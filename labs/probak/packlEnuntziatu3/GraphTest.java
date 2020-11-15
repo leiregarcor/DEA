@@ -6,6 +6,8 @@ import org.junit.Test;
 import packlEnuntziatu1.Web;
 import packlEnuntziatu1.WebZerrenda;
 
+import java.util.ArrayList;
+
 public class GraphTest {
     private WebZerrenda wz;
     private Web w1, w2, w3, w4, w5, w6, w0;
@@ -72,7 +74,7 @@ public class GraphTest {
     }
 
     @Test
-    public void TestErlazionatuta() {
+    public void Test2Erlazionatuta() {
         System.out.println("  ");
         System.out.println("  ");
         System.out.println(" TestErlazionatuta ");
@@ -131,9 +133,35 @@ public class GraphTest {
     }
 
     @Test
-    public void TestErlazionatutaBidea() {
+    public void Test1ErlazionatutaBidea() {
+        ArrayList<String> ema= null;
 
+        System.out.println(" TestErlazionatutaBidea ");
+        System.out.println("  ");
+        System.out.println("  ");
 
+        System.out.println(" "+w1.getUrlWeb() +" "+w5.getUrlWeb()+"-rekin:    EMAITZA: true ");
+        ema=g.erlazionatutaBidea(w1.getUrlWeb(), w5.getUrlWeb());
+        for(String s : ema){
+            System.out.println(" "+s);
+        }
 
+        System.out.println("  ");
+        System.out.println("  ");
+        System.out.println(" "+w0.getUrlWeb() +" "+w0.getUrlWeb()+"-rekin:    EMAITZA: true ");
+        ema=g.erlazionatutaBidea(w0.getUrlWeb(), w0.getUrlWeb());
+        for(String s : ema){
+            System.out.println(" "+s);
+        }
+
+        System.out.println("  ");
+        System.out.println("  ");
+        System.out.println(" "+w4.getUrlWeb() +" "+w0.getUrlWeb()+"-rekin:    EMAITZA: true ");
+        ema=g.erlazionatutaBidea(w4.getUrlWeb(), w0.getUrlWeb());
+        if(ema.size()==0){
+            System.out.println(" null da");
+        }
+        System.out.println("  ");
+        System.out.println("  ");
     }
 }
