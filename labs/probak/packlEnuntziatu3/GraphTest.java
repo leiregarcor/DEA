@@ -73,13 +73,67 @@ public class GraphTest {
 
     @Test
     public void TestErlazionatuta() {
+        System.out.println("  ");
+        System.out.println("  ");
         System.out.println(" TestErlazionatuta ");
         boolean ema=false;
-
+        System.out.println("  ");
+        System.out.println("  ");
         g.print();
+        System.out.println("  ");
+        System.out.println("  ");
 
-        System.out.println(" "+w0.getUrlWeb() +" "+w1.getUrlWeb()+"-rekin:    EMAITZA: true ");
-        g.erlazionatuta(w0.getUrlWeb(), w1.getUrlWeb());
+        System.out.println(" "+w0.getUrlWeb() +" "+w0.getUrlWeb()+"-rekin:    EMAITZA: true ");
+        ema=g.erlazionatuta(w0.getUrlWeb(), w0.getUrlWeb());
         System.out.println(ema);
+
+        System.out.println("  ");
+        System.out.println("  ");
+
+        System.out.println(" "+w0.getUrlWeb() +" "+w4.getUrlWeb()+"-rekin:    EMAITZA: true ");
+        ema=g.erlazionatuta(w0.getUrlWeb(), w4.getUrlWeb());
+        System.out.println(ema);
+
+        System.out.println("  ");
+        System.out.println("  ");
+
+        System.out.println(" "+w0.getUrlWeb() +" "+w5.getUrlWeb()+"-rekin:    EMAITZA: true ");
+        ema=g.erlazionatuta(w0.getUrlWeb(), w5.getUrlWeb());
+        System.out.println(ema);
+
+        System.out.println("  ");
+        System.out.println("  ");
+
+        System.out.println(" "+w1.getUrlWeb() +" "+w5.getUrlWeb()+"-rekin:    EMAITZA: true ");
+        ema=g.erlazionatuta(w1.getUrlWeb(), w5.getUrlWeb());
+        System.out.println(ema);
+
+        System.out.println("  ");
+        System.out.println("  ");
+
+        System.out.println(" "+w2.getUrlWeb() +" "+w4.getUrlWeb()+"-rekin:    EMAITZA: true ");
+        ema=g.erlazionatuta(w2.getUrlWeb(), w4.getUrlWeb());
+        System.out.println(ema);
+
+        System.out.println("  ");
+        System.out.println("  ");
+
+       System.out.println(" "+w4.getUrlWeb() +" "+w2.getUrlWeb()+"-rekin:    EMAITZA: false ");
+       ema=g.erlazionatuta(w4.getUrlWeb(), w2.getUrlWeb());
+       System.out.println(ema);
+
+        System.out.println("  ");
+        System.out.println("  ");
+
+        System.out.println(" "+w5.getUrlWeb() +" "+w0.getUrlWeb()+"-rekin:    EMAITZA: false ");
+        ema=g.erlazionatuta(w5.getUrlWeb(), w0.getUrlWeb());
+        System.out.println(ema);
+    }
+
+    @Test
+    public void TestErlazionatutaBidea() {
+
+
+
     }
 }
