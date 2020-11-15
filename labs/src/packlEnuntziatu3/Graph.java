@@ -64,7 +64,7 @@ public class Graph {
       }
 	
 	public boolean erlazionatuta(String a1, String a2){
-		Queue<Integer> aztertuGabeak = new LinkedList<Integer>();
+		Queue<Integer> aztertuGabeak = new LinkedList<>();
 		int pos1 = th.get(a1);
 		int pos2 = th.get(a2);
 		boolean aurkitua = false;
@@ -96,7 +96,7 @@ public class Graph {
 
 	public  ArrayList<String> erlazionatutaBidea(String a1, String a2){
 		ArrayList<String> ema= new  ArrayList<String>();
-		Queue<Integer> aztertuGabeak = new LinkedList<Integer>();
+		Queue<Integer> aztertuGabeak = new LinkedList<>();
 		Integer[] bidea = new Integer[th.size()];
 		int pos1 = th.get(a1);
 		int pos2 = th.get(a2);
