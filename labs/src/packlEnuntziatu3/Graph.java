@@ -15,6 +15,8 @@ public class Graph {
 	}
 
 
+
+
 	public void thBete (WebZerrenda lista){
 		Collection<Web> c= lista.getHM().values();
 		ArrayList<Web> l= new ArrayList<>(c);
@@ -142,7 +144,9 @@ public class Graph {
 					oraingoa= bidea[oraingoa];
 					pila.push(keys[oraingoa]);
 				}
+				System.out.println(" Bidea hau da: ");
 				while(!pila.isEmpty()){
+					System.out.println(pila.peek());
 					ema.add(pila.pop());
 				}
 			}
@@ -153,5 +157,13 @@ public class Graph {
 		return ema;
 	}
 
+
+	public static void main(String[] args) {
+		WebZerrenda w = WebZerrenda.getNireWebZerrenda();
+		Graph g = new Graph();
+		g.grafoaSortu(w);
+		System.out.println(g.erlazionatuta(g.keys[10], g.keys[0]));
+
+	}
 
 }
