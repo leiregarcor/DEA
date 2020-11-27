@@ -5,6 +5,8 @@ import packlEnuntziatu1.WebZerrenda;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.*;
 
 public class Graph {
@@ -136,7 +138,7 @@ public class Graph {
 		if (aurkitua){
 			if(pos1==pos2){
 				ema.add(keys[pos1]);
-				System.out.println(" Hasierako eta amaierko nodoak berdinak dira ");
+				System.out.println("Hasierako eta amaierko nodoak berdinak dira ");
 			}
 			else{
 				Stack<String> pila= new Stack<String>();
@@ -146,7 +148,7 @@ public class Graph {
 					oraingoa= bidea[oraingoa];
 					pila.push(keys[oraingoa]);
 				}
-				System.out.println(" Bidea hau da: ");
+				System.out.println("Bidea hau da: ");
 				while(!pila.isEmpty()){
 					System.out.println(pila.peek());
 					ema.add(pila.pop());
@@ -154,9 +156,24 @@ public class Graph {
 			}
 		}
 		else{
-			System.out.println("  Ez dago biderik");
+			System.out.println("Ez dago biderik");
 		}
 		return ema;
+	}
+
+	public void xAldizDeitu(){
+		Random r= new Random();
+		int random1= 0;
+		int random2= 0;
+		long start = System.currentTimeMillis();
+		for (int i=0; i<100; i++){
+			random1= r.nextInt(keys.length-1);
+			random2= r.nextInt(keys.length-1);
+			erlazionatuta(keys[random1],keys[random2]);
+		}
+		long end = System.currentTimeMillis();
+		NumberFormat formatter = new DecimalFormat("#0.00000");
+		System.out.print("Execution time is " + formatter.format((end - start) / 1000d) + " seconds");
 	}
 
 
@@ -179,13 +196,27 @@ public class Graph {
 		}
 		Graph g = new Graph();
 		g.grafoaSortu(w);
-
+		System.out.println("Erlazionatuta");
 		System.out.println(g.erlazionatuta(g.keys[10], g.keys[0]));
+		System.out.println(" ");
+		System.out.println("Erlazionatuta bidea biderik gabe");
 		g.erlazionatutaBidea("0-5.co.il", g.keys[0]);
+		System.out.println(" ");
+		System.out.println("Erlazionatuta bidea bide zuzenarekin");
 		g.erlazionatutaBidea("0-chat.com", "0-deai.com");
+		System.out.println(" ");
+		System.out.println("Erlazionatuta bidea random");
 		g.erlazionatutaBidea(g.keys[20], g.keys[10]);
+		System.out.println(" ");
+		System.out.println("Erlazionatuta bidea nodo berarekin");
 		g.erlazionatutaBidea(g.keys[20],g.keys[20]);
-
+		System.out.println(" ");
+		System.out.println("Erlazionatuta bidea random");
+		g.erlazionatutaBidea(g.keys[234565], g.keys[17660]);
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println("Erlazionatuta 100 aldiz exekutatzeko behar duen denbora");
+		g.xAldizDeitu();
 	}
 
 }
