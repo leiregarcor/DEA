@@ -181,7 +181,10 @@ public class Graph {
 		g.grafoaSortu(w);
 
 		System.out.println(g.erlazionatuta(g.keys[10], g.keys[0]));
-		g.erlazionatutaBidea(g.keys[10], g.keys[0]);
+		g.erlazionatutaBidea("0-5.co.il", g.keys[0]);
+		g.erlazionatutaBidea("0-chat.com", "0-deai.com");
+		g.erlazionatutaBidea(g.keys[20], g.keys[10]);
+		g.erlazionatutaBidea(g.keys[20],g.keys[20]);
 
 	}
 
