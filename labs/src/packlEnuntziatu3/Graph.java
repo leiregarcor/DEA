@@ -3,6 +3,8 @@ package packlEnuntziatu3;
 import packlEnuntziatu1.Web;
 import packlEnuntziatu1.WebZerrenda;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Graph {
@@ -160,9 +162,26 @@ public class Graph {
 
 	public static void main(String[] args) {
 		WebZerrenda w = WebZerrenda.getNireWebZerrenda();
+
+		File webIndexFitxeroa = null;
+		File webEstekaFitxeroa = null;
+
+
+		webIndexFitxeroa = new File ("resources\\index.txt");
+		webEstekaFitxeroa = new File ("resources\\pld-arcs-1-N.txt");
+
+
+		try {
+			w.indexFitxeroaKargatu(webIndexFitxeroa);
+			w.arcFitxeroaKargatu(webEstekaFitxeroa);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 		Graph g = new Graph();
 		g.grafoaSortu(w);
+
 		System.out.println(g.erlazionatuta(g.keys[10], g.keys[0]));
+		g.erlazionatutaBidea(g.keys[10], g.keys[0]);
 
 	}
 
