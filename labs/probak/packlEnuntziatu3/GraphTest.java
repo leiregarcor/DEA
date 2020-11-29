@@ -1,5 +1,4 @@
 package packlEnuntziatu3;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,10 +11,8 @@ public class GraphTest {
     private Graph g;
 
     @Before
-    public void setUp() throws Exception {
-        //hasieraketak
+    public void setUp() throws Exception {  //hasieraketak
         wz= WebZerrenda.getNireWebZerrenda();
-
         w0= new Web(0, "a.com");
         w1= new Web(1, "b.com");
         w2= new Web(2, "c.com");
@@ -23,7 +20,6 @@ public class GraphTest {
         w4= new Web(4, "e.com");
         w5= new Web(5, "f.com");
         w6= new Web(6, "g.com");
-
         //web-en esteken zerrendak bete:
             //a norekin lotuta
         w0.getEstekenZerrenda().add(w1); //b
@@ -42,7 +38,6 @@ public class GraphTest {
         w5.getEstekenZerrenda().add(w6);//g
             //g norekin lotuta
         w6.getEstekenZerrenda().add(w5);//f
-
         //web-ak webZerrendan sartu
         wz.gehitu(w0);
         wz.gehitu(w1);
@@ -51,7 +46,7 @@ public class GraphTest {
         wz.gehitu(w4);
         wz.gehitu(w5);
         wz.gehitu(w6);
-
+        //grafoa
         g = new Graph();
         g.grafoaSortu(wz);
     }
@@ -59,7 +54,6 @@ public class GraphTest {
     @After
     public void tearDown() throws Exception {
         wz= null;
-
         w1= null;
         w2= null;
         w3= null;
@@ -67,7 +61,6 @@ public class GraphTest {
         w5= null;
         w6= null;
         w0= null;
-
         g= null;
     }
 
@@ -132,7 +125,6 @@ public class GraphTest {
 
     @Test
     public void Test1ErlazionatutaBidea() {
-
         System.out.println(" ");
         System.out.println(" TestErlazionatutaBidea ");
         System.out.println("  ");
@@ -150,7 +142,5 @@ public class GraphTest {
         System.out.println("  ");
         System.out.println(" "+w4.getUrlWeb() +" "+w0.getUrlWeb()+"-rekin:    EMAITZA: false, Ez dago biderik");
         g.erlazionatutaBidea(w4.getUrlWeb(), w0.getUrlWeb());
-        System.out.println("  ");
-        System.out.println("  ");
     }
 }

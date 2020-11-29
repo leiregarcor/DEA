@@ -1,8 +1,6 @@
 package packlEnuntziatu3;
-
 import packlEnuntziatu1.Web;
 import packlEnuntziatu1.WebZerrenda;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.DecimalFormat;
@@ -10,16 +8,11 @@ import java.text.NumberFormat;
 import java.util.*;
 
 public class Graph {
-	
-      HashMap<String, Integer> th; //HashMap sortu behar dugu non Key = url eta Value = indizea
+      HashMap<String, Integer> th; //HashMap, non Key = url eta Value = indizea
       String[] keys;
       ArrayList<Integer>[] adjList;
 
-	public Graph() {
-	}
-
-
-
+	public Graph() {}
 
 	public void thBete (WebZerrenda lista){
 		Collection<Web> c= lista.getHM().values();
@@ -33,16 +26,12 @@ public class Graph {
 	  }
 
 	  public void grafoaSortu(WebZerrenda lista){
-		// Post: web-en zerrendatik grafoa sortu
-		//       Nodoak web-en url-ak dira
-		
+		// Post: web-en zerrendatik grafoa sortu, Nodoak web-en url-ak dira
             // 1. pausua:  “th” bete
 		  this.thBete(lista);
-
             // 2. pausua: “keys” bete
 		keys = new String[th.size()];
 		for (String k: th.keySet()) keys[th.get(k)] = k;
-
  	    // 3. pausua: “adjList” bete
 		  adjList = new ArrayList[keys.length];
 		  Web w= null;
@@ -76,7 +65,6 @@ public class Graph {
 		boolean aurkitua = false;
 		boolean[] aztertuak = new boolean[th.size()];
 		for(int k=0; k<aztertuak.length;k++) aztertuak[k] = false;
-
 		aztertuGabeak.add(pos1); //aztertuGabeen ilararen bukaeran sartu
 		aztertuak[pos1]= true; //aztertuen array-an true jarri
 		if (pos1 == pos2) aurkitua = true;
@@ -85,14 +73,14 @@ public class Graph {
 		while(!aurkitua && !aztertuGabeak.isEmpty()){
 			//aurkitu ez dugun bitartean edo pila hutsa den bitartean loop-ean sartu
 			unekoa= aztertuGabeak.remove();
-			lag = adjList[unekoa]; //aztertzen ari garen nodoaren  bizilagunak lortu ditugu
+			lag = adjList[unekoa]; //aztertzen ari garen nodoaren  bizilagunak lortu
 			//aztertuak arrayan true sartuko dugu nodoen indizeetan, baita aztertu gabeen ilaran sartu ere:
 			for (int biziLag : lag){
 				if (!aztertuak[biziLag]) {//ez bada tratatua izan
 					aztertuak[biziLag] = true;
 					aztertuGabeak.add(biziLag);
 				}
-				if(biziLag==pos2){ //amaierako nodoa unekoaren bizilagunen bat bada, aurkitua true eta loop-a amaitu
+				if(biziLag==pos2){ //amaierako nodoa unekoaren bizilagunen bat bada, aurkitua eta loop handia amaitu
 					aurkitua= true;
 				}
 			}
@@ -111,7 +99,6 @@ public class Graph {
 		for(int k=0; k<aztertuak.length;k++){
 			aztertuak[k]=false;
 		}
-
 		aztertuGabeak.add(pos1); //aztertuGabeen ilararen bukaeran sartu
 		aztertuak[pos1]= true; //aztertuen array-an true jarri
 		if (pos1 == pos2) aurkitua = true;
@@ -129,18 +116,17 @@ public class Graph {
 					aztertuGabeak.add(biziLag);
 					bidea[biziLag]=unekoa;
 				}
-				if(biziLag==pos2){ //amaierako nodoa unekoaren bizilagunen bat bada, aurkitua true eta loop-a amaitu
+				if(biziLag==pos2){ //amaierako nodoa unekoaren bizilagunen bat bada, aurkitua eta loop handia amaitu
 					aurkitua= true;
 				}
 			}
 		}
-
 		if (aurkitua){
-			if(pos1==pos2){
+			if(pos1==pos2){//nodo bera badira
 				ema.add(keys[pos1]);
 				System.out.println("Hasierako eta amaierko nodoak berdinak dira ");
 			}
-			else{
+			else{//nodo desberdinak badira
 				Stack<String> pila= new Stack<String>();
 				int oraingoa=pos2;
 				pila.push(keys[oraingoa]);
@@ -155,11 +141,12 @@ public class Graph {
 				}
 			}
 		}
-		else{
+		else{//biderik ez badago
 			System.out.println("Ez dago biderik");
 		}
 		return ema;
 	}
+
 
 	public void xAldizDeitu(){
 		Random r= new Random();
@@ -176,18 +163,12 @@ public class Graph {
 		System.out.print("Execution time is " + formatter.format((end - start) / 1000d) + " seconds");
 	}
 
-
 	public static void main(String[] args) {
 		WebZerrenda w = WebZerrenda.getNireWebZerrenda();
-
 		File webIndexFitxeroa = null;
 		File webEstekaFitxeroa = null;
-
-
 		webIndexFitxeroa = new File ("resources\\index.txt");
 		webEstekaFitxeroa = new File ("resources\\pld-arcs-1-N.txt");
-
-
 		try {
 			w.indexFitxeroaKargatu(webIndexFitxeroa);
 			w.arcFitxeroaKargatu(webEstekaFitxeroa);
@@ -196,24 +177,23 @@ public class Graph {
 		}
 		Graph g = new Graph();
 		g.grafoaSortu(w);
-		System.out.println("Erlazionatuta");
+		System.out.println("Erlazionatuta:");
 		System.out.println(g.erlazionatuta(g.keys[10], g.keys[0]));
 		System.out.println(" ");
-		System.out.println("Erlazionatuta bidea biderik gabe");
+		System.out.println("ErlazionatutaBidea biderik gabe:");
 		g.erlazionatutaBidea("0-5.co.il", g.keys[0]);
 		System.out.println(" ");
-		System.out.println("Erlazionatuta bidea bide zuzenarekin");
+		System.out.println("ErlazionatutaBidea bide zuzenarekin:");
 		g.erlazionatutaBidea("0-chat.com", "0-deai.com");
 		System.out.println(" ");
-		System.out.println("Erlazionatuta bidea random");
+		System.out.println("Erlazionatuta bidea random:");
 		g.erlazionatutaBidea(g.keys[20], g.keys[10]);
 		System.out.println(" ");
 		System.out.println("Erlazionatuta bidea nodo berarekin");
 		g.erlazionatutaBidea(g.keys[20],g.keys[20]);
 		System.out.println(" ");
-		System.out.println("Erlazionatuta bidea random");
+		System.out.println("Erlazionatuta bidea random:");
 		g.erlazionatutaBidea(g.keys[234565], g.keys[17660]);
-		System.out.println(" ");
 		System.out.println(" ");
 		System.out.println("Erlazionatuta 100 aldiz exekutatzeko behar duen denbora");
 		g.xAldizDeitu();
