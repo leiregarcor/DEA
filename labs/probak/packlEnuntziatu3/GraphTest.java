@@ -6,8 +6,6 @@ import org.junit.Test;
 import packlEnuntziatu1.Web;
 import packlEnuntziatu1.WebZerrenda;
 
-import java.util.ArrayList;
-
 public class GraphTest {
     private WebZerrenda wz;
     private Web w1, w2, w3, w4, w5, w6, w0;
@@ -134,24 +132,24 @@ public class GraphTest {
 
     @Test
     public void Test1ErlazionatutaBidea() {
-        ArrayList<String> ema;
-        System.out.println("");
+
+        System.out.println(" ");
         System.out.println(" TestErlazionatutaBidea ");
         System.out.println("  ");
 
         System.out.println(" "+w1.getUrlWeb() +" "+w5.getUrlWeb()+"-rekin:    EMAITZA: true, bidea-> b.com, d.com, f.com ");
-        ema=g.erlazionatutaBidea(w1.getUrlWeb(), w5.getUrlWeb());
+        g.erlazionatutaBidea(w1.getUrlWeb(), w5.getUrlWeb());
 
 
         System.out.println("  ");
         System.out.println("  ");
         System.out.println(" "+w0.getUrlWeb() +" "+w0.getUrlWeb()+"-rekin:    EMAITZA: true, Hasierako eta amaierko nodoak berdinak dira ");
-        ema=g.erlazionatutaBidea(w0.getUrlWeb(), w0.getUrlWeb());
+        g.erlazionatutaBidea(w0.getUrlWeb(), w0.getUrlWeb());
 
         System.out.println("  ");
         System.out.println("  ");
         System.out.println(" "+w4.getUrlWeb() +" "+w0.getUrlWeb()+"-rekin:    EMAITZA: false, Ez dago biderik");
-        ema=g.erlazionatutaBidea(w4.getUrlWeb(), w0.getUrlWeb());
+        g.erlazionatutaBidea(w4.getUrlWeb(), w0.getUrlWeb());
         System.out.println("  ");
         System.out.println("  ");
     }
