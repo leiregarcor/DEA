@@ -80,7 +80,7 @@ public class GraphTest {
         System.out.println(" TestErlazionatuta ");
         boolean ema;
         System.out.println("  ");
-        System.out.println("  ");
+        System.out.println(" GRAFOA ");
         g.print();
         System.out.println("  ");
         System.out.println("  ");
@@ -135,32 +135,23 @@ public class GraphTest {
     @Test
     public void Test1ErlazionatutaBidea() {
         ArrayList<String> ema;
-
+        System.out.println("");
         System.out.println(" TestErlazionatutaBidea ");
         System.out.println("  ");
-        System.out.println("  ");
 
-        System.out.println(" "+w1.getUrlWeb() +" "+w5.getUrlWeb()+"-rekin:    EMAITZA: true ");
+        System.out.println(" "+w1.getUrlWeb() +" "+w5.getUrlWeb()+"-rekin:    EMAITZA: true, bidea-> b.com, d.com, f.com ");
         ema=g.erlazionatutaBidea(w1.getUrlWeb(), w5.getUrlWeb());
-        for(String s : ema){
-            System.out.println(" "+s);
-        }
+
 
         System.out.println("  ");
         System.out.println("  ");
-        System.out.println(" "+w0.getUrlWeb() +" "+w0.getUrlWeb()+"-rekin:    EMAITZA: true ");
+        System.out.println(" "+w0.getUrlWeb() +" "+w0.getUrlWeb()+"-rekin:    EMAITZA: true, Hasierako eta amaierko nodoak berdinak dira ");
         ema=g.erlazionatutaBidea(w0.getUrlWeb(), w0.getUrlWeb());
-        for(String s : ema){
-            System.out.println(" "+s);
-        }
 
         System.out.println("  ");
         System.out.println("  ");
-        System.out.println(" "+w4.getUrlWeb() +" "+w0.getUrlWeb()+"-rekin:    EMAITZA: false ");
+        System.out.println(" "+w4.getUrlWeb() +" "+w0.getUrlWeb()+"-rekin:    EMAITZA: false, Ez dago biderik");
         ema=g.erlazionatutaBidea(w4.getUrlWeb(), w0.getUrlWeb());
-        if(ema.size()==0){
-            System.out.println(" null da");
-        }
         System.out.println("  ");
         System.out.println("  ");
     }
