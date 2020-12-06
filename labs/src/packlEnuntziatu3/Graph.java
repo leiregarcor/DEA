@@ -14,6 +14,14 @@ public class Graph {
 
 	public Graph() {}
 
+	public HashMap<String, Integer> getTh(){
+		return this.th;
+	}
+
+	public String[] getKeys() {
+		return keys;
+	}
+
 	public void thBete (WebZerrenda lista){
 		Collection<Web> c= lista.getHM().values();
 		ArrayList<Web> l= new ArrayList<>(c);
