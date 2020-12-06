@@ -35,9 +35,9 @@ public class PageRank {
 
     public HashMap<String, Double> pageRank() {
         //POST: emaitza web-orri zerrendaren web-orri bakoitzaren PageRank algoritmoaren balioa da
-        double balio = ((1-d)/n)+(d*);
         double dif=1;
         while(dif>0.0001){
+            double balio = ((1-d)/n)+(d*(/));
 
         }
 
