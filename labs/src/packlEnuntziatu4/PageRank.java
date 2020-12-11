@@ -64,8 +64,8 @@ public class PageRank {
                 balioa=0;
                 lag=g.getKeys()[i];
                 for (int k=0; k<heldutakoakList[i].size(); k++){
-                    balioa=balioa+ (zahar.get(heldutakoakList[i].get(k))/g.getAdjList()[heldutakoakList[i].get(k)].size())
-                    lag=heldutakoakList[i].get(k);
+                    balioa=balioa+ (zahar.get(heldutakoakList[i].get(k))/g.getAdjList()[heldutakoakList[i].get(k)].size());
+                    //lag=heldutakoakList[i].get(k);
                 }
                 berri.put(lag,)
             }
