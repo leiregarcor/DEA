@@ -13,14 +13,32 @@ public class PageRank {
     private double n;
     private HashMap<String, Double> zahar;
     private HashMap<String, Double> berri;
+    private ArrayList<Integer>[] heldutakoakList;
 
     public PageRank() {
         this.d = 0.85;
         this.n = g.getTh().size();
         this.g = new Graph();
+        this.heldutakoakList = new ArrayList[g.getAdjList().length];
         g.grafoaSortu(WebZerrenda.getNireWebZerrenda());
         HashMap<String, Double> zahar = new HashMap<>();
         HashMap<String, Double> berri = new HashMap<>();
+    }
+
+
+    public void heldutakoakBete(){
+        /*
+        * post: heldutakoakList hasieratu eta bete du.
+        * heldutakoakList atributuan gordeko da nondik heltzen garen nodo bakoitzera.
+        */
+        for(int k=0; k<heldutakoakList.length ; k++){
+            heldutakoakList[k]= new ArrayList<>();
+        }
+        for (int i=0; i<g.getAdjList().length; i++ ){
+            for (int x:g.getAdjList()[i]){
+                heldutakoakList[x].add(i);
+            }
+        }
     }
 
 
@@ -34,11 +52,25 @@ public class PageRank {
     }
 
     public HashMap<String, Double> pageRank() {
-        this.hasieratuPageRank();
         //POST: emaitza web-orri zerrendaren web-orri bakoitzaren PageRank algoritmoaren balioa da
+        this.hasieratuPageRank();
         double dif=1;
+        String lag;
+        double balioa;
         while(dif>0.0001){
-            double balio = ((1-d)/n)+(d*(/));
+            zahar=berri;
+            berri=new HashMap<String, Double>();
+            for (int i=0; i<g.getKeys().length; i++){
+                balioa=0;
+                lag=g.getKeys()[i];
+                for (int k=0; k<heldutakoakList[i].size(); k++){
+                    balioa=balioa+ (zahar.get(heldutakoakList[i].get(k))/g.getAdjList()[heldutakoakList[i].get(k)].size())
+                    lag=heldutakoakList[i].get(k);
+                }
+                berri.put(lag,)
+            }
+
+
 
         }
 

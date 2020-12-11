@@ -14,6 +14,10 @@ public class Graph {
 
 	public Graph() {}
 
+	public ArrayList<Integer>[] getAdjList(){
+		return adjList;
+	}
+
 	public HashMap<String, Integer> getTh(){
 		return this.th;
 	}
