@@ -34,6 +34,7 @@ public class PageRank {
     }
 
     public HashMap<String, Double> pageRank() {
+        this.hasieratuPageRank();
         //POST: emaitza web-orri zerrendaren web-orri bakoitzaren PageRank algoritmoaren balioa da
         double dif=1;
         while(dif>0.0001){
