@@ -129,14 +129,19 @@ public class PageRank {
         ArrayList<Web> lag1= GakoHitzZerrenda.getNireGakoHitzZerrenda().bilatuHitza(gakoHitz1).getWebLista();
         ArrayList<Web> lag2= GakoHitzZerrenda.getNireGakoHitzZerrenda().bilatuHitza(gakoHitz2).getWebLista();
         ArrayList<Bikote> ema= new ArrayList<>();
+        int kont=0;
+        boolean aurkitua=false;
         for (Web w:lag1){
-            for (Web x:lag2){
-                int i= w.getUrlWeb().compareTo(x.getUrlWeb());
+            kont=0;
+            aurkitua=false;
+            while (kont< lag2.size() && !aurkitua){
+                int i= w.getUrlWeb().compareTo(lag2.get(kont).getUrlWeb());
                 if(i==0) {
                     Bikote b = new Bikote();
                     b.web = w.getUrlWeb();
                     b.pageRank = berri.get(w.getUrlWeb());
                     lista.add(b);
+                    aurkitua=true;
                 }
             }
         }
