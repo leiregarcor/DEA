@@ -1,6 +1,9 @@
 package packlEnuntziatu4;
 
-import packlEnuntziatu1.*;
+import packlEnuntziatu1.GakoHitzZerrenda;
+import packlEnuntziatu1.Hitza;
+import packlEnuntziatu1.Web;
+import packlEnuntziatu1.WebZerrenda;
 import packlEnuntziatu2.Node;
 import packlEnuntziatu2.OrderedCircularLinkedList;
 import packlEnuntziatu3.Graph;
@@ -10,7 +13,6 @@ import java.io.FileNotFoundException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -47,7 +49,6 @@ public class PageRank {
             }
         }
     }
-
 
     public void hasieratuPageRank(){
         zahar = new HashMap<>();
