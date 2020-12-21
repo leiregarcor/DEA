@@ -3,9 +3,11 @@ package packlEnuntziatu4;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import packlEnuntziatu1.GakoHitzZerrenda;
+import packlEnuntziatu1.Hitza;
 import packlEnuntziatu1.Web;
 import packlEnuntziatu1.WebZerrenda;
-import packlEnuntziatu2.Hitza;
+import packlEnuntziatu1.Hitza;
 import packlEnuntziatu3.Graph;
 
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ public class PageRankTest {
     private Graph g;
     private Hitza h0;
     private PageRank p;
+    private GakoHitzZerrenda gz;
 
 
     @Before
@@ -63,6 +66,9 @@ public class PageRankTest {
         h0= new Hitza("a");
         h0.gehituWebBat(w1);//web a.com
         h0.gehituWebBat(w3);//web d.com
+        gz= new GakoHitzZerrenda();
+        GakoHitzZerrenda.getNireGakoHitzZerrenda();
+        gz.getGakoMapa().put(h0.getKatea(),h0);
     }
 
     @After

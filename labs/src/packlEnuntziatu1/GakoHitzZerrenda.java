@@ -15,7 +15,7 @@ public class GakoHitzZerrenda {
 	private HashMap<String, Hitza> gakoMapa; // HashMap bat sortu behar dugu Key = katea eta Value = Hitza objektua
 	
 	// eraikitzailea
-	private GakoHitzZerrenda() {
+	public GakoHitzZerrenda() {
 		//this.ghZerrenda = new ArrayList<Hitza>(); //gako array-a sortu
 		this.gakoMapa = new HashMap<String,Hitza>(); //gako mapa sortu
 	}
@@ -62,5 +62,8 @@ public class GakoHitzZerrenda {
 	        }
 	     }	
 		
+	}
+	public HashMap<String, Hitza> getGakoMapa(){
+		return gakoMapa;
 	}
 }
