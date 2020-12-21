@@ -7,13 +7,10 @@ import packlEnuntziatu1.GakoHitzZerrenda;
 import packlEnuntziatu1.Hitza;
 import packlEnuntziatu1.Web;
 import packlEnuntziatu1.WebZerrenda;
-import packlEnuntziatu1.Hitza;
 import packlEnuntziatu3.Graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import static org.junit.Assert.*;
 
 public class PageRankTest {
 
@@ -81,6 +78,7 @@ public class PageRankTest {
         g= null;
         p=null;
         h0=null;
+        gz=null;
     }
 
 
