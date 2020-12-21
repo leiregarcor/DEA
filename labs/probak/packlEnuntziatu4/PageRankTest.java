@@ -74,10 +74,10 @@ public class PageRankTest {
     @Test
     public void pageRank() {
         /**  EMAITZA:
-        *    A---1
-        *    B---2
-        *    C---3
-        *    D---4        */
+        *    A---4
+        *    B---3
+        *    C---1
+        *    D---2        */
 
         System.out.println("  ");
         System.out.println(" TestpageRank ");
