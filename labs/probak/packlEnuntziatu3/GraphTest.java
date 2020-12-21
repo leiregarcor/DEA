@@ -48,7 +48,7 @@ public class GraphTest {
         wz.gehitu(w6);
         //grafoa
         g = new Graph();
-        g.grafoaSortu(wz);
+        g.grafoaSortu();
     }
 
     @After

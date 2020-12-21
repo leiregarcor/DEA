@@ -26,15 +26,12 @@ public class PageRank {
     public PageRank() {
         this.d = 0.85;
         this.g = new Graph();
-        g.grafoaSortu(WebZerrenda.getNireWebZerrenda());
+        g.grafoaSortu();
         this.n = g.getTh().size();
         this.heldutakoakList = new ArrayList[g.getAdjList().length];
-        g.grafoaSortu(WebZerrenda.getNireWebZerrenda());
         HashMap<String, Double> zahar = new HashMap<>();
         HashMap<String, Double> berri = new HashMap<>();
-
     }
-
 
     public void heldutakoakBete(){
         /*
@@ -95,7 +92,6 @@ public class PageRank {
         }
         return berri;
     }
-
 
     public class Bikote implements Comparable<Bikote> {
         String web;
@@ -184,9 +180,7 @@ public class PageRank {
         GakoHitzZerrenda ghz = GakoHitzZerrenda.getNireGakoHitzZerrenda();
         WebZerrenda wz = WebZerrenda.getNireWebZerrenda();
 
-
-        try {
-            // Lehenik fitxeroen karga egiten dugu.
+        try { // Lehenik fitxeroen karga egiten dugu.
             ghz.fitxeroaKargatu(wordsFitxeroa);
             wz.indexFitxeroaKargatu(webIndexFitxeroa);
             wz.arcFitxeroaKargatu(webEstekaFitxeroa);

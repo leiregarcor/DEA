@@ -37,9 +37,10 @@ public class Graph {
 		  }
 	  }
 
-	  public void grafoaSortu(WebZerrenda lista){
+	  public void grafoaSortu(){
 		// Post: web-en zerrendatik grafoa sortu, Nodoak web-en url-ak dira
             // 1. pausua:  “th” bete
+		  WebZerrenda lista = WebZerrenda.getNireWebZerrenda();
 		  this.thBete(lista);
             // 2. pausua: “keys” bete
 		keys = new String[th.size()];
@@ -188,7 +189,7 @@ public class Graph {
 			e.printStackTrace();
 		}
 		Graph g = new Graph();
-		g.grafoaSortu(w);
+		g.grafoaSortu();
 		System.out.println("Erlazionatuta:");
 		System.out.println(g.erlazionatuta(g.keys[10], g.keys[0]));
 		System.out.println(" ");
