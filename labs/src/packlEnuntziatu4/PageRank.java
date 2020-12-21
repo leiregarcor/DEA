@@ -120,8 +120,7 @@ public class PageRank {
         // txikienera ordenatuta (hau da, lehenengo posizioetan pagerank handiena duten web - orriak agertuko dira)
         OrderedCircularLinkedList<Bikote> lista= new OrderedCircularLinkedList<>("Page ranken lista");
         ArrayList<Bikote> ema= new ArrayList<>();
-        GakoHitzZerrenda gz=GakoHitzZerrenda.getNireGakoHitzZerrenda();
-        Hitza h= gz.bilatuHitza(gakoHitz);
+        Hitza h= GakoHitzZerrenda.getNireGakoHitzZerrenda().bilatuHitza(gakoHitz);
         for(int i=0; i<h.getWebLista().size(); i++){
             Web w= h.getWebLista().get(i);
             Bikote b= new Bikote();
