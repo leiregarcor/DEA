@@ -29,13 +29,13 @@ public class PageRankTest {
         //a norekin lotuta
         w0.getEstekenZerrenda().add(w1); //b
         w0.getEstekenZerrenda().add(w2); //c
-        w0.getEstekenZerrenda().add(w4); //e
         //b norekin lotuta
         w1.getEstekenZerrenda().add(w3);//d
         //c norekin lotuta
-        w2.getEstekenZerrenda().add(w0);//a
+        w2.getEstekenZerrenda().add(w3);//d
+        w2.getEstekenZerrenda().add(w1);//b
         //d norekin lotuta
-        w3.getEstekenZerrenda().add(w5);//f
+        w3.getEstekenZerrenda().add(w2);//c
 
         //web-ak webZerrendan sartu
         wz.gehitu(w0);
@@ -45,6 +45,13 @@ public class PageRankTest {
         //grafoa
         g = new Graph();
         g.grafoaSortu(wz);
+        /**
+         *     A----->B
+         *     |   🡥  |
+         *     ↓ /    ↓
+         *     C<---->D
+
+         * */
     }
 
     @After
@@ -60,6 +67,25 @@ public class PageRankTest {
 
     @Test
     public void pageRank() {
+        /**  EMAITZA:
+        *    A---1
+        *    B---2
+        *    C---3
+        *    D---4        */
+
+        System.out.println("  ");
+        System.out.println("  ");
+        System.out.println(" TestpageRank ");
+        boolean ema;
+        System.out.println("  ");
+        System.out.println(" GRAFOA ");
+        g.print();
+        System.out.println("  ");
+        System.out.println(" A----->B");
+        System.out.println(" |   \uD83E\uDC65  |");
+        System.out.println(" ↓ /    ↓");
+        System.out.println(" C<---->D");
+
     }
 
     @Test
