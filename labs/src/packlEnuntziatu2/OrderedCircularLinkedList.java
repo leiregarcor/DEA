@@ -79,6 +79,6 @@ public class OrderedCircularLinkedList<T extends Comparable<T>> extends Circular
 		
 			}
 		}
-	}	
-	
+	}
+
 }
