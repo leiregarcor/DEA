@@ -49,6 +49,9 @@ public class PageRank {
 
 
     public void hasieratuPageRank(){
+        zahar = new HashMap<>();
+        berri = new HashMap<>();
+        heldutakoakBete();
         double balio = 1/n;
         for (String s:g.getKeys()){
             zahar.put(s, 0.0);
@@ -73,7 +76,7 @@ public class PageRank {
                 lag=g.getKeys()[i];
                 for (int k=0; k<heldutakoakList[i].size(); k++){
                     aux=heldutakoakList[i].get(k);
-                    balioa=balioa+ ((zahar.get(aux)/g.getAdjList()[aux].size())*d);
+                    balioa=balioa+ ((zahar.get(g.getKeys()[aux])/g.getAdjList()[aux].size())*d);
                     //lag=heldutakoakList[i].get(k);
                 }
                 balioa=balioa+((1-d)/n);
