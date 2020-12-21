@@ -1,12 +1,11 @@
 package packlEnuntziatu4;
 
-import packlEnuntziatu1.GakoHitzZerrenda;
-import packlEnuntziatu1.Hitza;
-import packlEnuntziatu1.Web;
-import packlEnuntziatu1.WebZerrenda;
+import packlEnuntziatu1.*;
 import packlEnuntziatu2.OrderedCircularLinkedList;
 import packlEnuntziatu3.Graph;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -29,6 +28,7 @@ public class PageRank {
         g.grafoaSortu(WebZerrenda.getNireWebZerrenda());
         HashMap<String, Double> zahar = new HashMap<>();
         HashMap<String, Double> berri = new HashMap<>();
+
     }
 
 
@@ -93,13 +93,6 @@ public class PageRank {
         String web;
         Double pageRank;
 
-        /**public String getWeb(){
-            return this.web;
-        }
-        public Double getPageRank(){
-            return this.pageRank;
-        }*/
-
         @Override
         public int compareTo(Bikote o) {
             if(pageRank==o.pageRank) {
@@ -119,7 +112,8 @@ public class PageRank {
         // txikienera ordenatuta (hau da, lehenengo posizioetan pagerank handiena duten web - orriak agertuko dira)
         OrderedCircularLinkedList<Bikote> lista= new OrderedCircularLinkedList<>("Page ranken lista");
         ArrayList<Bikote> ema= new ArrayList<>();
-        Hitza h= GakoHitzZerrenda.getNireGakoHitzZerrenda().bilatuHitza(gakoHitz);
+        GakoHitzZerrenda gz=GakoHitzZerrenda.getNireGakoHitzZerrenda();
+        Hitza h= gz.bilatuHitza(gakoHitz);
         for(int i=0; i<h.getWebLista().size(); i++){
             Web w= h.getWebLista().get(i);
             Bikote b= new Bikote();
@@ -164,5 +158,38 @@ public class PageRank {
 
     public Graph getGrafoa(){
         return this.g;
+    }
+
+    public static void main(String[] args) {
+
+        File wordsFitxeroa = null;
+        File webIndexFitxeroa = null;
+        File webEstekaFitxeroa = null;
+
+        wordsFitxeroa = new File ("resources\\words.txt");
+        webIndexFitxeroa = new File ("resources\\index.txt");
+        webEstekaFitxeroa = new File ("resources\\pld-arcs-1-N.txt");
+
+        GakoHitzZerrenda ghz = GakoHitzZerrenda.getNireGakoHitzZerrenda();
+        WebZerrenda wz = WebZerrenda.getNireWebZerrenda();
+
+
+        try {
+            // Lehenik fitxeroen karga egiten dugu.
+            ghz.fitxeroaKargatu(wordsFitxeroa);
+            wz.indexFitxeroaKargatu(webIndexFitxeroa);
+            wz.arcFitxeroaKargatu(webEstekaFitxeroa);
+
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        PageRank p =new PageRank();
+        p.pageRank();
+        p.bilatzailea("sport");
     }
 }

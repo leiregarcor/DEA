@@ -60,7 +60,7 @@ public class PageRankTest {
          * */
         p = new PageRank();
 
-        h0= new Hitza("a");
+        h0= new Hitza("a.com");
         h0.gehituWebBat(w1);//web a.com
         h0.gehituWebBat(w3);//web d.com
         gz= new GakoHitzZerrenda();
