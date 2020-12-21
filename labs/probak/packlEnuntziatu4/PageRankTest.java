@@ -8,6 +8,7 @@ import packlEnuntziatu1.WebZerrenda;
 import packlEnuntziatu2.Hitza;
 import packlEnuntziatu3.Graph;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import static org.junit.Assert.*;
@@ -23,7 +24,8 @@ public class PageRankTest {
 
     @Before
     public void setUp() throws Exception {
-        //hasieraketak
+            //hasieraketak
+        //WebZerrenda eta Web-ak sortu
         wz= WebZerrenda.getNireWebZerrenda();
         w0= new Web(0, "a.com");
         w1= new Web(1, "b.com");
@@ -57,6 +59,10 @@ public class PageRankTest {
          *     C<---->D
          * */
         p = new PageRank();
+
+        h0= new Hitza("a");
+        h0.gehituWebBat(w1);//web a.com
+        h0.gehituWebBat(w3);//web d.com
     }
 
     @After
@@ -68,6 +74,7 @@ public class PageRankTest {
         w0= null;
         g= null;
         p=null;
+        h0=null;
     }
 
 
@@ -80,7 +87,7 @@ public class PageRankTest {
         *    D---2        */
 
         System.out.println("  ");
-        System.out.println(" TestpageRank ");
+        System.out.println(" TestPageRank ");
 
         System.out.println("  ");
         System.out.println(" GRAFOA ");
@@ -104,6 +111,16 @@ public class PageRankTest {
 
     @Test
     public void bilatzailea() {
+        System.out.println("  ");
+        System.out.println(" TestBilatzailea ");
+        System.out.println("  ");
+
+        ArrayList<PageRank.Bikote> ema=  p.bilatzailea(h0.getKatea());
+        for (PageRank.Bikote b:ema){
+            System.out.println("Web urel: " + b.web + "PageRank: " + b.pageRank);
+        }
+
+
     }
 
     @Test

@@ -93,6 +93,13 @@ public class PageRank {
         String web;
         Double pageRank;
 
+        /**public String getWeb(){
+            return this.web;
+        }
+        public Double getPageRank(){
+            return this.pageRank;
+        }*/
+
         @Override
         public int compareTo(Bikote o) {
             if(pageRank==o.pageRank) {
