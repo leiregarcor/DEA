@@ -39,6 +39,7 @@ public class PageRankTest {
         //c norekin lotuta
         w2.getEstekenZerrenda().add(w3);//d
         w2.getEstekenZerrenda().add(w1);//b
+        w2.getEstekenZerrenda().add(w0);//a
         //d norekin lotuta
         w3.getEstekenZerrenda().add(w2);//c
 
@@ -48,9 +49,15 @@ public class PageRankTest {
         wz.gehitu(w2);
         wz.gehitu(w3);
         //grafoa sortzen da pagerank klasean
+
+
+        g = new Graph();
+        g.grafoaSortu(wz);
+
+
         /**
          *     A----->B
-         *     |   🡥  |
+         *     ↑   🡥  |
          *     ↓ /    ↓
          *     C<---->D
          * */
@@ -83,9 +90,11 @@ public class PageRankTest {
         System.out.println("  ");
         System.out.println(" GRAFOA ");
 
+        g.print();
+
         System.out.println("  ");
         System.out.println(" A----->B");
-        System.out.println(" |   \uD83E\uDC65  |");
+        System.out.println(" ↑   \uD83E\uDC65  |");
         System.out.println(" ↓ /    ↓");
         System.out.println(" C<---->D");
         System.out.println("  ");
