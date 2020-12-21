@@ -143,6 +143,8 @@ public class CircularLinkedList<T> implements ListADT<T>{
 		}
 		
 	}
-	
+	public Node<T> getLast(){
+		return last;
+	}
 
 }

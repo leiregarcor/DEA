@@ -1,14 +1,18 @@
 package packlEnuntziatu4;
 
 import packlEnuntziatu1.*;
+import packlEnuntziatu2.Node;
 import packlEnuntziatu2.OrderedCircularLinkedList;
 import packlEnuntziatu3.Graph;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class PageRank {
 
@@ -68,6 +72,7 @@ public class PageRank {
         int aux;
         double balioa;
         while(dif>0.0001){
+            long start = System.currentTimeMillis();
             dif=0;
             zahar=berri;
             berri=new HashMap<String, Double>();
@@ -83,7 +88,10 @@ public class PageRank {
                 berri.put(lag,balioa);
                 dif=dif+Math.abs(berri.get(lag)-zahar.get(lag));
             }
-
+            System.out.println("Diferentzia "+dif);
+            long end = System.currentTimeMillis();
+            NumberFormat formatter = new DecimalFormat("#0.00000");
+            System.out.println("Execution time is " + formatter.format((end - start) / 1000d) + " seconds");
         }
         return berri;
     }
@@ -121,7 +129,8 @@ public class PageRank {
             b.pageRank= berri.get(w.getUrlWeb());
             lista.add(b);
         }
-        while (!lista.isEmpty()){
+        Iterator<Bikote> itr= lista.iterator();
+        while (itr.hasNext()){
             ema.add(lista.removeFirst());
         }
         return ema;
@@ -150,9 +159,12 @@ public class PageRank {
                 }
             }
         }
-        while (!lista.isEmpty()){
-            ema.add(lista.removeFirst());
+        Node<Bikote> unekoa=lista.getLast();
+        while(unekoa.next!=lista.getLast()) {
+            unekoa=unekoa.next;
+            ema.add(unekoa.elem);
         }
+        ema.add(lista.getLast().elem);
         return ema;
     }
 
@@ -190,6 +202,9 @@ public class PageRank {
 
         PageRank p =new PageRank();
         p.pageRank();
-        p.bilatzailea("sport");
+        ArrayList<PageRank.Bikote> ema= p.bilatzailea("casino");
+        for (int i=0; i<ema.size();i++){
+            System.out.println("Web url: " + ema.get(i).web + " PageRank: " + ema.get(i).pageRank);
+        }
     }
 }
