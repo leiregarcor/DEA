@@ -5,7 +5,10 @@ import org.junit.Before;
 import org.junit.Test;
 import packlEnuntziatu1.Web;
 import packlEnuntziatu1.WebZerrenda;
+import packlEnuntziatu2.Hitza;
 import packlEnuntziatu3.Graph;
+
+import java.util.HashMap;
 
 import static org.junit.Assert.*;
 
@@ -14,6 +17,8 @@ public class PageRankTest {
     private WebZerrenda wz;
     private Web w1, w2, w3, w0;
     private Graph g;
+    private Hitza h0;
+    private PageRank p;
 
 
     @Before
@@ -50,8 +55,8 @@ public class PageRankTest {
          *     |   🡥  |
          *     ↓ /    ↓
          *     C<---->D
-
          * */
+        p = new PageRank();
     }
 
     @After
@@ -62,6 +67,7 @@ public class PageRankTest {
         w3= null;
         w0= null;
         g= null;
+        p=null;
     }
 
 
@@ -74,17 +80,25 @@ public class PageRankTest {
         *    D---4        */
 
         System.out.println("  ");
-        System.out.println("  ");
         System.out.println(" TestpageRank ");
-        boolean ema;
+
         System.out.println("  ");
         System.out.println(" GRAFOA ");
+
         g.print();
+
         System.out.println("  ");
         System.out.println(" A----->B");
         System.out.println(" |   \uD83E\uDC65  |");
         System.out.println(" ↓ /    ↓");
         System.out.println(" C<---->D");
+        System.out.println("  ");
+        System.out.println("  ");
+
+        HashMap<String, Double>  ema= p.pageRank();
+
+        System.out.println(ema.values());
+        System.out.println(ema.keySet());
 
     }
 

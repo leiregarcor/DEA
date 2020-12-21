@@ -22,8 +22,9 @@ public class PageRank {
 
     public PageRank() {
         this.d = 0.85;
-        this.n = g.getTh().size();
         this.g = new Graph();
+        g.grafoaSortu(WebZerrenda.getNireWebZerrenda());
+        this.n = g.getTh().size();
         this.heldutakoakList = new ArrayList[g.getAdjList().length];
         g.grafoaSortu(WebZerrenda.getNireWebZerrenda());
         HashMap<String, Double> zahar = new HashMap<>();
