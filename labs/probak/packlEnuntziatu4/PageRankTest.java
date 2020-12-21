@@ -50,11 +50,6 @@ public class PageRankTest {
         wz.gehitu(w3);
         //grafoa sortzen da pagerank klasean
 
-
-        g = new Graph();
-        g.grafoaSortu(wz);
-
-
         /**
          *     A----->B
          *     ↑   🡥  |
@@ -90,7 +85,7 @@ public class PageRankTest {
         System.out.println("  ");
         System.out.println(" GRAFOA ");
 
-        g.print();
+        p.getGrafoa().print();
 
         System.out.println("  ");
         System.out.println(" A----->B");
@@ -101,7 +96,7 @@ public class PageRankTest {
         System.out.println("  ");
 
         HashMap<String, Double>  ema= p.pageRank();
-
+        System.out.println(" Honakoak dira PageRank-ak ");
         System.out.println(ema.values());
         System.out.println(ema.keySet());
 

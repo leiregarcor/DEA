@@ -154,4 +154,8 @@ public class PageRank {
         }
         return ema;
     }
+
+    public Graph getGrafoa(){
+        return this.g;
+    }
 }
