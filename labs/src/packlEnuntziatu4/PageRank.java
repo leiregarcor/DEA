@@ -124,8 +124,25 @@ public class PageRank {
 
     public ArrayList<Bikote> bilatzailea(String gakoHitz1, String gakoHitz2){
         // Post: Emaitza emandako gako-hitzak dituzten web-orrien zerrenda da, bere pagerank-aren arabera handienetik
-        //  txikienera ordenatuta(hau da, lehenengo posizioetan pagerank handiena duten web-orriak agertuko dira)
+        //  txikienera ordenatuta(hau da, lehenengo posizioetan pagerank handiena duten web-orriak agertuko dira
+        OrderedCircularLinkedList<Bikote> lista= new OrderedCircularLinkedList<>("Page ranken lista");
+        ArrayList<Web> lag1= GakoHitzZerrenda.getNireGakoHitzZerrenda().bilatuHitza(gakoHitz1).getWebLista();
+        ArrayList<Web> lag2= GakoHitzZerrenda.getNireGakoHitzZerrenda().bilatuHitza(gakoHitz2).getWebLista();
         ArrayList<Bikote> ema= new ArrayList<>();
+        for (Web w:lag1){
+            for (Web x:lag2){
+                int i= w.getUrlWeb().compareTo(x.getUrlWeb());
+                if(i==0) {
+                    Bikote b = new Bikote();
+                    b.web = w.getUrlWeb();
+                    b.pageRank = berri.get(w.getUrlWeb());
+                    lista.add(b);
+                }
+            }
+        }
+        while (!lista.isEmpty()){
+            ema.add(lista.removeFirst());
+        }
         return ema;
     }
 }
