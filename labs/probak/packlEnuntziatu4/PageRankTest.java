@@ -47,9 +47,7 @@ public class PageRankTest {
         wz.gehitu(w1);
         wz.gehitu(w2);
         wz.gehitu(w3);
-        //grafoa
-        g = new Graph();
-        g.grafoaSortu(wz);
+        //grafoa sortzen da pagerank klasean
         /**
          *     A----->B
          *     |   🡥  |
@@ -84,8 +82,6 @@ public class PageRankTest {
 
         System.out.println("  ");
         System.out.println(" GRAFOA ");
-
-        g.print();
 
         System.out.println("  ");
         System.out.println(" A----->B");
